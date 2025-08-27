@@ -1,98 +1,176 @@
-"use client";
-import React, { useState } from 'react';
+"use client"
+import { useState, useEffect } from "react"
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMenuOpen])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md  ">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo/Name */}
-          <div className="text-xl font-bold text-gray-900">
-            <span className="block">Md Abul</span>
-            <span className="block">Hashem</span>
-          </div>
-          
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#xtra" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-            >
-              X-TRa
-            </a>
-            <a 
-              href="#about" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-            >
-              About Me
-            </a>
-            <a 
-              href="#resume" 
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-            >
-              Resume
-            </a>
-          </div>
+    <>
+      <div
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <svg 
-              className={`w-6 h-6 text-black transition-transform duration-300 ${isMenuOpen ? 'rotate-45' : ''}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo/Name */}
+            <div className="text-lg sm:text-xl font-bold leading-tight"
+            style={{
+              background: 'linear-gradient(180deg, #191918 0%, rgba(25, 25, 24, 0.8) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              <span className="block">Md Abul</span>
+              <span className="block">Hashem</span>
+            </div>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a
+                href="#xtra"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+              >
+                X-TRa
+              </a>
+              <a
+                href="#about"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+              >
+                About Me
+              </a>
+              <a
+                href="#resume"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
+              >
+                Resume
+              </a>
+            </div>
+
+            <button
+              className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none rounded-lg"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+              <div className="flex flex-col items-center justify-center w-6 h-6 relative">
+                <span
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${
+                    isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                  }`}
+                />
+                <span
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-200 ease-out ${
+                    isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
+                />
+                <span
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${
+                    isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        <div 
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+        <div
+          className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-gray-100/50 shadow-xl transform transition-all duration-500 ease-out ${
+            isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
           }`}
         >
-          <div className="py-4 space-y-4 border-t border-gray-200 mt-4">
-            <a 
-              href="#xtra" 
-              className="block text-gray-600 hover:text-gray-900 transition-colors duration-200 py-2"
-              onClick={() => setIsMenuOpen(false)}
+          <div className="px-6 py-8">
+            <nav className="space-y-1">
+              <a
+                href="#xtra"
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
+                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                }`}
+                style={{ transitionDelay: isMenuOpen ? "100ms" : "0ms" }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                  X-TRa
+                </span>
+              </a>
+
+              <a
+                href="#about"
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
+                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                }`}
+                style={{ transitionDelay: isMenuOpen ? "200ms" : "0ms" }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                  About Me
+                </span>
+              </a>
+
+              <a
+                href="#resume"
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
+                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                }`}
+                style={{ transitionDelay: isMenuOpen ? "300ms" : "0ms" }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                  Resume
+                </span>
+              </a>
+            </nav>
+
+            <div
+              className={`mt-8 pt-6 border-t border-gray-200/50 transform transition-all duration-500 ease-out ${
+                isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+              }`}
+              style={{ transitionDelay: isMenuOpen ? "400ms" : "0ms" }}
             >
-              X-TRa
-            </a>
-            <a 
-              href="#about" 
-              className="block text-gray-600 hover:text-gray-900 transition-colors duration-200 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Me
-            </a>
-            <a 
-              href="#resume" 
-              className="block text-gray-600 hover:text-gray-900 transition-colors duration-200 py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Resume
-            </a>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="text-sm text-gray-600 font-medium">Available for projects</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  );
-};
+      </nav>
 
-export default Navbar;
+      <style jsx global>{`
+        .hero-section,
+        .background-content,
+        main > section:not(.navbar-section) {
+          transition: filter 0.3s ease-out;
+        }
+        
+        body:has(.navbar-menu-open) .hero-section,
+        body:has(.navbar-menu-open) .background-content,
+        body:has(.navbar-menu-open) main > section:not(.navbar-section) {
+          filter: blur(2px);
+        }
+      `}</style>
+    </>
+  )
+}
+
+export default Navbar
