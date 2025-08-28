@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Mail, MoveUpRight } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Mail, MoveUpRight } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -49,28 +49,29 @@ const Footer = () => {
             className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
           >
             <span className="text-sm">LinkedIn</span>
-            <MoveUpRight  size={16} />
+            <ArrowUpRight  size={16} />
           </a>
           <a 
             href="#" 
             className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
           >
             <span className="text-sm">Instagram</span>
-            <MoveUpRight size={16} />
+            <ArrowUpRight size={16} />
           </a>
           <a 
             href="#" 
             className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
           >
             <span className="text-sm">Behance</span>
-            <MoveUpRight size={16} />
+            <ArrowUpRight size={16} />
           </a>
           <a 
             href="#" 
             className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
           >
             <span className="text-sm">Dribbble</span>
-            <MoveUpRight size={16} />
+            <ArrowUpRight size={16} />
+
           </a>
         </div>
 
@@ -82,21 +83,21 @@ const Footer = () => {
               className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">LinkedIn</span>
-              <MoveUpRight size={16} />
+              <ArrowUpRight size={16} />
             </a>
             <a 
               href="#" 
               className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">Instagram</span>
-              <MoveUpRight size={16} />
+              <ArrowUpRight size={16} />
             </a>
             <a 
               href="#" 
               className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">Behance</span>
-              <MoveUpRight size={16} />
+              <ArrowUpRight size={16} />
             </a>
           </div>
           <div className="flex justify-center">
@@ -105,7 +106,7 @@ const Footer = () => {
               className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">Dribbble</span>
-              <MoveUpRight size={16} />
+              <ArrowUpRight size={16} />
             </a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 "use client"
+import { ArrowRightToLine, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const Navbar = () => {
@@ -95,7 +96,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-gray-100/50 shadow-xl transform transition-all duration-500 ease-out ${
+          className={`md:hidden absolute top-full left-0 right-0 bg-[#F5F5F5] backdrop-blur-xl border-b border-gray-100/50 shadow-xl transform transition-all duration-500 ease-out ${
             isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
           }`}
         >
@@ -109,7 +110,8 @@ const Navbar = () => {
                 style={{ transitionDelay: isMenuOpen ? "100ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                <span className="text-lg flex justify-start items-center gap-3 font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                  <ArrowUpRight />
                   X-TRa
                 </span>
               </a>
@@ -122,7 +124,8 @@ const Navbar = () => {
                 style={{ transitionDelay: isMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                <span className="text-lg font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200 flex justify-start items-center gap-3">
+                  <CornerDownRight />
                   About Me
                 </span>
               </a>
@@ -135,7 +138,8 @@ const Navbar = () => {
                 style={{ transitionDelay: isMenuOpen ? "300ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="text-xl font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+                <span className="text-lg font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200 flex justify-start items-center gap-3">
+                  <ArrowRightToLine />
                   Resume
                 </span>
               </a>
