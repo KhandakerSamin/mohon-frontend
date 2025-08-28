@@ -26,7 +26,7 @@ const Footer = () => {
         </h2>
 
         {/* Email Button */}
-        <div className="mb-12 absolute top-13 left-25 lg:top-30 lg:right-8 ">
+        <div className="mb-12 absolute top-13 right-31 lg:top-30 lg:right-8 ">
           <a 
             href="mailto:your-email@example.com"
             className="py-2.5 px-6 bg-transparent border border-black rounded-full rounded-tr-none  text-black text-sm tracking-wide hover:bg-black hover:text-white transition-all duration-200 flex justify-center items-center gap-1"
@@ -106,7 +106,7 @@ const Footer = () => {
               className="flex items-center space-x-2 text-black hover:text-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">Dribbble</span>
-              <ArrowUpRight size={16} />
+              <MoveUpRight size={16} />
             </a>
           </div>
         </div>
