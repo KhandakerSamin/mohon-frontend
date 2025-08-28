@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="bg-[#F5F5F5] pt-15 lg:pt-30 px-4 lg:px-8 ">
       <div className=" mx-auto max-w-7xl text-center relative">
         {/* CTA Button */}
-        <div className="mb-8 absolute -top-15 left-20 lg:-top-14 lg:left-10">
-          <button className="inline-block py-2.5 px-6 bg-transparent border border-black rounded-full rounded-bl-none text-black text-sm lg:text-2xl tracking-wide hover:bg-black hover:text-white transition-all duration-200">
+        <div className="mb-8 absolute -top-15 left-23 lg:-top-14 lg:left-10">
+          <button className="inline-block py-2.5 px-6 bg-transparent border border-black rounded-full rounded-bl-none text-black text-sm lg:text-2xl tracking-wide hover:bg-black hover:text-white transition-all duration-200 ">
             Have An Idea On Mind?
           </button>
         </div>
@@ -26,7 +26,7 @@ const Footer = () => {
         </h2>
 
         {/* Email Button */}
-        <div className="mb-12 absolute top-13 right-27 lg:top-32 lg:right-8 ">
+        <div className="mb-12 absolute top-13 right-33 lg:top-32 lg:right-8 ">
           <a 
             href="mailto:your-email@example.com"
             className="py-2.5 px-6 bg-transparent border border-black rounded-full rounded-tr-none  text-black text-sm lg:text-2xl tracking-wide hover:bg-black hover:text-white transition-all duration-200 flex justify-center items-center gap-2"
