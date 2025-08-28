@@ -1,5 +1,6 @@
 "use client"
 import { ArrowRightToLine, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 
 const Navbar = () => {
@@ -36,6 +37,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo/Name */}
+            <Link href="/">
             <div className="text-lg sm:text-xl font-bold leading-tight"
             style={{
               background: 'linear-gradient(180deg, #191918 0%, rgba(25, 25, 24, 0.8) 100%)',
@@ -46,11 +48,12 @@ const Navbar = () => {
               <span className="block">Md Abul</span>
               <span className="block">Hashem</span>
             </div>
+            </Link>
 
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
               <a
-                href="#xtra"
+                href="x-tra"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
               >
                 X-TRa
@@ -103,7 +106,7 @@ const Navbar = () => {
           <div className="px-6 py-8">
             <nav className="space-y-1">
               <a
-                href="#xtra"
+                href="x-tra"
                 className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
                   isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
                 }`}
@@ -125,7 +128,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="text-lg font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200 flex justify-start items-center gap-3">
-                  <CornerDownRight />
+                  <ArrowUpRight />
                   About Me
                 </span>
               </a>
@@ -139,7 +142,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="text-lg font-medium text-gray-800 group-hover:text-gray-900 transition-colors duration-200 flex justify-start items-center gap-3">
-                  <ArrowRightToLine />
+                  <ArrowUpRight />
                   Resume
                 </span>
               </a>

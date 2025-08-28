@@ -35,24 +35,8 @@
     image: "/p1.png",
     tags: ["UI/UX Design", "Product Design"]
   },
-  {
-    id: 5,
-    title: "E-commerce",
-    category: "Web Design",
-    type: "Product Design",
-    description: "Golpo is a Game-Based Audiobook Streaming App Designed to Deliver Immersive Audio Storytelling Experiences.",
-    image: "/p3.png",
-    tags: ["UI/UX Design", "Product Design"]
-  },
-  {
-    id: 6,
-    title: "Dashboard",
-    category: "Web Design",
-    type: "Product Design",
-    description: "Golpo is a Game-Based Audiobook Streaming App Designed to Deliver Immersive Audio Storytelling Experiences.",
-    image: "/p2.png", 
-    tags: ["UI/UX Design", "Product Design"]
-  }
+
+
 ];
 
 export default projectsData;

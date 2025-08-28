@@ -5,7 +5,7 @@ import { MoveRight } from 'lucide-react';
 const ProjectCard = ({ project, isFullWidth = false }) => {
   return (
     <div
-      className={`group relative overflow-hidden rounded-lg bg-[#F5F5F5]  transition-colors duration-300 cursor-pointer ${
+      className={`group relative rounded-lg overflow-hidden bg-[#F5F5F5]  transition-colors duration-300 cursor-pointer ${
         isFullWidth ? 'col-span-full' : 'col-span-1'
       }`}
     >

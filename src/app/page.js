@@ -6,7 +6,7 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div className='bg-[#F5F5F5]'>
+    <div className='bg-[#F5F5F5] '>
       <Navbar />
       <Hero />
       <ProjectSection />
