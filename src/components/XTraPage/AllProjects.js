@@ -77,7 +77,7 @@ const AllProjects = () => {
 
   return (
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F5F5] min-h-screen">
-      <div className="max-w-[1230px] mx-auto my-20">
+      <div className="max-w-screen mx-auto my-20">
 
         {/* Masonry Container */}
         <div 
