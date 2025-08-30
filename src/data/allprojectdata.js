@@ -41,7 +41,7 @@ export const allProjectsData = [
     category: "Web Application",
     type: "Full Stack Design",
     description: "Complete e-commerce solution with product catalog, shopping cart, payment integration, and admin dashboard for online retail businesses.",
-    image: "/ap1.png",
+    image: "/ap2.png",
     year: "2023"
   },
   {
@@ -59,7 +59,7 @@ export const allProjectsData = [
     category: "Mobile App",
     type: "UI/UX Design",
     description: "On-demand food delivery application with restaurant discovery, order tracking, and seamless payment processing for hungry customers.",
-    image: "/ap1.png",
+    image: "/p1.png",
     year: "2023"
   },
   {
@@ -77,7 +77,7 @@ export const allProjectsData = [
     category: "Web Application",
     type: "UI/UX Design",
     description: "Property listing and management platform with advanced search filters, virtual tours, and agent communication tools.",
-    image: "/ap3.png",
+    image: "/p3.png",
     year: "2023"
   },
   {
@@ -86,7 +86,7 @@ export const allProjectsData = [
     category: "EdTech",
     type: "Web Design",
     description: "Educational platform for online courses with video streaming, assignment submission, and progress tracking for students and instructors.",
-    image: "/ap1.png",
+    image: "/p2.png",
     year: "2024"
   },
   {
@@ -95,7 +95,7 @@ export const allProjectsData = [
     category: "Analytics Tool",
     type: "Web Application",
     description: "Social media management dashboard with post scheduling, analytics, and engagement tracking across multiple platforms.",
-    image: "/ap2.png",
+    image: "/p1.png",
     year: "2023"
   },
   {
@@ -131,7 +131,7 @@ export const allProjectsData = [
     category: "Fintech",
     type: "Web Application",
     description: "Investment tracking and portfolio management platform with real-time market data, performance analytics, and trading tools.",
-    image: "/ap3.png",
+    image: "/p3.png",
     year: "2023"
   },
   {
@@ -140,7 +140,7 @@ export const allProjectsData = [
     category: "Lifestyle App",
     type: "Mobile Design",
     description: "Cooking and recipe discovery app with step-by-step instructions, ingredient lists, and meal planning features for food enthusiasts.",
-    image: "/ap1.png",
+    image: "/p1.png",
     year: "2024"
   },
   {
@@ -149,7 +149,7 @@ export const allProjectsData = [
     category: "Travel App",
     type: "UI/UX Design",
     description: "Hotel reservation platform with search filters, room comparisons, guest reviews, and secure booking system for travelers.",
-    image: "/ap2.png",
+    image: "/p2.png",
     year: "2023"
   },
   {
@@ -185,7 +185,7 @@ export const allProjectsData = [
     category: "Lifestyle App",
     type: "Mobile Design",
     description: "Plant care and gardening app with watering reminders, plant identification, and care tips for green thumb enthusiasts.",
-    image: "/ap3.png",
+    image: "/p3.png",
     year: "2023"
   },
   {
@@ -194,7 +194,7 @@ export const allProjectsData = [
     category: "Business App",
     type: "Web Design",
     description: "Event planning and management platform with attendee registration, schedule management, and real-time updates for organizers.",
-    image: "/ap1.png",
+    image: "/p1.png",
     year: "2024"
   },
   {
@@ -203,7 +203,7 @@ export const allProjectsData = [
     category: "EdTech App",
     type: "Mobile Design",
     description: "Interactive language learning app with gamified lessons, pronunciation practice, and progress tracking for multiple languages.",
-    image: "/ap2.png",
+    image: "/p2.png",
     year: "2023"
   },
   {
@@ -215,13 +215,13 @@ export const allProjectsData = [
     image: "/ap3.png",
     year: "2024"
   },
-  {
-    id: 25,
-    title: "Interior Design Tool",
-    category: "Design App",
-    type: "AR Application",
-    description: "Augmented reality interior design app allowing users to visualize furniture and decor in their space before purchasing.",
-    image: "/ap1.png",
-    year: "2024"
-  }
+  // {
+  //   id: 25,
+  //   title: "Interior Design Tool",
+  //   category: "Design App",
+  //   type: "AR Application",
+  //   description: "Augmented reality interior design app allowing users to visualize furniture and decor in their space before purchasing.",
+  //   image: "/ap1.png",
+  //   year: "2024"
+  // }
 ];

@@ -59,7 +59,7 @@ const Navbar = () => {
                 X-TRa
               </a>
               <a
-                href="#about"
+                href="about"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium"
               >
                 About Me
@@ -120,7 +120,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="#about"
+                href="about"
                 className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
                   isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
                 }`}
