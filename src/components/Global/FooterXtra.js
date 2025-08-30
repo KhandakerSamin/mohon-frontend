@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowUpRight, ExternalLink, Mail, MoveUpRight } from 'lucide-react';
 
-const Footer = () => {
+const FooterXtra = () => {
   return (
     <footer className="bg-[#F5F5F5] pt-15 lg:pt-30 px-4 lg:px-8 ">
-      <div className=" mx-auto max-w-[1230px] text-center relative">
+      <div className=" mx-auto max-w-screen text-center relative">
         {/* CTA Button */}
         <div className="mb-8 absolute -top-15 left-23 lg:-top-14 lg:left-10">
           <button className="inline-block py-2.5 px-6 bg-transparent border border-black rounded-full rounded-bl-none text-black text-sm lg:text-2xl tracking-wide hover:bg-black hover:text-white transition-all duration-200 ">
@@ -124,4 +124,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterXtra;

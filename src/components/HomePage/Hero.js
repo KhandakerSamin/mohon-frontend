@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="h-screen max-w-screen mx-auto flex items-center justify-center px-8 py-10 lg:py-24 relative">
+    <section className="h-screen max-w-7xl mx-auto flex items-center justify-center px-8 py-10 lg:py-24 relative">
       <div className="max-w-6xl mx-auto text-center ">
         {/* Main Content */}
         <div className="space-y-2 md:space-y-6 relative">
@@ -32,11 +32,12 @@ const Hero = () => {
           {/* CTA Button */}
           <div className="absolute right-0 -bottom-12 lg:-bottom-14">
             <a
-              href="#contact"
+              href="https://api.whatsapp.com/send/?phone=8801879449690&text&type=phone_number&app_absent=0"
               className="group inline-flex items-center py-1 md:py-2 lg:py-2.5 px-3 md:px-6 lg:px-8  
              bg-transparent border border-black rounded-full rounded-tr-none 
              text-black text-sm lg:text-2xl tracking-wide  
              transition-all duration-200 hover:bg-black hover:text-white"
+              target="_blank"
             >
               {/* WhatsApp Icon */}
               <svg

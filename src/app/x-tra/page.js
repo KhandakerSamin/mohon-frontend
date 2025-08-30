@@ -1,14 +1,14 @@
-import Footer from '@/components/Global/Footer'
-import Navbar from '@/components/Global/Navbar'
+import FooterXtra from '@/components/Global/FooterXtra'
+import NavbarXtra from '@/components/Global/NavbarXtra'
 import AllProjects from '@/components/XTraPage/AllProjects'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-     <Navbar />
+     <NavbarXtra />
      <AllProjects />
-     <Footer />
+     <FooterXtra />
     </div>
   )
 }
