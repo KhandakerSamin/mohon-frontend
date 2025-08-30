@@ -19,7 +19,7 @@ const projectsData = [
         { label: "Role", value: "Product Designer" },
         { label: "Timeline", value: "February 2025" },
         { label: "Industry", value: "Music Industry" },
-        { label: "Platform", value: "Mobile Application" }
+        { label: "Appname", value: "Mobile Application" }
       ],
 
       // Description sections
@@ -37,7 +37,7 @@ const projectsData = [
           },
         },
         {
-          serialNumber: "01",
+          serialNumber: "02",
           title: "User Research & Analysis",
           text: "Conducted extensive user research to understand listening habits, preferences, and pain points in existing audiobook platforms. Analyzed competitor apps and identified opportunities for improvement in user experience and content discovery.",
           photo: {
@@ -68,6 +68,17 @@ const projectsData = [
             type: "endless-height",
             src: "/p1.png",
             alt: "Final app solution"
+          },
+        },{
+          serialNumber: "05",
+          title: "Project Overview last",
+          text: "The Primary Objective Was To Create An Intuitive And Reliable App That Integrates Seamlessly With Audio Content, Offering Functionalities Such As Genre-Based Discovery, Personalized Recommendations, And Offline Listening Capabilities. The Project Aimed To Enhance The Audio Experience By Providing Users With Ultimate Control Over Their Listening Journey.",
+          photo: {
+            type: "two-grid",
+            images: [
+              { src: "/p2.png", alt: "Research analysis" },
+              { src: "/p1.png", alt: "User journey mapping" }
+            ]
           },
         },
       ],
