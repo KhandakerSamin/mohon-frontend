@@ -6,13 +6,14 @@ const projectsData = [
       homepageThumbnail: "/p1.png",
       projectTitle: "Golpo App",
       homepageDetail:
-        "Your Audio Storytelling Experience - A genre-based audiobook streaming app designed to deliver immersive audio storytelling experiences with curated content.",
+        "Your Audio Storytelling Experience - A user-centric mobile application designed to deliver immersive audio content, including audiobooks, podcasts, and storytelling sessions, with personalized recommendations and offline listening capabilities.",
       keywords: ["Audio Streaming", "Mobile App"],
     },
 
     // Details page fields
     detailPage: {
       projectTitle: "Golpo App",
+      projectInfo: "Your Audio Storytelling Experience",
       detailPageThumbnail: "/p2.png",
       projectSubtitles: [
         { label: "Role", value: "Product Designer" },
@@ -28,21 +29,21 @@ const projectsData = [
           title: "Project Overview",
           text: "The Primary Objective Was To Create An Intuitive And Reliable App That Integrates Seamlessly With Audio Content, Offering Functionalities Such As Genre-Based Discovery, Personalized Recommendations, And Offline Listening Capabilities. The Project Aimed To Enhance The Audio Experience By Providing Users With Ultimate Control Over Their Listening Journey.",
           photo: {
-            type: "full-width",
-            src: "/p3.png",
-            alt: "Project overview visualization"
-          },
-        },
-        {
-          serialNumber: "02",
-          title: "User Research & Analysis",
-          text: "Conducted extensive user research to understand listening habits, preferences, and pain points in existing audiobook platforms. Analyzed competitor apps and identified opportunities for improvement in user experience and content discovery.",
-          photo: {
             type: "two-grid",
             images: [
               { src: "/p2.png", alt: "Research analysis" },
               { src: "/p1.png", alt: "User journey mapping" }
             ]
+          },
+        },
+        {
+          serialNumber: "01",
+          title: "User Research & Analysis",
+          text: "Conducted extensive user research to understand listening habits, preferences, and pain points in existing audiobook platforms. Analyzed competitor apps and identified opportunities for improvement in user experience and content discovery.",
+          photo: {
+            type: "full-width",
+            src: "/p3.png",
+            alt: "Project overview visualization"
           },
         },
         {
@@ -87,6 +88,7 @@ const projectsData = [
     // Details page fields
     detailPage: {
       projectTitle: "TripLine",
+      projectInfo: "Smart Travel Companion",
       detailPageThumbnail: "/p1.png",
       projectSubtitles: [
         { label: "Role", value: "UX/UI Designer" },
@@ -101,9 +103,11 @@ const projectsData = [
           title: "Challenge & Opportunity",
           text: "Travel planning often involves juggling multiple apps, websites, and documents. TripLine was designed to consolidate the entire travel experience into one intelligent platform that learns from user preferences and provides personalized recommendations.",
           photo: {
-            type: "full-width",
-            src: "/p1.png",
-            alt: "Travel planning challenge"
+            type: "two-grid",
+            images: [
+              { src: "/p1.png", alt: "Feature wireframes" },
+              { src: "/p1.png", alt: "User flow diagrams" }
+            ]
           },
         },
         {
@@ -111,11 +115,9 @@ const projectsData = [
           title: "Feature Development",
           text: "Developed core features including itinerary planning, expense tracking, local discovery, and real-time travel updates. Each feature was designed with user-centric approach focusing on simplicity and efficiency.",
           photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p1.png", alt: "Feature wireframes" },
-              { src: "/p1.png", alt: "User flow diagrams" }
-            ]
+            type: "full-width",
+            src: "/p1.png",
+            alt: "Travel planning challenge"
           },
         },
         {
@@ -160,6 +162,7 @@ const projectsData = [
     // Details page fields
     detailPage: {
       projectTitle: "FactWatch",
+      projectInfo: "Truth Verification Platform",
       detailPageThumbnail: "/p2.png",
       projectSubtitles: [
         { label: "Role", value: "Product Designer" },
@@ -174,9 +177,11 @@ const projectsData = [
           title: "Problem Statement",
           text: "In an era of information overload and misinformation, users need reliable tools to verify the authenticity of news and claims. FactWatch addresses this critical need by providing instant fact-checking capabilities with transparent source verification.",
           photo: {
-            type: "full-width",
-            src: "/p2.png",
-            alt: "Problem identification"
+            type: "two-grid",
+            images: [
+              { src: "/p2.png", alt: "Research findings" },
+              { src: "/p2.png", alt: "Strategy framework" }
+            ]
           },
         },
         {
@@ -184,11 +189,9 @@ const projectsData = [
           title: "Research & Strategy",
           text: "Conducted thorough research on misinformation patterns, user verification behaviors, and existing fact-checking methodologies. Developed a strategy that balances automation with human oversight for maximum accuracy.",
           photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p2.png", alt: "Research findings" },
-              { src: "/p2.png", alt: "Strategy framework" }
-            ]
+            type: "full-width",
+            src: "/p2.png",
+            alt: "Problem identification"
           },
         },
         {
@@ -242,6 +245,7 @@ const projectsData = [
     // Details page fields
     detailPage: {
       projectTitle: "SecureBank Pro",
+      projectInfo: "Next-Generation Banking Experience",
       detailPageThumbnail: "/p3.png",
       projectSubtitles: [
         { label: "Role", value: "Senior UX Designer" },
@@ -256,9 +260,11 @@ const projectsData = [
           title: "Project Vision",
           text: "SecureBank Pro was envisioned as a revolutionary banking platform that would redefine digital banking standards. The goal was to create a secure, user-friendly interface that could handle complex financial operations while maintaining the highest security standards.",
           photo: {
-            type: "full-width",
-            src: "/p3.png",
-            alt: "Project vision"
+            type: "two-grid",
+            images: [
+              { src: "/p2.png", alt: "Support interface" },
+              { src: "/p1.png", alt: "Chat system" }
+            ]
           },
         },
         {
@@ -266,11 +272,9 @@ const projectsData = [
           title: "Security-First Design",
           text: "Implemented advanced security measures including biometric authentication, multi-factor verification, and encrypted transactions. The design ensures security without compromising user experience or accessibility.",
           photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p3.png", alt: "Security features" },
-              { src: "/p3.png", alt: "Authentication flow" }
-            ]
+            type: "full-width",
+            src: "/p3.png",
+            alt: "Project vision"
           },
         },
         {
@@ -304,16 +308,6 @@ const projectsData = [
           title: "Investment Platform",
           text: "Integrated investment management tools that allow users to track portfolios, analyze market trends, and make informed investment decisions directly within the banking platform.",
           photo: {
-            type: "full-width",
-            src: "/p3.png",
-            alt: "Investment platform"
-          },
-        },
-        {
-          serialNumber: "06",
-          title: "Customer Support Integration",
-          text: "Built-in customer support features including live chat, video calls, and AI-powered assistance to help users resolve issues quickly and efficiently without leaving the platform.",
-          photo: {
             type: "two-grid",
             images: [
               { src: "/p2.png", alt: "Support interface" },
@@ -321,6 +315,7 @@ const projectsData = [
             ]
           },
         },
+        
       ],
     }
   },
