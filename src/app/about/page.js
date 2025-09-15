@@ -1,4 +1,5 @@
 
+import HeadingSection from '@/components/AboutPage/HeadingSection';
 import HeroAbout from '@/components/AboutPage/HeroAbout';
 import ImageSection from '@/components/AboutPage/ImageSection';
 import Footer from '@/components/Global/Footer';
@@ -10,6 +11,7 @@ const AboutPage = () => {
     <div className='bg-[#F5F5F5] '>
      <Navbar />
       <ImageSection />
+      <HeadingSection />
       <Footer />
     </div>
   );
