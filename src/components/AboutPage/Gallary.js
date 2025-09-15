@@ -30,7 +30,7 @@ const Gallery = () => {
   const column3Images = galleryImages.filter(img => img.column === 3);
 
   return (
-    <div className="w-full max-w-[1230px] mx-auto py-12 px-6">
+    <div className="w-full max-w-[1230px] mx-auto py-12">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
         <button className="px-6 hidden md:block py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
@@ -52,7 +52,7 @@ const Gallery = () => {
             <div
               key={item.id}
               onClick={() => handleImageClick(item.id)}
-              className="group cursor-pointer overflow-hidden rounded-2xl hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group cursor-pointer overflow-hidden rounded-md hover:transform  transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ height: `${item.height}px` }}
             >
               <img
@@ -73,7 +73,7 @@ const Gallery = () => {
             <div
               key={item.id}
               onClick={() => handleImageClick(item.id)}
-              className="group cursor-pointer overflow-hidden rounded-2xl hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group cursor-pointer overflow-hidden rounded-md hover:transform  transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ height: `${item.height}px` }}
             >
               <img
@@ -94,7 +94,7 @@ const Gallery = () => {
             <div
               key={item.id}
               onClick={() => handleImageClick(item.id)}
-              className="group cursor-pointer overflow-hidden rounded-2xl hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group cursor-pointer overflow-hidden rounded-md hover:transform  transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ height: `${item.height}px` }}
             >
               <img
@@ -127,7 +127,7 @@ const Gallery = () => {
             <div
               key={item.id}
               onClick={() => handleImageClick(item.id)}
-              className="group cursor-pointer overflow-hidden rounded-2xl hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group cursor-pointer overflow-hidden rounded-md hover:transform  transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ height: `${item.mobileHeight}px` }}
             >
               <img

@@ -3,27 +3,27 @@ import React, { useState, useRef, useCallback } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const ContentCreator = () => {
-     // Image data with Instagram links
-     const imageData = [
+     // Video data with YouTube links and embed IDs
+     const videoData = [
           {
                id: 1,
-               image: '/cc-1.png',
-               instaLink: '' // Add your Instagram link here
+               youtubeUrl: 'https://www.youtube.com/shorts/oJ75aGAeRrw',
+               embedId: 'oJ75aGAeRrw'
           },
           {
                id: 2,
-               image: '/cc-2.png',
-               instaLink: '' // Add your Instagram link here
+               youtubeUrl: 'https://www.youtube.com/shorts/h4aHezBXEqY',
+               embedId: 'h4aHezBXEqY'
           },
           {
                id: 3,
-               image: '/cc-3.png',
-               instaLink: '' // Add your Instagram link here
+               youtubeUrl: 'https://www.youtube.com/shorts/pwzu6NS5cuM',
+               embedId: 'pwzu6NS5cuM'
           },
           {
                id: 4,
-               image: '/cc-4.png',
-               instaLink: '' // Add your Instagram link here
+               youtubeUrl: 'https://www.youtube.com/shorts/_Bb9PP7_2jU',
+               embedId: '_Bb9PP7_2jU'
           }
      ];
 
@@ -32,19 +32,13 @@ const ContentCreator = () => {
      const touchEndX = useRef(0);
      const isDragging = useRef(false);
 
-     const handleImageClick = (instaLink) => {
-          if (instaLink && !isDragging.current) {
-               window.open(instaLink, '_blank');
-          }
-     };
-
      const nextSlide = useCallback(() => {
-          setCurrentSlide((prev) => (prev + 1) % imageData.length);
-     }, [imageData.length]);
+          setCurrentSlide((prev) => (prev + 1) % videoData.length);
+     }, [videoData.length]);
 
      const prevSlide = useCallback(() => {
-          setCurrentSlide((prev) => (prev - 1 + imageData.length) % imageData.length);
-     }, [imageData.length]);
+          setCurrentSlide((prev) => (prev - 1 + videoData.length) % videoData.length);
+     }, [videoData.length]);
 
      // Handle touch events for swipe
      const handleTouchStart = (e) => {
@@ -83,27 +77,26 @@ const ContentCreator = () => {
                     </button>
                     <div className="hidden md:block">
                          <button className="px-6 py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium flex items-center gap-2">
-                              More On Insta
+                              More On YouTube
                               <ArrowUpRight className="pl-1 w-8 h-8" />
                          </button>
                     </div>
                </div>
 
-               {/* Desktop Grid - 4 images in a row */}
+               {/* Desktop Grid - 4 videos in a row */}
                <div className="hidden md:grid md:grid-cols-4 gap-6">
-                    {imageData.map((item) => (
+                    {videoData.map((item) => (
                          <div
                               key={item.id}
-                              onClick={() => handleImageClick(item.instaLink)}
-                              className="group cursor-pointer overflow-hidden rounded-xl min-w-[250px] min-h-[380px] hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="group overflow-hidden rounded-xl min-w-[250px] min-h-[380px] transition-all duration-300 shadow-lg"
                          >
-                              <img
-                                   src={item.image}
-                                   alt={`Content Creator Post ${item.id}`}
-                                   className="w-full h-full object-cover"
-                                   onError={(e) => {
-                                        e.target.src = '/placeholder-image.jpg'; // Fallback image
-                                   }}
+                              <iframe
+                                   src={`https://www.youtube.com/embed/${item.embedId}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1`}
+                                   title={`Content Creator Video ${item.id}`}
+                                   className="w-full h-full rounded-xl"
+                                   frameBorder="0"
+                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                   allowFullScreen
                               />
                          </div>
                     ))}
@@ -112,11 +105,11 @@ const ContentCreator = () => {
                {/* Mobile Slider */}
                <div className="md:hidden relative px-4 mb-10">
                     <div className="flex justify-center items-center mb-12">
-                         <button className="px-6  py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+                         <button className="px-6 py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
                               Me As A Content Creator
                          </button>
-
                     </div>
+                    
                     <div className="relative">
                          <div
                               className="overflow-hidden rounded-2xl touch-pan-y"
@@ -128,21 +121,19 @@ const ContentCreator = () => {
                                    className="flex transition-transform duration-300 ease-out"
                                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                               >
-                                   {imageData.map((item) => (
+                                   {videoData.map((item) => (
                                         <div
                                              key={item.id}
-                                             onClick={() => handleImageClick(item.instaLink)}
-                                             className="w-full flex-shrink-0 cursor-pointer"
+                                             className="w-full flex-shrink-0"
                                         >
-                                             <div className="max-h-[700px] overflow-hidden rounded-xl shadow-lg">
-                                                  <img
-                                                       src={item.image}
-                                                       alt={`Content Creator Post ${item.id}`}
-                                                       className="w-full h-full object-cover"
-                                                       draggable={false}
-                                                       onError={(e) => {
-                                                            e.target.src = '/placeholder-image.jpg'; // Fallback image
-                                                       }}
+                                             <div className="max-h-[700px] overflow-hidden rounded-xl shadow-lg aspect-[9/16]">
+                                                  <iframe
+                                                       src={`https://www.youtube.com/embed/${item.embedId}?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1`}
+                                                       title={`Content Creator Video ${item.id}`}
+                                                       className="w-full h-full rounded-xl"
+                                                       frameBorder="0"
+                                                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                       allowFullScreen
                                                   />
                                              </div>
                                         </div>
@@ -174,7 +165,7 @@ const ContentCreator = () => {
 
                     {/* Slide Indicators */}
                     <div className="flex justify-center mt-6 space-x-2">
-                         {imageData.map((_, index) => (
+                         {videoData.map((_, index) => (
                               <button
                                    key={index}
                                    onClick={() => setCurrentSlide(index)}

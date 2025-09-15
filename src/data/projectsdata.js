@@ -6,7 +6,7 @@ const projectsData = [
       homepageThumbnail: "/p1.png",
       projectTitle: "Golpo App",
       homepageDetail:
-        "Your Audio Storytelling Experience - A user-centric mobile application designed to deliver immersive audio content, including audiobooks, podcasts, and storytelling sessions, with personalized recommendations and offline listening capabilities.",
+        "",
       keywords: ["Audio Streaming", "Mobile App"],
     },
 
@@ -92,7 +92,7 @@ const projectsData = [
       homepageThumbnail: "/p1.png",
       projectTitle: "TripLine",
       homepageDetail:
-        "Smart Travel Companion - An intelligent travel planning app that helps users organize trips, track expenses, and discover local experiences with AI-powered recommendations.",
+        "",
       keywords: ["Travel Planning", "AI Assistant"],
     },
 
@@ -166,7 +166,7 @@ const projectsData = [
       homepageThumbnail: "/p2.png",
       projectTitle: "FactWatch",
       homepageDetail:
-        "Truth Verification Platform - A comprehensive fact-checking application that helps users verify information authenticity using AI-powered analysis and trusted source verification.",
+        "",
       keywords: ["Fact Checking", "Information Verification"],
     },
 
@@ -249,7 +249,7 @@ const projectsData = [
       homepageThumbnail: "/p1.png",
       projectTitle: "SecureBank Pro",
       homepageDetail:
-        "Next-Generation Banking Experience - A comprehensive digital banking platform that combines advanced security features with intuitive user experience for seamless financial management.",
+        "",
       keywords: ["Digital Banking", "Financial Technology"],
     },
 
