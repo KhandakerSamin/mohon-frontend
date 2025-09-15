@@ -1,5 +1,6 @@
 
 import ClientSay from '@/components/AboutPage/ClientSay';
+import ContentCreator from '@/components/AboutPage/ContentCreator';
 import HeadingSection from '@/components/AboutPage/HeadingSection';
 import ImageSection from '@/components/AboutPage/ImageSection';
 import WorkwithSection from '@/components/AboutPage/WorkwithSection';
@@ -15,6 +16,7 @@ const AboutPage = () => {
       <HeadingSection />
       <WorkwithSection />
       <ClientSay />
+      <ContentCreator />
       <Footer />
     </div>
   );
