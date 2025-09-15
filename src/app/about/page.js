@@ -1,7 +1,8 @@
 
+import ClientSay from '@/components/AboutPage/ClientSay';
 import HeadingSection from '@/components/AboutPage/HeadingSection';
-import HeroAbout from '@/components/AboutPage/HeroAbout';
 import ImageSection from '@/components/AboutPage/ImageSection';
+import WorkwithSection from '@/components/AboutPage/WorkwithSection';
 import Footer from '@/components/Global/Footer';
 import Navbar from '@/components/Global/Navbar';
 import React from 'react';
@@ -12,6 +13,8 @@ const AboutPage = () => {
      <Navbar />
       <ImageSection />
       <HeadingSection />
+      <WorkwithSection />
+      <ClientSay />
       <Footer />
     </div>
   );
