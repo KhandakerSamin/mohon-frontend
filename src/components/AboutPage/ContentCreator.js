@@ -64,7 +64,7 @@ const ContentCreator = () => {
         {videoData.map((item) => (
           <div 
             key={item.id} 
-            className="overflow-hidden rounded-xl min-w-[250px] h-[550px] shadow-lg"
+            className="overflow-hidden rounded-xl min-w-[250px] h-[500px] shadow-lg"
           >
             <iframe
               src={`https://www.youtube.com/embed/${item.embedId}?controls=1&rel=0&modestbranding=1`}
