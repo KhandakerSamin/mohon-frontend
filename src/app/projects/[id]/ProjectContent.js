@@ -183,8 +183,8 @@ export default function ProjectContent({ project }) {
     <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30">
       {/* Project Title Section */}
       <div className="mb-12 md:mb-16">
-        <div className="text-xl text-gray-600 mb-1">{project.homepage.projectTitle}</div>
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-8 leading-relaxed">
+        <div className="text-xl text-foreground mb-1">{project.homepage.projectTitle}</div>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-8 leading-relaxed">
           {project.detailPage.projectInfo}
         </h1>
         
@@ -192,8 +192,8 @@ export default function ProjectContent({ project }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mb-12">
           {project.detailPage.projectSubtitles.map((subtitle, index) => (
             <div key={index}>
-              <div className="text-xs md:text-base text-gray-600 mb-1">{subtitle.label}</div>
-              <div className="text-sm md:text-xl text-gray-900">{subtitle.value}</div>
+              <div className="text-xs md:text-base text-foreground mb-1">{subtitle.label}</div>
+              <div className="text-sm md:text-xl text-foreground">{subtitle.value}</div>
             </div>
           ))}
         </div>
@@ -219,10 +219,10 @@ export default function ProjectContent({ project }) {
           <div key={index}>
             {/* Section Title */}
             <div className="mb-8 md:mb-12">
-              <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-4 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-medium text-foreground mb-4 md:mb-6">
                 {desc.title}
               </h2>
-              <p className="text-gray-700 leading-relaxed max-w-full text-base md:text-lg">
+              <p className="text-forground leading-relaxed max-w-full text-base md:text-lg">
                 {desc.text}
               </p>
             </div>

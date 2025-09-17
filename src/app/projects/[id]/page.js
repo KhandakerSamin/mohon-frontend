@@ -16,7 +16,7 @@ export default function ProjectDetailPage({ params }) {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-[#F5F5F5]">
+      <div className="min-h-screen ">
         <ProjectContent project={project} />
       </div>
       <Footer />
