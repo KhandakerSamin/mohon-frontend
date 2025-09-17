@@ -26,7 +26,7 @@ export default function HeroAbout() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 lg:py-24">
+    <section className="bg-background py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Image Cards */}
@@ -54,7 +54,7 @@ export default function HeroAbout() {
                 
                 {/* Label */}
                 <div className="absolute bottom-6 left-6">
-                  <span className="inline-block px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-medium rounded-full">
+                  <span className="inline-block px-4 py-2 bg-background/90 backdrop-blur-sm text-foreground text-sm font-medium rounded-full border border-foreground/10">
                     {image.label}
                   </span>
                 </div>
@@ -71,22 +71,22 @@ export default function HeroAbout() {
         {/* Content Section */}
         <div className="text-center max-w-7xl mx-auto">
           {/* Greeting Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm bg-white border border-gray-200 text-gray-700 mb-8 shadow-sm">
+          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm bg-background border border-foreground/20 text-foreground mb-8 shadow-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             Hey! I&apos;m
           </div>
           
-          {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-4">
+          {/* Main Heading with gradient */}
+          <h1 className="gradient-text text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
             Abul Hashem
           </h1>
           
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8">
+          <h2 className="gradient-text text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
             MOHON
           </h2>
           
           {/* Description */}
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
             Product Designer With 2+ Years Of UI/UX Experience In The EdTech Industry, Creating Intuitive, 
             Learner-Focused Interfaces. Backed By 5+ Years In Visual Design, With Strengths In Aesthetics, 
             Content Structure, And Storytelling. Experienced In Remote Work, Daily Scrum, And Collaborating 
