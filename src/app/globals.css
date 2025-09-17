@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F5F5; /* Light mode background */
+  --foreground: #171717; /* Light mode text */
 }
 
 @theme inline {
@@ -12,22 +12,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #ededed;
-  }
+/* Dark mode variables */
+.dark {
+  --background: #191918; /* Dark mode background */
+  --foreground: #ededed; /* Dark mode text */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Syne;
+  font-family: Syne, sans-serif;
 }
 
-
-/* Add this to your globals.css file */
-
+/* Optional: grain texture effect */
 .grain-texture {
   position: fixed;
   top: 0;
@@ -52,4 +49,20 @@ body {
   70% { transform: translate(0%, 15%); }
   80% { transform: translate(-15%, 0%); }
   90% { transform: translate(10%, 5%); }
+}
+
+/* Gradient text for light mode */
+.gradient-text {
+  background: linear-gradient(180deg, #191918 0%, rgba(25, 25, 24, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient text for dark mode */
+.dark .gradient-text {
+  background: linear-gradient(180.25deg, #FFFFFF 0.22%, rgba(25, 25, 24, 0.8) 116.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

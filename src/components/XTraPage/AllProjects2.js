@@ -31,7 +31,7 @@ const AllProjects2 = () => {
   }
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F5F5] min-h-screen">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-background min-h-screen">
       <div className="max-w-[1230px] mx-auto my-20">
         
         {/* Conditional Rendering: Show either loading skeleton OR actual content */}
@@ -44,9 +44,9 @@ const AllProjects2 = () => {
                   key={row} 
                   className="flex flex-col lg:flex-row gap-3 lg:gap-8 h-[300px] lg:h-[350px]"
                 >
-                  <div className="bg-gray-300 shadow-md h-full flex-[3]"></div>
-                  <div className="bg-gray-300 shadow-md h-full flex-[2]"></div>
-                  <div className="bg-gray-300 shadow-md h-full flex-[2.5]"></div>
+                  <div className="bg-foreground/20 shadow-md h-full flex-[3]"></div>
+                  <div className="bg-foreground/20 shadow-md h-full flex-[2]"></div>
+                  <div className="bg-foreground/20 shadow-md h-full flex-[2.5]"></div>
                 </div>
               ))}
             </div>

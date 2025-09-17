@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 
 const ProjectSection = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-[#F5F5F5]">
+    <section className="py-16 px-4 md:px-8 bg-background">
       <div className="max-w-[1230px] mx-auto">
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

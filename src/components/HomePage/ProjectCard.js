@@ -8,7 +8,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
   return (
     <Link 
       href={`/projects/${project.id}`}
-      className={`group relative rounded-lg overflow-hidden bg-[#F5F5F5] transition-colors duration-300 cursor-pointer block ${
+      className={`group relative rounded-lg overflow-hidden bg-background transition-colors duration-300 cursor-pointer block ${
         isFullWidth ? "col-span-full" : "col-span-1"
       }`}
     >
@@ -32,21 +32,21 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
         <div className="flex items-center justify-between">
           {/* Title and Arrow */}
           <div className="flex items-center justify-start gap-1.5 md:gap-5 mb-2">
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-black transition-colors">
+            <h3 className="text-lg md:text-xl font-semibold text-foreground group-hover:text-foreground/80 transition-colors">
               {project.homepage.projectTitle}
             </h3>
             <MoveRight
               size={20}
-              className="text-gray-900 group-hover:translate-x-2 group-hover:text-black transition-all duration-300"
+              className="text-foreground group-hover:translate-x-2 group-hover:text-foreground/80 transition-all duration-300"
             />
           </div>
 
           {/* Keywords */}
-          <div className="flex items-center space-x-2 md:space-x-4 text-sm text-black mb-3">
+          <div className="flex items-center space-x-2 md:space-x-4 text-sm text-foreground mb-3">
             {project.homepage.keywords.map((keyword, index) => (
               <span
                 key={index}
-                className="border border-[#EFEFEF] p-1.5 md:px-3 rounded-md bg-[#EFEFEF] group-hover:bg-gray-200 transition-colors duration-200"
+                className="border border-foreground/20 p-1.5 md:px-3 rounded-md bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-200"
               >
                 {keyword}
               </span>
@@ -55,7 +55,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 group-hover:text-gray-800 leading-relaxed mb-4 transition-colors duration-200">
+        <p className="text-foreground/70 group-hover:text-foreground/90 leading-relaxed mb-4 transition-colors duration-200">
           {project.homepage.homepageDetail}
         </p>
       </div>
