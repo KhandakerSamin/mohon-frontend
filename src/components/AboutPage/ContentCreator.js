@@ -52,40 +52,16 @@ const ContentCreator = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-12 flex-wrap">
         <button
-          className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg transition-colors duration-200"
-          style={{
-            border: '1px solid var(--foreground)',
-            color: 'var(--foreground)',
-            backgroundColor: 'var(--background)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--foreground)';
-            e.currentTarget.style.color = 'var(--background)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--background)';
-            e.currentTarget.style.color = 'var(--foreground)';
-          }}
+          className="hidden md:inline-block px-8 py-3  rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium"
+          
         >
           Me As A Content Creator
         </button>
 
-        <div className="mt-4 md:mt-0">
+        <div className="mt-4 md:mt-0 hidden md:block">
           <button
-            className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg flex items-center gap-2 transition-colors duration-200"
-            style={{
-              border: '1px solid var(--foreground)',
-              color: 'var(--foreground)',
-              backgroundColor: 'var(--background)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--foreground)';
-              e.currentTarget.style.color = 'var(--background)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--background)';
-              e.currentTarget.style.color = 'var(--foreground)';
-            }}
+            className="flex justify-between items-center gap-1 px-8 py-3 rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium "
+            
           >
             More On YouTube
             <ArrowUpRight className="pl-1 w-6 h-6" />
@@ -114,8 +90,8 @@ const ContentCreator = () => {
       </div>
 
       {/* Mobile Slider */}
-      <div className="md:hidden relative px-4 mb-10">
-        <div className="flex justify-center items-center mb-8">
+      <div className="md:hidden relative  px-4 mb-10">
+        <div className="flex justify-center items-center mb-15">
           <button
             className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg transition-colors duration-200"
             style={{
