@@ -43,10 +43,10 @@ export default function ClientSay() {
       <div className="max-w-[1230px] mx-auto">
         {/* Section Headers */}
         <div className="flex justify-center md:justify-between items-center mb-16">
-          <div className="inline-block px-8 py-3 rounded-full rounded-bl-none border border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+          <div className="inline-block px-8 py-3 rounded-full rounded-bl-none border border-forground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
             Clients Say
           </div>
-          <div className="hidden sm:inline-block px-8 py-3 rounded-full rounded-bl-none border border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+          <div className="inline-block px-8 py-3 rounded-full rounded-bl-none border border-forground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
             Clients Say
           </div>
         </div>

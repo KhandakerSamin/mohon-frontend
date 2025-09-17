@@ -45,26 +45,61 @@ const ContentCreator = () => {
   };
 
   return (
-    <div className="w-full max-w-[1230px] mx-auto py-12">
+    <div
+      className="w-full max-w-[1230px] mx-auto py-12"
+      style={{ color: 'var(--foreground)', backgroundColor: 'var(--background)' }}
+    >
       {/* Header */}
-      <div className="flex justify-between items-center mb-12">
-        <button className="px-6 hidden md:block py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+      <div className="flex justify-between items-center mb-12 flex-wrap">
+        <button
+          className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg transition-colors duration-200"
+          style={{
+            border: '1px solid var(--foreground)',
+            color: 'var(--foreground)',
+            backgroundColor: 'var(--background)',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--foreground)';
+            e.currentTarget.style.color = 'var(--background)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--background)';
+            e.currentTarget.style.color = 'var(--foreground)';
+          }}
+        >
           Me As A Content Creator
         </button>
-        <div className="hidden md:block">
-          <button className="px-6 py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium flex items-center gap-2">
+
+        <div className="mt-4 md:mt-0">
+          <button
+            className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg flex items-center gap-2 transition-colors duration-200"
+            style={{
+              border: '1px solid var(--foreground)',
+              color: 'var(--foreground)',
+              backgroundColor: 'var(--background)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--foreground)';
+              e.currentTarget.style.color = 'var(--background)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--background)';
+              e.currentTarget.style.color = 'var(--foreground)';
+            }}
+          >
             More On YouTube
             <ArrowUpRight className="pl-1 w-6 h-6" />
           </button>
         </div>
       </div>
 
-      {/* Desktop Grid - Direct YouTube Videos */}
+      {/* Desktop Grid */}
       <div className="hidden md:grid md:grid-cols-4 gap-6">
         {videoData.map((item) => (
-          <div 
-            key={item.id} 
+          <div
+            key={item.id}
             className="overflow-hidden rounded-xl min-w-[250px] h-[500px] shadow-lg"
+            style={{ backgroundColor: 'var(--background)' }}
           >
             <iframe
               src={`https://www.youtube.com/embed/${item.embedId}?controls=1&rel=0&modestbranding=1`}
@@ -78,10 +113,25 @@ const ContentCreator = () => {
         ))}
       </div>
 
-      {/* Mobile Slider - Direct YouTube Videos */}
+      {/* Mobile Slider */}
       <div className="md:hidden relative px-4 mb-10">
         <div className="flex justify-center items-center mb-8">
-          <button className="px-6 py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+          <button
+            className="px-6 py-3 rounded-full rounded-bl-none font-medium text-lg transition-colors duration-200"
+            style={{
+              border: '1px solid var(--foreground)',
+              color: 'var(--foreground)',
+              backgroundColor: 'var(--background)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--foreground)';
+              e.currentTarget.style.color = 'var(--background)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--background)';
+              e.currentTarget.style.color = 'var(--foreground)';
+            }}
+          >
             Me As A Content Creator
           </button>
         </div>
@@ -99,7 +149,10 @@ const ContentCreator = () => {
             >
               {videoData.map((item) => (
                 <div key={item.id} className="w-full flex-shrink-0">
-                  <div className="aspect-[9/16] max-h-[700px] overflow-hidden rounded-xl shadow-lg">
+                  <div
+                    className="aspect-[9/16] max-h-[700px] overflow-hidden rounded-xl shadow-lg"
+                    style={{ backgroundColor: 'var(--background)' }}
+                  >
                     <iframe
                       src={`https://www.youtube.com/embed/${item.embedId}?controls=1&rel=0&modestbranding=1`}
                       title={`YouTube video ${item.id}`}
@@ -115,19 +168,43 @@ const ContentCreator = () => {
           </div>
 
           {/* Navigation */}
-          <button 
-            onClick={prevSlide} 
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 rounded-full p-3 shadow-lg z-20 hover:bg-white transition-colors"
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 rounded-full p-3 shadow-lg z-20 transition-colors duration-200"
+            style={{
+              backgroundColor: 'var(--background)',
+              color: 'var(--foreground)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--foreground)';
+              e.currentTarget.style.color = 'var(--background)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--background)';
+              e.currentTarget.style.color = 'var(--foreground)';
+            }}
           >
-            <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
             </svg>
           </button>
-          <button 
-            onClick={nextSlide} 
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 rounded-full p-3 shadow-lg z-20 hover:bg-white transition-colors"
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full p-3 shadow-lg z-20 transition-colors duration-200"
+            style={{
+              backgroundColor: 'var(--background)',
+              color: 'var(--foreground)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--foreground)';
+              e.currentTarget.style.color = 'var(--background)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--background)';
+              e.currentTarget.style.color = 'var(--foreground)';
+            }}
           >
-            <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
             </svg>
           </button>
@@ -139,7 +216,8 @@ const ContentCreator = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${currentSlide === index ? "bg-gray-800" : "bg-gray-300"}`}
+              className="w-3 h-3 rounded-full transition-colors duration-200"
+              style={{ backgroundColor: currentSlide === index ? 'var(--foreground)' : 'rgba(0,0,0,0.2)' }}
             />
           ))}
         </div>
