@@ -12,7 +12,7 @@ export default function ClientSay() {
       location: "USA",
       date: "Aug 2025",
       avatar: "/avatar.png",
-      companyLogo: "/tinitypeLogo.png",
+      companyLogo: "/brand-8.png",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function ClientSay() {
       location: "UK",
       date: "Aug 2025",
       avatar: "/avatar.png",
-      companyLogo: "/tinitypeLogo.png",
+      companyLogo: "/brand-10.png",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export default function ClientSay() {
       location: "Australia",
       date: "Aug 2025",
       avatar: "/avatar.png",
-      companyLogo: "/tinitypeLogo.png",
+      companyLogo: "/brand-12.png",
     },
   ];
 
@@ -72,8 +72,8 @@ export default function ClientSay() {
                     <Image
                       src={testimonial.companyLogo}
                       alt="Company Logo"
-                      width={70}
-                      height={35}
+                      width={100}
+                      height={40}
                       className="object-contain"
                     />
                   )}
