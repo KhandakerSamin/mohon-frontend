@@ -2,6 +2,8 @@
 import { ArrowRightToLine, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { ThemeToggle } from "./ThemeToggle"
+import Image from "next/image"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,9 +27,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setIsMenuOpen(false)}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -37,7 +38,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo/Name */}
-            <Link href="/">
+            {/* <Link href="/">
             <div className="text-lg sm:text-xl font-bold leading-tight"
             style={{
               background: 'linear-gradient(180deg, #191918 0%, rgba(25, 25, 24, 0.8) 100%)',
@@ -48,6 +49,16 @@ const Navbar = () => {
               <span className="block">Md Abul</span>
               <span className="block">Hashem</span>
             </div>
+            </Link> */}
+            <Link href="/" className="inline-block">
+              <Image
+                src="/NewLogo.png"
+                alt="Md Abul Hashem Logo"
+                width={140} 
+                height={50}   
+                priority      
+                className="h-auto w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation Links */}
@@ -72,6 +83,8 @@ const Navbar = () => {
               </a>
             </div>
 
+            <ThemeToggle />
+
             <button
               className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none rounded-lg"
               onClick={toggleMenu}
@@ -79,19 +92,16 @@ const Navbar = () => {
             >
               <div className="flex flex-col items-center justify-center w-6 h-6 relative">
                 <span
-                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${
-                    isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                    }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-200 ease-out ${
-                    isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-200 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                    }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${
-                    isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-gray-900 rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                    }`}
                 />
               </div>
             </button>
@@ -99,17 +109,15 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`md:hidden absolute top-full left-0 right-0 bg-[#F5F5F5] backdrop-blur-xl border-b border-gray-100/50 shadow-xl transform transition-all duration-500 ease-out ${
-            isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
-          }`}
+          className={`md:hidden absolute top-full left-0 right-0 bg-[#F5F5F5] backdrop-blur-xl border-b border-gray-100/50 shadow-xl transform transition-all duration-500 ease-out ${isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
+            }`}
         >
           <div className="px-6 py-8">
             <nav className="space-y-1">
               <a
                 href="x-tra"
-                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
-                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                }`}
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                  }`}
                 style={{ transitionDelay: isMenuOpen ? "100ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -121,9 +129,8 @@ const Navbar = () => {
 
               <a
                 href="about"
-                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
-                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                }`}
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                  }`}
                 style={{ transitionDelay: isMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -135,9 +142,8 @@ const Navbar = () => {
 
               <a
                 href="#resume"
-                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${
-                  isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-                }`}
+                className={`group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:bg-gray-50 ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+                  }`}
                 style={{ transitionDelay: isMenuOpen ? "300ms" : "0ms" }}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -149,9 +155,8 @@ const Navbar = () => {
             </nav>
 
             <div
-              className={`mt-8 pt-6 border-t border-gray-200/50 transform transition-all duration-500 ease-out ${
-                isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-              }`}
+              className={`mt-8 pt-6 border-t border-gray-200/50 transform transition-all duration-500 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                }`}
               style={{ transitionDelay: isMenuOpen ? "400ms" : "0ms" }}
             >
               <div className="flex items-center space-x-3">
