@@ -33,11 +33,11 @@ const Gallery = () => {
     <div className="w-full max-w-[1230px] mx-auto py-12">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
-        <button className="px-6 hidden md:block py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+        <button className="px-6 hidden md:block py-3 border rounded-full rounded-bl-none border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
           Me as a Nomad
         </button>
         <div className="hidden md:block">
-          <button className="px-6 py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium flex items-center gap-2">
+          <button className="px-6 py-3 border rounded-full rounded-bl-none border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium flex items-center gap-2">
             More On Insta
             <ArrowUpRight className="pl-1 w-8 h-8" />
           </button>
