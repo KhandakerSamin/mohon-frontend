@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
 import { allProjectsData } from "../../data/allprojectdata";
 import Card2 from './Card2';
 
