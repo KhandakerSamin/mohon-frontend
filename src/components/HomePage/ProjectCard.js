@@ -15,7 +15,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
       {/* Project Image */}
       <div
         className={`relative rounded-lg overflow-hidden bg-gray-900 ${
-          isFullWidth ? "aspect-video max-h-[800px]" : "h-[300px] md:h-[430px]"
+          isFullWidth ? "aspect-video max-h-[800px]" : "h-[230px] md:h-[430px]"
         }`}
       >
         <Image
