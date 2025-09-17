@@ -46,7 +46,7 @@ export default function ClientSay() {
           <div className="inline-block px-8 py-3 rounded-full rounded-bl-none border border-forground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
             Clients Say
           </div>
-          <div className="inline-block px-8 py-3 rounded-full rounded-bl-none border border-forground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
+          <div className="hidden md:inline-block px-8 py-3 rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
             Clients Say
           </div>
         </div>
