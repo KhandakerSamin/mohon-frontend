@@ -44,7 +44,7 @@ const Navbar = () => {
               <Image
                 src={theme === "dark" ? "/NewLogoDark.png" : "/NewLogo.png"}
                 alt="Md Abul Hashem Logo"
-                width={140}
+                width={160}
                 height={50}
                 priority
                 className="h-auto w-auto object-contain"
@@ -64,8 +64,12 @@ const Navbar = () => {
               </a>
             </div>
 
-            {/* Theme toggle */}
+            <div className="hidden md:block">
+              {/* Theme toggle */}
             <ThemeToggle />
+            </div>
+
+            
 
             {/* Mobile menu button */}
             <button
@@ -131,6 +135,8 @@ const Navbar = () => {
                   <ArrowUpRight /> Resume
                 </span>
               </a>
+
+             
             </nav>
 
             <div
@@ -138,9 +144,15 @@ const Navbar = () => {
                 isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
               }`}
             >
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <div className="flex justify-between items-center px-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 <span className="text-sm font-medium">Available for projects</span>
+                </div>
+               {/* Theme toggle */}
+            <div className=" flex justify-start items-center gap-3">
+            <ThemeToggle />
+            </div>
               </div>
             </div>
           </div>
