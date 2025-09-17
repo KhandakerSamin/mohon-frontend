@@ -1,18 +1,16 @@
 "use client"
-
 import React, { useState, useEffect } from 'react';
 import { allProjectsData } from "../../data/allprojectdata";
 import Card2 from './Card2';
 
 const AllProjects2 = () => {
   const [isLayoutReady, setIsLayoutReady] = useState(false);
-
+  
   useEffect(() => {
     // Show layout after a brief delay to ensure smooth rendering
     const timer = setTimeout(() => {
       setIsLayoutReady(true);
     }, 150);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,60 +34,63 @@ const AllProjects2 = () => {
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F5F5] min-h-screen">
       <div className="max-w-[1230px] mx-auto my-20">
         
-        {/* Grid Container */}
-        <div 
-          className={`space-y-8 transition-opacity duration-500 ${
-            isLayoutReady ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {groupedProjects.map((projectRow, rowIndex) => {
-            const widthPattern = getRowPattern(rowIndex);
-            
-            return (
-              <div 
-                key={rowIndex}
-                className="flex flex-col lg:flex-row gap-3 lg:gap-8 items-stretch h-[350px]"
-              >
-                {projectRow.map((project, cardIndex) => {
-                  const flexClass = widthPattern[cardIndex] || 'flex-1';
-                  
-                  return (
-                    <div
-                      key={project.id || `${rowIndex}-${cardIndex}`}
-                      className={`w-full ${flexClass} h-full`}
-                    >
-                      <Card2 
-                        project={{ 
-                          ...project, 
-                          index: rowIndex * 3 + cardIndex 
-                        }} 
-                        className="h-full"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Loading State */}
-        {!isLayoutReady && (
-          <div className="flex items-center justify-center max-h-[450px]">
-            <div className="animate-pulse space-y-8 w-full">
+        {/* Conditional Rendering: Show either loading skeleton OR actual content */}
+        {!isLayoutReady ? (
+          // Loading State - Positioned at the top
+          <div className="space-y-8">
+            <div className="animate-pulse space-y-6 w-full">
               {[1, 2, 3].map((row) => (
-                <div key={row} className="flex gap-8 h-[450px]">
-                  <div className="bg-gray-200  h-full flex-[3]"></div>
-                  <div className="bg-gray-200  h-full flex-[2]"></div>
-                  <div className="bg-gray-200  h-full flex-[2.5]"></div>
+                <div 
+                  key={row} 
+                  className="flex flex-col lg:flex-row gap-3 lg:gap-8 h-[300px] lg:h-[350px]"
+                >
+                  <div className="bg-gray-300 shadow-md h-full flex-[3]"></div>
+                  <div className="bg-gray-300 shadow-md h-full flex-[2]"></div>
+                  <div className="bg-gray-300 shadow-md h-full flex-[2.5]"></div>
                 </div>
               ))}
             </div>
           </div>
+        ) : (
+          // Main Content - Grid Container
+          <div 
+            className="space-y-8 transition-opacity duration-500 opacity-100"
+          >
+            {groupedProjects.map((projectRow, rowIndex) => {
+              const widthPattern = getRowPattern(rowIndex);
+              
+              return (
+                <div 
+                  key={rowIndex}
+                  className="flex flex-col lg:flex-row gap-3 lg:gap-8 items-stretch h-auto lg:h-[350px]"
+                >
+                  {projectRow.map((project, cardIndex) => {
+                    const flexClass = widthPattern[cardIndex] || 'flex-1';
+                    
+                    return (
+                      <div
+                        key={project.id || `${rowIndex}-${cardIndex}`}
+                        className={`w-full ${flexClass} 
+                          aspect-square sm:aspect-auto 
+                          min-h-[300px] sm:min-h-0`}
+                      >
+                        <Card2 
+                          project={{ 
+                            ...project, 
+                            index: rowIndex * 3 + cardIndex 
+                          }} 
+                          className="h-full"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
         )}
-
       </div>
-
+      
       <style jsx>{`
         /* Smooth transitions for layout changes */
         .transition-opacity {
