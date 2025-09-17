@@ -20,7 +20,7 @@ export function ThemeToggle() {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={`relative inline-flex h-8 w-16 items-center rounded-full p-1 transition-all duration-500 ease-out  ${
         isDark 
-          ? "bg-slate-700 " 
+          ? "bg-slate-900 " 
           : "bg-gray-200 "
       }`}
     >

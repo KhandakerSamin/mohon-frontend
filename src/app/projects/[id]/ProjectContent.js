@@ -12,7 +12,7 @@ export default function ProjectContent({ project }) {
     const carousel = carouselRefs.current[carouselId]
     if (!carousel) return
 
-    const scrollAmount = 320 // Width of one image + gap
+    const scrollAmount = 320
     const newScrollLeft = direction === 'left' 
       ? carousel.scrollLeft - scrollAmount 
       : carousel.scrollLeft + scrollAmount
@@ -76,9 +76,8 @@ export default function ProjectContent({ project }) {
         
         return (
           <div key={index} className="mb-16">
-            {/* Carousel Container */}
             <div className="relative group">
-              {/* Navigation Buttons - Desktop */}
+              {/* Navigation Buttons */}
               <div className="hidden md:block">
                 <button
                   onClick={() => scrollCarousel(carouselId, 'left')}
@@ -110,17 +109,9 @@ export default function ProjectContent({ project }) {
                 ref={el => carouselRefs.current[carouselId] = el}
                 onScroll={() => updateCarouselState(carouselId)}
                 className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory"
-                style={{ 
-                  scrollbarWidth: 'none',
-                  msOverflowStyle: 'none',
-                  WebkitScrollbar: { display: 'none' }
-                }}
               >
                 {photo.images.map((img, imgIndex) => (
-                  <div 
-                    key={imgIndex} 
-                    className="flex-shrink-0 snap-start group"
-                  >
+                  <div key={imgIndex} className="flex-shrink-0 snap-start group">
                     <div className="w-80 md:w-90 h-60 md:h-[650px] overflow-hidden rounded-xl shadow-md">
                       <Image
                         src={img.src || "/placeholder.svg"}
@@ -135,7 +126,7 @@ export default function ProjectContent({ project }) {
                 ))}
               </div>
 
-              {/* Mobile Navigation Dots */}
+              {/* Mobile Dots */}
               <div className="flex justify-center mt-6 md:hidden">
                 <div className="flex gap-2">
                   {photo.images.map((_, imgIndex) => (
@@ -180,59 +171,57 @@ export default function ProjectContent({ project }) {
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30">
-      {/* Project Title Section */}
+    <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30" style={{ color: 'var(--foreground)', background: 'var(--background)' }}>
+      {/* Project Title */}
       <div className="mb-12 md:mb-16">
-        <div className="text-xl text-foreground mb-1">{project.homepage.projectTitle}</div>
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-8 leading-relaxed">
+        <div className="text-xl md:text-base mb-1" style={{ color: 'var(--foreground)' }}>
+          {project.homepage.projectTitle}
+        </div>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 leading-relaxed" style={{ color: 'var(--foreground)' }}>
           {project.detailPage.projectInfo}
         </h1>
-        
+
         {/* Project Details Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mb-12">
           {project.detailPage.projectSubtitles.map((subtitle, index) => (
             <div key={index}>
-              <div className="text-xs md:text-base text-foreground mb-1">{subtitle.label}</div>
-              <div className="text-sm md:text-xl text-foreground">{subtitle.value}</div>
+              <div className="text-xs md:text-base mb-1" style={{ color: 'var(--foreground)' }}>{subtitle.label}</div>
+              <div className="text-sm md:text-xl" style={{ color: 'var(--foreground)' }}>{subtitle.value}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Main Project Image */}
-      <div className="mb-16 md:mb-20">
-        <div className="overflow-hidden rounded-xl">
-          <Image
-            src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
-            alt={project.detailPage.projectTitle}
-            width={1400}
-            height={700}
-            className="w-full h-auto shadow-lg"
-            sizes="(max-width: 768px) 100vw, 1400px"
-          />
-        </div>
+      <div className="mb-16 md:mb-20 overflow-hidden rounded-xl shadow-lg">
+        <Image
+          src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
+          alt={project.detailPage.projectTitle}
+          width={1400}
+          height={700}
+          className="w-full h-auto"
+          sizes="(max-width: 768px) 100vw, 1400px"
+        />
       </div>
 
       {/* Description Sections */}
       <div className="space-y-16 md:space-y-20">
         {project.detailPage.descriptions.map((desc, index) => (
           <div key={index}>
-            {/* Section Title */}
             <div className="mb-8 md:mb-12">
-              <h2 className="text-xl md:text-2xl font-medium text-foreground mb-4 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6" style={{ color: 'var(--foreground)' }}>
                 {desc.title}
               </h2>
-              <p className="text-forground leading-relaxed max-w-full text-base md:text-lg">
+              <p className="leading-relaxed max-w-full text-base md:text-lg" style={{ color: 'var(--foreground)' }}>
                 {desc.text}
               </p>
             </div>
 
-            {/* Section Image */}
             {desc.photo && renderPhoto(desc.photo, index)}
           </div>
         ))}
       </div>
-      
+
       <style jsx global>{`
         .scrollbar-hide {
           -ms-overflow-style: none;
