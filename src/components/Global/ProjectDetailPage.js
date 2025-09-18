@@ -113,13 +113,13 @@ export default async function ProjectDetailPage({ params }) {
       <section className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{project.detailPage.projectTitle}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground/70">{project.detailPage.projectTitle}</h1>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               {project.detailPage.projectSubtitles.map((subtitle, index) => (
                 <div key={index}>
                   <h3 className="font-semibold text-muted-foreground mb-1">{subtitle.label}</h3>
-                  <p className="text-foreground">{subtitle.value}</p>
+                  <p className="text-foreground/70">{subtitle.value}</p>
                 </div>
               ))}
             </div>
@@ -152,12 +152,12 @@ export default async function ProjectDetailPage({ params }) {
           <div key={index} className="mb-16">
             <div className="mb-8">
               <div className="flex items-center gap-4 mb-4">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">
+                <span className="w-8 h-8 bg-primary text-foreground/70 rounded-full flex items-center justify-center text-sm font-semibold">
                   {desc.serialNumber}
                 </span>
                 <h2 className="text-2xl font-bold">{desc.title}</h2>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg">{desc.text}</p>
+              <p className="text-foreground/70 leading-relaxed text-lg">{desc.text}</p>
             </div>
 
             {desc.photo && renderPhoto(desc.photo, index)}

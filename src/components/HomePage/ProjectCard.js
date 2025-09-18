@@ -37,7 +37,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
             </h3>
             <MoveRight
               size={20}
-              className="text-foreground group-hover:translate-x-2 group-hover:text-foreground/80 transition-all duration-300"
+              className="text-foreground/70 group-hover:translate-x-2 group-hover:text-foreground/80 transition-all duration-300"
             />
           </div>
 

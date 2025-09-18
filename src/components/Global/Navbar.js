@@ -235,12 +235,12 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl border-b shadow-xl transform transition-all duration-500 ease-out bg-background text-foreground ${
+          className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-lg transform transition-all duration-500 ease-out bg-background text-foreground ${
             isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
           }`}
         >
           <div className="px-6 py-8">
-            <nav className="space-y-1">
+            <nav className="space-y-1 text-foreground/70">
               <Link
                 href="/x-tra"
                 className="group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:opacity-80"
@@ -277,7 +277,7 @@ const Navbar = () => {
                 isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
               }`}
             >
-              <div className="flex justify-between items-center px-4">
+              <div className="flex justify-between items-center px-4 text-foreground/70">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                   <span className="text-sm font-medium">Available for projects</span>

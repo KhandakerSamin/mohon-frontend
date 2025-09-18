@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Social Links - Mobile */}
-          <div className="md:hidden space-y-4 mb-5 lg:mb-12">
+          <div className="md:hidden space-y-4 mb-5 lg:mb-12 ">
             <div className="flex justify-center space-x-8">
               <a 
                 href="#" 
@@ -79,14 +79,14 @@ const Footer = () => {
               </a>
               <a 
                 href="#" 
-                className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
+                className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Instagram</span>
                 <ArrowUpRight size={16} />
               </a>
               <a 
                 href="#" 
-                className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
+                className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Behance</span>
                 <ArrowUpRight size={16} />
@@ -95,7 +95,7 @@ const Footer = () => {
             <div className="flex justify-center">
               <a 
                 href="#" 
-                className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
+                className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Dribbble</span>
                 <MoveUpRight size={16} />

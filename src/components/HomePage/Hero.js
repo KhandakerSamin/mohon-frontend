@@ -61,7 +61,7 @@ const Hero = () => {
         <div className="text-center md:text-right">
           <p className="mb-1 font-medium">My Clients From</p>
           <p className="leading-relaxed">
-            USA, Germany, Colombia, UK<br br className="hidden md:block"/>
+            USA, Germany, Colombia, UK <br br className="hidden md:block"/>
             Australia, Finland,<br className="md:hidden" /> South Africa, France
           </p>
         </div>

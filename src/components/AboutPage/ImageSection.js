@@ -28,7 +28,7 @@ export default function ImageSection() {
         {heroImages.map((item) => (
           <div
             key={item.id}
-            className="relative w-full h-[500px] overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+            className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-md group cursor-pointer"
           >
             {/* Image */}
             <img
