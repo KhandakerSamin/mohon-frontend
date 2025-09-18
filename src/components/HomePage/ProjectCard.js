@@ -32,7 +32,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
         <div className="flex items-center justify-between">
           {/* Title and Arrow */}
           <div className="flex items-center justify-start gap-1.5 md:gap-5 mb-2">
-            <h3 className="text-lg md:text-xl font-semibold text-foreground group-hover:text-foreground/80 transition-colors">
+            <h3 className="text-lg md:text-xl font-semibold text-foreground/80 group-hover:text-foreground/80 transition-colors">
               {project.homepage.projectTitle}
             </h3>
             <MoveRight

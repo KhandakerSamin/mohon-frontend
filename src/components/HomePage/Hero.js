@@ -47,22 +47,22 @@ const Hero = () => {
       </div>
 
       {/* Bottom Section - Previously @ and My Clients From */}
-      <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-sm text-foreground/70">
+      <div className="absolute bottom-10 md:bottom-8 md:left-8 md:right-8 flex flex-col md:flex-row justify-between md:items-end text-sm text-foreground/70">
         {/* Previously @ Section */}
-        <div className="text-left">
-          <p className="mb-1 font-medium">Previously @</p>
+        <div className="text-center md:text-left  mb-5 md:mb-0 ">
+          <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
-            Programming Hero, Codeflexs,<br />
+            Programming Hero, Codeflexs, <br className="hidden md:block"/>
             Gameohacker360
           </p>
         </div>
 
         {/* My Clients From Section */}
-        <div className="text-right">
+        <div className="text-center md:text-right">
           <p className="mb-1 font-medium">My Clients From</p>
           <p className="leading-relaxed">
-            USA, Germany, Colombia, UK<br />
-            Australia, Finland, South Africa, France
+            USA, Germany, Colombia, UK<br br className="hidden md:block"/>
+            Australia, Finland,<br className="md:hidden" /> South Africa, France
           </p>
         </div>
       </div>
