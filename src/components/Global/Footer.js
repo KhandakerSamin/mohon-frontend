@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="hidden md:flex justify-center items-center space-x-8">
             <a 
               href="#" 
-              className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
+              className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
             >
               <span className="text-sm">LinkedIn</span>
               <ArrowUpRight size={16} />
@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="flex justify-center space-x-8">
               <a 
                 href="#" 
-                className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
+                className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">LinkedIn</span>
                 <ArrowUpRight size={16} />

@@ -30,7 +30,7 @@ const Gallery = () => {
   const column3Images = galleryImages.filter(img => img.column === 3);
 
   return (
-    <div className="w-full max-w-[1230px] mx-auto py-12">
+    <div className="w-full max-w-[1230px] mx-auto mb-30  md:mb-50">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
         <button className="px-6 hidden md:block py-3 border rounded-full rounded-bl-none border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
@@ -115,7 +115,7 @@ const Gallery = () => {
         {/* Mobile Header */}
         <div className="flex justify-center items-center mb-8">
           <div className="flex justify-center items-center mb-12">
-            <button className="px-6  py-3 border rounded-full rounded-bl-none border-black hover:text-white hover:bg-black text-gray-900 text-lg font-medium">
+            <button className="px-6  py-3 border rounded-full rounded-bl-none border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
              Me as a Nomad
             </button>
           </div>

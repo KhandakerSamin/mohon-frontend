@@ -26,10 +26,10 @@ const WorkwithSection = () => {
   };
 
   return (
-    <div className="w-full max-w-[1230px] mx-auto py-5 md:py-12">
+    <div className="w-full max-w-[1230px] mx-auto pb-20 md:pb-40">
       {/* Header */}
-      <div className=" flex justify-between items-center mb-12">
-        <button className="px-6 hidden md:block py-3 border  rounded-full rounded-bl-none  border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
+      <div className=" flex flex-col md:flex-row justify-between items-center mb-12">
+        <button className="px-6  py-3 border  rounded-full rounded-bl-none  border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium">
           Previously Worked With
         </button>
         <div className='hidden md:block'>
@@ -41,7 +41,7 @@ const WorkwithSection = () => {
       </div>
 
       {/* Company Logos Grid - Desktop Layout */}
-      <div className="hidden md:flex flex-col gap-6 md:gap-12 bg-[#EBEBEB] p-8 rounded-2xl">
+      <div className="hidden md:flex flex-col gap-6 md:gap-12 bg-[#EBEBEB] p-8 rounded-md">
         {/* First Row - 5 companies */}
         <div className="flex justify-between items-center">
           {companies.slice(0, 5).map((company) => (

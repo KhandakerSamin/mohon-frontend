@@ -3,9 +3,9 @@ import React from "react";
 
 export default function HeadingSection() {
   return (
-    <div className="text-center max-w-5xl mx-auto py-20 relative">
+    <div className="text-center max-w-5xl mx-auto py-20 md:py-40 relative">
       {/* Greeting Badge */}
-      <div className="inline-block absolute left-40 top-12 lg:left-110 lg:top-10">
+      <div className="inline-block absolute left-50 top-12 lg:left-110 lg:top-30">
         <span className="py-1.5 md:py-2 lg:py-2.5 px-5 md:px-6 lg:px-8 bg-transparent border border-foreground rounded-full rounded-bl-none text-foreground hover:bg-foreground hover:text-background text-sm lg:text-2xl tracking-wide transition-colors duration-200">
           Hey! I&apos;m
         </span>
@@ -20,7 +20,7 @@ export default function HeadingSection() {
       </h1>
 
       {/* Description */}
-      <p className="text-base md:text-md text-foreground  leading-relaxed max-w-[380px] md:max-w-[780px] mx-auto">
+      <p className="text-base md:text-md text-foreground/70  leading-relaxed max-w-[380px] md:max-w-[780px] mx-auto">
         Product Designer With 2+ Years Of UI/UX Experience In The EdTech Industry, Creating Intuitive, Learner-Focused Interfaces. Backed By 5+ Years In Visual Design, With Strengths In Aesthetics, Content Structure, And Storytelling. Experienced In Remote Work, Daily Scrum, And Collaborating With Product And Development Teams.
       </p>
 

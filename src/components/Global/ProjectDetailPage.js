@@ -113,7 +113,7 @@ export default async function ProjectDetailPage({ params }) {
       <section className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{project.detailPage.projectTitle}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{project.detailPage.projectTitle}</h1>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               {project.detailPage.projectSubtitles.map((subtitle, index) => (

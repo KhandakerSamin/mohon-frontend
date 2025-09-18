@@ -46,7 +46,7 @@ const ContentCreator = () => {
 
   return (
     <div
-      className="w-full max-w-[1230px] mx-auto py-12"
+      className="w-full max-w-[1230px] mx-auto pb-20 md:pb-40"
       style={{ color: 'var(--foreground)', backgroundColor: 'var(--background)' }}
     >
       {/* Header */}
@@ -74,13 +74,13 @@ const ContentCreator = () => {
         {videoData.map((item) => (
           <div
             key={item.id}
-            className="overflow-hidden rounded-xl min-w-[250px] h-[500px] shadow-lg"
+            className="overflow-hidden rounded-md min-w-[250px] h-[500px] shadow-lg"
             style={{ backgroundColor: 'var(--background)' }}
           >
             <iframe
               src={`https://www.youtube.com/embed/${item.embedId}?controls=1&rel=0&modestbranding=1`}
               title={`YouTube video ${item.id}`}
-              className="w-full h-full rounded-xl"
+              className="w-full h-full rounded-md"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -126,13 +126,13 @@ const ContentCreator = () => {
               {videoData.map((item) => (
                 <div key={item.id} className="w-full flex-shrink-0">
                   <div
-                    className="aspect-[9/16] max-h-[700px] overflow-hidden rounded-xl shadow-lg"
+                    className="aspect-[9/16] max-h-[700px] overflow-hidden rounded-md shadow-lg"
                     style={{ backgroundColor: 'var(--background)' }}
                   >
                     <iframe
                       src={`https://www.youtube.com/embed/${item.embedId}?controls=1&rel=0&modestbranding=1`}
                       title={`YouTube video ${item.id}`}
-                      className="w-full h-full rounded-xl"
+                      className="w-full h-full rounded-md"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen

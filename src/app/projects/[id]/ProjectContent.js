@@ -46,7 +46,7 @@ export default function ProjectContent({ project }) {
               alt={photo.alt}
               width={1400}
               height={700}
-              className="w-full h-auto rounded-xl shadow-lg"
+              className="w-full h-auto rounded-md shadow-lg"
               sizes="(max-width: 768px) 100vw, 1400px"
             />
           </div>
@@ -56,7 +56,7 @@ export default function ProjectContent({ project }) {
         return (
           <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
             {photo.images.map((img, imgIndex) => (
-              <div key={imgIndex} className="group overflow-hidden rounded-xl min-h-[650px] md:h-80">
+              <div key={imgIndex} className="group overflow-hidden rounded-md min-h-[650px] md:h-80">
                 <Image
                   src={img.src || "/placeholder.svg"}
                   alt={img.alt}
@@ -112,7 +112,7 @@ export default function ProjectContent({ project }) {
               >
                 {photo.images.map((img, imgIndex) => (
                   <div key={imgIndex} className="flex-shrink-0 snap-start group">
-                    <div className="w-80 md:w-90 h-60 md:h-[650px] overflow-hidden rounded-xl shadow-md">
+                    <div className="w-80 md:w-90 h-60 md:h-[650px] overflow-hidden rounded-md shadow-md">
                       <Image
                         src={img.src || "/placeholder.svg"}
                         alt={img.alt}
@@ -158,7 +158,7 @@ export default function ProjectContent({ project }) {
               alt={photo.alt}
               width={1400}
               height={0}
-              className="w-full h-auto rounded-xl shadow-lg"
+              className="w-full h-auto rounded-md shadow-lg"
               sizes="100vw"
               style={{ height: 'auto' }}
             />
@@ -193,7 +193,7 @@ export default function ProjectContent({ project }) {
       </div>
 
       {/* Main Project Image */}
-      <div className="mb-16 md:mb-20 overflow-hidden rounded-xl shadow-lg">
+      <div className="mb-16 md:mb-20 overflow-hidden rounded-md ">
         <Image
           src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
           alt={project.detailPage.projectTitle}

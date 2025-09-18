@@ -39,7 +39,7 @@ export default function ClientSay() {
   ];
 
   return (
-    <div className="py-20 px-4">
+    <div className="pb-20 md:pb-40 px-4">
       <div className="max-w-[1230px] mx-auto">
         {/* Section Headers */}
         <div className="flex justify-center md:justify-between items-center mb-16">
@@ -133,7 +133,7 @@ export default function ClientSay() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-[#EBEBEB] flex flex-col justify-between p-8 min-h-[350px] rounded-lg border border-gray-100"
+              className="bg-[#EBEBEB] flex flex-col justify-between p-8 min-h-[350px] rounded-md border border-gray-100"
             >
               {/* Quote Icon and Company Logo */}
               <div className="flex justify-between items-start mb-6">

@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
 
         {/* Navbar */}
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background text-foreground">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background text-foreground/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div className="flex items-center justify-between">
               {/* Logo placeholder */}
@@ -98,7 +98,7 @@ const Navbar = () => {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl border-b shadow-xl transform transition-all duration-500 ease-out bg-background text-foreground ${
+            className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl border-b shadow-xl transform transition-all duration-500 ease-out bg-background text-foreground/70 ${
               isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
             }`}
           >
@@ -173,7 +173,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background text-foreground">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background text-foreground/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
