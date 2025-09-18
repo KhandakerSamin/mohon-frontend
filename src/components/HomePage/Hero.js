@@ -45,6 +45,27 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Bottom Section - Previously @ and My Clients From */}
+      <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-sm text-foreground/70">
+        {/* Previously @ Section */}
+        <div className="text-left">
+          <p className="mb-1 font-medium">Previously @</p>
+          <p className="leading-relaxed">
+            Programming Hero, Codeflexs,<br />
+            Gameohacker360
+          </p>
+        </div>
+
+        {/* My Clients From Section */}
+        <div className="text-right">
+          <p className="mb-1 font-medium">My Clients From</p>
+          <p className="leading-relaxed">
+            USA, Germany, Colombia, UK<br />
+            Australia, Finland, South Africa, France
+          </p>
+        </div>
+      </div>
     </section>
   )
 }
