@@ -62,7 +62,7 @@ const AllProjects2 = () => {
               return (
                 <div 
                   key={rowIndex}
-                  className="flex flex-col lg:flex-row gap-3 lg:gap-8 items-stretch h-auto lg:h-[350px]"
+                  className="flex flex-col  lg:flex-row gap-3 lg:gap-8 items-stretch h-auto lg:h-[350px]"
                 >
                   {projectRow.map((project, cardIndex) => {
                     const flexClass = widthPattern[cardIndex] || 'flex-1';
