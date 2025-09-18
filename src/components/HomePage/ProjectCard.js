@@ -46,7 +46,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
             {project.homepage.keywords.map((keyword, index) => (
               <span
                 key={index}
-                className="border border-foreground/20 p-1.5 md:px-3 rounded-md bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-200"
+                className=" p-1.5 text-foreground/70 md:px-3 rounded-md bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-200"
               >
                 {keyword}
               </span>
