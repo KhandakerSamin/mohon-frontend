@@ -8,13 +8,13 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
   return (
     <Link 
       href={`/projects/${project.id}`}
-      className={`group relative rounded-lg overflow-hidden bg-background transition-colors duration-300 cursor-pointer block ${
+      className={`group relative rounded-md overflow-hidden bg-background transition-colors duration-300 cursor-pointer block ${
         isFullWidth ? "col-span-full" : "col-span-1"
       }`}
     >
       {/* Project Image */}
       <div
-        className={`relative rounded-lg overflow-hidden bg-gray-900 ${
+        className={`relative rounded-md overflow-hidden bg-gray-900 ${
           isFullWidth ? "aspect-video max-h-[800px]" : "h-[230px] md:h-[430px]"
         }`}
       >

@@ -3,7 +3,7 @@ import React from "react"
 
 const Hero = () => {
   return (
-    <section className="h-screen max-w-7xl mx-auto flex items-center justify-center bg-background text-foreground px-8 py-10 lg:py-24 relative">
+    <section className="min-h-screen max-w-7xl mx-auto flex items-center justify-center bg-background text-foreground px-8 py-10 lg:py-24 relative">
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-2 md:space-y-6 relative">
           {/* Greeting Badge */}
@@ -12,14 +12,14 @@ const Hero = () => {
               Hey! I&apos;m
             </span>
           </div>
-          
+
           {/* Main Title with CSS-based gradient */}
           <h1 className="gradient-text text-[clamp(4rem,12vw,8rem)] font-bold leading-none tracking-tight mb-[2rem]">
             Product
             <br />
             Designer
           </h1>
-          
+
           {/* CTA Button */}
           <div className="absolute right-0 -bottom-12 lg:-bottom-14">
             <a
@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="text-center md:text-left  mb-5 md:mb-0 ">
           <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
-            Programming Hero, Codeflexs, <br className="hidden md:block"/>
+            Programming Hero, Codeflexs, <br className="hidden md:block" />
             Gameohacker360
           </p>
         </div>
@@ -61,8 +61,8 @@ const Hero = () => {
         <div className="text-center md:text-right">
           <p className="mb-1 font-medium">My Clients From</p>
           <p className="leading-relaxed">
-            USA, Germany, Colombia, UK <br br className="hidden md:block"/>
-            Australia, Finland,<br className="md:hidden" /> South Africa, France
+            USA, Germany, Colombia, UK <br className="hidden md:block" />
+            Australia, Finland, <br className="md:hidden" /> South Africa, France
           </p>
         </div>
       </div>

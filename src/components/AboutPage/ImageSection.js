@@ -28,13 +28,13 @@ export default function ImageSection() {
         {heroImages.map((item) => (
           <div
             key={item.id}
-            className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-md group cursor-pointer"
+            className="relative w-full h-[500px] overflow-hidden rounded-md shadow-md group cursor-pointer"
           >
             {/* Image */}
             <img
               src={item.src}
               alt={item.alt}
-              className="w-full h-full object-cover rounded-xl transition-all duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover rounded-md transition-all duration-500 group-hover:scale-110"
             />
             
             {/* Gradient overlay */}

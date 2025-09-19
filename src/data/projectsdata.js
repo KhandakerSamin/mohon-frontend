@@ -242,94 +242,94 @@ const projectsData = [
     }
   },
 
-  {
-    id: 4,
-    // Homepage fields
-    homepage: {
-      homepageThumbnail: "/p1.png",
-      projectTitle: "SecureBank Pro",
-      homepageDetail:
-        "",
-      keywords: ["Digital Banking", "Financial Technology"],
-    },
+  // {
+  //   id: 4,
+  //   // Homepage fields
+  //   homepage: {
+  //     homepageThumbnail: "/p1.png",
+  //     projectTitle: "SecureBank Pro",
+  //     homepageDetail:
+  //       "",
+  //     keywords: ["Digital Banking", "Financial Technology"],
+  //   },
 
-    // Details page fields
-    detailPage: {
-      projectTitle: "SecureBank Pro",
-      projectInfo: "Next-Generation Banking Experience",
-      detailPageThumbnail: "/p3.png",
-      projectSubtitles: [
-        { label: "Role", value: "Senior UX Designer" },
-        { label: "Timeline", value: "April 2025" },
-        { label: "Industry", value: "Financial Services" },
-        { label: "Platform", value: "Enterprise Application" }
-      ],
+  //   // Details page fields
+  //   detailPage: {
+  //     projectTitle: "SecureBank Pro",
+  //     projectInfo: "Next-Generation Banking Experience",
+  //     detailPageThumbnail: "/p3.png",
+  //     projectSubtitles: [
+  //       { label: "Role", value: "Senior UX Designer" },
+  //       { label: "Timeline", value: "April 2025" },
+  //       { label: "Industry", value: "Financial Services" },
+  //       { label: "Platform", value: "Enterprise Application" }
+  //     ],
 
-      descriptions: [
-        {
-          serialNumber: "01",
-          title: "Project Vision",
-          text: "SecureBank Pro was envisioned as a revolutionary banking platform that would redefine digital banking standards. The goal was to create a secure, user-friendly interface that could handle complex financial operations while maintaining the highest security standards.",
-          photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p2.png", alt: "Support interface" },
-              { src: "/p1.png", alt: "Chat system" }
-            ]
-          },
-        },
-        {
-          serialNumber: "02",
-          title: "Security-First Design",
-          text: "Implemented advanced security measures including biometric authentication, multi-factor verification, and encrypted transactions. The design ensures security without compromising user experience or accessibility.",
-          photo: {
-            type: "full-width",
-            src: "/p3.png",
-            alt: "Project vision"
-          },
-        },
-        {
-          serialNumber: "03",
-          title: "Dashboard & Analytics",
-          text: "Created comprehensive dashboards that provide users with clear insights into their financial health, spending patterns, and investment performance. The interface uses data visualization to make complex financial information easily understandable.",
-          photo: {
-            type: "carousel",
-            images: [
-              { src: "/p3.png", alt: "Main dashboard" },
-              { src: "/p3.png", alt: "Analytics view" },
-              { src: "/p3.png", alt: "Data visualization" },
-              { src: "/p3.png", alt: "Reports interface" },
-              { src: "/p1.png", alt: "Mobile dashboard" },
-              { src: "/p2.png", alt: "Responsive design" }
-            ]
-          },
-        },
-        {
-          serialNumber: "04",
-          title: "Transaction Management",
-          text: "Designed streamlined transaction flows that allow users to send money, pay bills, and manage accounts with minimal friction. The interface provides clear feedback and confirmation at every step.",
-          photo: {
-            type: "endless-height",
-            src: "/p3.png",
-            alt: "Transaction interface"
-          },
-        },
-        {
-          serialNumber: "05",
-          title: "Investment Platform",
-          text: "Integrated investment management tools that allow users to track portfolios, analyze market trends, and make informed investment decisions directly within the banking platform.",
-          photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p2.png", alt: "Support interface" },
-              { src: "/p1.png", alt: "Chat system" }
-            ]
-          },
-        },
+  //     descriptions: [
+  //       {
+  //         serialNumber: "01",
+  //         title: "Project Vision",
+  //         text: "SecureBank Pro was envisioned as a revolutionary banking platform that would redefine digital banking standards. The goal was to create a secure, user-friendly interface that could handle complex financial operations while maintaining the highest security standards.",
+  //         photo: {
+  //           type: "two-grid",
+  //           images: [
+  //             { src: "/p2.png", alt: "Support interface" },
+  //             { src: "/p1.png", alt: "Chat system" }
+  //           ]
+  //         },
+  //       },
+  //       {
+  //         serialNumber: "02",
+  //         title: "Security-First Design",
+  //         text: "Implemented advanced security measures including biometric authentication, multi-factor verification, and encrypted transactions. The design ensures security without compromising user experience or accessibility.",
+  //         photo: {
+  //           type: "full-width",
+  //           src: "/p3.png",
+  //           alt: "Project vision"
+  //         },
+  //       },
+  //       {
+  //         serialNumber: "03",
+  //         title: "Dashboard & Analytics",
+  //         text: "Created comprehensive dashboards that provide users with clear insights into their financial health, spending patterns, and investment performance. The interface uses data visualization to make complex financial information easily understandable.",
+  //         photo: {
+  //           type: "carousel",
+  //           images: [
+  //             { src: "/p3.png", alt: "Main dashboard" },
+  //             { src: "/p3.png", alt: "Analytics view" },
+  //             { src: "/p3.png", alt: "Data visualization" },
+  //             { src: "/p3.png", alt: "Reports interface" },
+  //             { src: "/p1.png", alt: "Mobile dashboard" },
+  //             { src: "/p2.png", alt: "Responsive design" }
+  //           ]
+  //         },
+  //       },
+  //       {
+  //         serialNumber: "04",
+  //         title: "Transaction Management",
+  //         text: "Designed streamlined transaction flows that allow users to send money, pay bills, and manage accounts with minimal friction. The interface provides clear feedback and confirmation at every step.",
+  //         photo: {
+  //           type: "endless-height",
+  //           src: "/p3.png",
+  //           alt: "Transaction interface"
+  //         },
+  //       },
+  //       {
+  //         serialNumber: "05",
+  //         title: "Investment Platform",
+  //         text: "Integrated investment management tools that allow users to track portfolios, analyze market trends, and make informed investment decisions directly within the banking platform.",
+  //         photo: {
+  //           type: "two-grid",
+  //           images: [
+  //             { src: "/p2.png", alt: "Support interface" },
+  //             { src: "/p1.png", alt: "Chat system" }
+  //           ]
+  //         },
+  //       },
         
-      ],
-    }
-  },
+  //     ],
+  //   }
+  // },
 ]
 
 export default projectsData

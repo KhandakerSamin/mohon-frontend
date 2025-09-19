@@ -48,7 +48,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-4 rounded-lg transition-all duration-300 flex items-center justify-center w-48 h-20"
+              className="group cursor-pointer p-4 rounded-md transition-all duration-300 flex items-center justify-center w-48 h-20"
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
@@ -64,7 +64,7 @@ const WorkwithSection = () => {
                   unoptimized
                 />
                 
-                <div className="hidden absolute inset-0 items-center justify-center  rounded-lg">
+                <div className="hidden absolute inset-0 items-center justify-center  rounded-md">
                   <span className="text-xs text-gray-500 text-center font-medium">
                     {company.name}
                   </span>
@@ -80,7 +80,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-4 rounded-lg  transition-all duration-300 flex items-center justify-center w-48 h-20"
+              className="group cursor-pointer p-4 rounded-md  transition-all duration-300 flex items-center justify-center w-48 h-20"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 
@@ -93,7 +93,7 @@ const WorkwithSection = () => {
                   unoptimized
                 />
                 
-                <div className="hidden absolute inset-0 items-center justify-center  rounded-lg">
+                <div className="hidden absolute inset-0 items-center justify-center  rounded-md">
                   <span className="text-xs text-gray-500 text-center font-medium">
                     {company.name}
                   </span>
@@ -109,7 +109,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-4 rounded-lg transition-all duration-300 flex items-center justify-center w-48 h-20"
+              className="group cursor-pointer p-4 rounded-md transition-all duration-300 flex items-center justify-center w-48 h-20"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 
@@ -122,7 +122,7 @@ const WorkwithSection = () => {
                   unoptimized
                 />
                 
-                <div className="hidden absolute inset-0 items-center justify-center rounded-lg">
+                <div className="hidden absolute inset-0 items-center justify-center rounded-md">
                   <span className="text-xs text-gray-500 text-center font-medium">
                     {company.name}
                   </span>
@@ -141,7 +141,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-2 rounded-lg  transition-all duration-300 flex items-center justify-center w-20 h-16"
+              className="group cursor-pointer p-2 rounded-md  transition-all duration-300 flex items-center justify-center w-20 h-16"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 
@@ -165,7 +165,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-1 rounded-lg transition-all duration-300 flex items-center justify-center w-33 h-16"
+              className="group cursor-pointer p-1 rounded-md transition-all duration-300 flex items-center justify-center w-33 h-16"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 
@@ -189,7 +189,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-2 rounded-lg  transition-all duration-300 flex items-center justify-center w-33 h-16"
+              className="group cursor-pointer p-2 rounded-md  transition-all duration-300 flex items-center justify-center w-33 h-16"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 
@@ -213,7 +213,7 @@ const WorkwithSection = () => {
             <div
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
-              className="group cursor-pointer p-2 rounded-lg  transition-all duration-300 flex items-center justify-center w-33 h-16"
+              className="group cursor-pointer p-2 rounded-md  transition-all duration-300 flex items-center justify-center w-33 h-16"
             >
               <div className="relative w-full h-full flex items-center justify-center">
 

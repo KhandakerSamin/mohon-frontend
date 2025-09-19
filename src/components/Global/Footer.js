@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className='flex flex-col lg:flex-row justify-between items-center pt-15 lg:pt-25 pb-10 px-9'>
+        <div className='flex flex-col lg:flex-row justify-between items-center pt-15 lg:pt-25 pb-10 pl-3'>
           {/* Copyright */}
           <div className="hidden lg:block text-sm text-foreground/80">
             ©Abulhashemmohon 2025
