@@ -1,90 +1,164 @@
-import projectsData from "../../../data/projectsdata"
-import { notFound } from "next/navigation"
+"use client";
+
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { useState, useRef } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-export default async function ProjectDetailPage({ params }) {
-  const { id } = await params
+export default function ProjectContent({ project }) {
+  const [carouselStates, setCarouselStates] = useState({})
+  const carouselRefs = useRef({})
 
-  console.log("[v0] Received ID from params:", id)
-  console.log(
-    "[v0] Available project IDs:",
-    projectsData.map((p) => p.id),
-  )
+  const scrollCarousel = (carouselId, direction) => {
+    const carousel = carouselRefs.current[carouselId]
+    if (!carousel) return
 
-  const project = projectsData.find((p) => p.id === Number.parseInt(id))
+    const scrollAmount = 320
+    const newScrollLeft = direction === 'left'
+      ? carousel.scrollLeft - scrollAmount
+      : carousel.scrollLeft + scrollAmount
 
-  console.log("[v0] Found project:", project ? project.id : "NOT FOUND")
+    carousel.scrollTo({
+      left: newScrollLeft,
+      behavior: 'smooth'
+    })
+  }
 
-  if (!project) {
-    console.log("[v0] Project not found, calling notFound()")
-    notFound()
+  const updateCarouselState = (carouselId) => {
+    const carousel = carouselRefs.current[carouselId]
+    if (!carousel) return
+
+    const isAtStart = carousel.scrollLeft <= 10
+    const isAtEnd = carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)
+
+    setCarouselStates(prev => ({
+      ...prev,
+      [carouselId]: { isAtStart, isAtEnd }
+    }))
   }
 
   const renderPhoto = (photo, index) => {
     switch (photo.type) {
       case "full-width":
         return (
-          <div key={index} className="w-full mb-8">
+          <div key={index} className="w-full mb-16">
             <Image
               src={photo.src || "/placeholder.svg"}
               alt={photo.alt}
-              width={1200}
-              height={600}
-              className="w-full h-auto rounded-lg"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+              width={1400}
+              height={700}
+              className="w-full h-auto rounded-md "
+              sizes="(max-width: 768px) 100vw, 1400px"
             />
           </div>
         )
 
       case "two-grid":
         return (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
             {photo.images.map((img, imgIndex) => (
-              <Image
-                key={imgIndex}
-                src={img.src || "/placeholder.svg"}
-                alt={img.alt}
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-lg"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div key={imgIndex} className="group overflow-hidden rounded-md min-h-[650px] md:h-80">
+                <Image
+                  src={img.src || "/placeholder.svg"}
+                  alt={img.alt}
+                  width={700}
+                  height={500}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 "
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             ))}
           </div>
         )
 
       case "carousel":
+        const carouselId = `carousel-${index}`
+        const currentState = carouselStates[carouselId] || { isAtStart: true, isAtEnd: false }
+
         return (
-          <div key={index} className="mb-8">
-            <div className="flex gap-4 overflow-x-auto pb-4">
-              {photo.images.map((img, imgIndex) => (
-                <div key={imgIndex} className="flex-shrink-0">
-                  <Image
-                    src={img.src || "/placeholder.svg"}
-                    alt={img.alt}
-                    width={400}
-                    height={300}
-                    className="rounded-lg"
-                    sizes="400px"
-                  />
+          <div key={index} className="mb-16">
+            <div className="relative group">
+              {/* Navigation Buttons */}
+              <div className="hidden md:block">
+                <button
+                  onClick={() => scrollCarousel(carouselId, 'left')}
+                  disabled={currentState.isAtStart}
+                  className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white  border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtStart
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-gray-50 hover: opacity-0 group-hover:opacity-100'
+                    }`}
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </button>
+
+                <button
+                  onClick={() => scrollCarousel(carouselId, 'right')}
+                  disabled={currentState.isAtEnd}
+                  className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white  border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtEnd
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-gray-50 hover: opacity-0 group-hover:opacity-100'
+                    }`}
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </button>
+              </div>
+
+              {/* Carousel Track */}
+              <div
+                ref={el => carouselRefs.current[carouselId] = el}
+                onScroll={() => updateCarouselState(carouselId)}
+                className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory"
+              >
+                {photo.images.map((img, imgIndex) => (
+                  <div key={imgIndex} className="flex-shrink-0 snap-start group">
+                    <div className="w-80 md:w-90 h-60 md:h-[650px] overflow-hidden rounded-md ">
+                      <Image
+                        src={img.src || "/placeholder.svg"}
+                        alt={img.alt}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 320px, 400px"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile Dots */}
+              <div className="flex justify-center mt-6 md:hidden">
+                <div className="flex gap-2">
+                  {photo.images.map((_, imgIndex) => (
+                    <button
+                      key={imgIndex}
+                      className="w-2 h-2 rounded-full bg-gray-300 transition-colors duration-200 hover:bg-gray-500"
+                      onClick={() => {
+                        const carousel = carouselRefs.current[carouselId]
+                        if (carousel) {
+                          carousel.scrollTo({
+                            left: imgIndex * 320,
+                            behavior: 'smooth'
+                          })
+                        }
+                      }}
+                    />
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         )
 
       case "endless-height":
         return (
-          <div key={index} className="w-full mb-8">
+          <div key={index} className="w-full mb-16">
             <Image
               src={photo.src || "/placeholder.svg"}
               alt={photo.alt}
-              width={800}
-              height={1200}
-              className="w-full h-auto rounded-lg"
-              sizes="(max-width: 768px) 100vw, 800px"
+              width={1400}
+              height={0}
+              className="w-full h-auto rounded-md "
+              sizes="100vw"
+              style={{ height: 'auto' }}
             />
           </div>
         )
@@ -95,96 +169,82 @@ export default async function ProjectDetailPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Portfolio
-          </Link>
+    <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30" style={{ color: 'var(--foreground)', background: 'var(--background)' }}>
+      {/* Project Title */}
+      <div className="mb-12 md:mb-16">
+        <div className="text-xl md:text-base mb-1" style={{ color: 'var(--foreground)' }}>
+          {project.homepage.projectTitle}
         </div>
-      </header>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 leading-relaxed" style={{ color: 'var(--foreground)' }}>
+          {project.detailPage.projectInfo}
+        </h1>
 
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground/70">{project.detailPage.projectTitle}</h1>
-
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              {project.detailPage.projectSubtitles.map((subtitle, index) => (
-                <div key={index}>
-                  <h3 className="font-semibold text-muted-foreground mb-1">{subtitle.label}</h3>
-                  <p className="text-foreground/70">{subtitle.value}</p>
-                </div>
-              ))}
+        {/* Project Details Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mb-12">
+          {project.detailPage.projectSubtitles.map((subtitle, index) => (
+            <div key={index}>
+              <div className="text-xs md:text-base mb-1" style={{ color: 'var(--foreground)' }}>{subtitle.label}</div>
+              <div className="text-sm md:text-xl" style={{ color: 'var(--foreground)' }}>{subtitle.value}</div>
             </div>
-
-            <div className="flex flex-wrap gap-2">
-              {project.homepage.keywords.map((keyword, index) => (
-                <span key={index} className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">
-                  {keyword}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <Image
-              src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
-              alt={project.detailPage.projectTitle}
-              width={600}
-              height={400}
-              className="w-full h-auto rounded-lg shadow-lg"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-            />
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* Main Project Image with text*/}
+      <div className="mb-5">
+        <h1 className="text-2xl ">{project.detailPage.headingtittle}</h1>
+        <p className="text-xl py-5">{project.detailPage.headindescription}</p>
+      </div>
+
+      <div className="mb-16 md:mb-20 overflow-hidden rounded-md ">
+        <Image
+          src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
+          alt={project.detailPage.projectTitle}
+          width={1400}
+          height={700}
+          className="w-full h-auto"
+          sizes="(max-width: 768px) 100vw, 1400px"
+        />
+      </div>
 
       {/* Description Sections */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
+      <div className="space-y-16 md:space-y-20 ">
         {project.detailPage.descriptions.map((desc, index) => (
-          <div key={index} className="mb-16">
-            <div className="mb-8">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="w-8 h-8 bg-primary text-foreground/70 rounded-full flex items-center justify-center text-sm font-semibold">
-                  {desc.serialNumber}
-                </span>
-                <h2 className="text-2xl font-bold">{desc.title}</h2>
-              </div>
-              <p className="text-foreground/70 leading-relaxed text-lg">{desc.text}</p>
+          <div key={index}>
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6" style={{ color: 'var(--foreground)' }}>
+                {desc.title}
+              </h2>
+              <p className="leading-relaxed max-w-full text-base md:text-lg mb-4" style={{ color: 'var(--foreground)' }}>
+                {desc.text}
+              </p>
+
+              {/* ADD THIS: Bullet Points Rendering */}
+              {desc.bulletPoints && desc.bulletPoints.length > 0 && (
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  {desc.bulletPoints.map((point, i) => (
+                    <li key={i} className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--foreground)' }}>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {desc.photo && renderPhoto(desc.photo, index)}
           </div>
         ))}
-      </section>
+      </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border mt-20">
-        <div className="max-w-6xl mx-auto px-4 py-12 text-center">
-          <h3 className="text-2xl font-bold mb-4">Have An Idea On Mind?</h3>
-          <p className="text-muted-foreground mb-6">Let&apos;s Bring It To Life</p>
-          <Link
-            href="mailto:contact@example.com"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            Email Me
-            <ExternalLink className="w-4 h-4" />
-          </Link>
-        </div>
-      </footer>
-    </div>
+      <style jsx global>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </main>
   )
-}
-
-export async function generateStaticParams() {
-  return projectsData.map((project) => ({
-    id: project.id.toString(),
-  }))
 }
