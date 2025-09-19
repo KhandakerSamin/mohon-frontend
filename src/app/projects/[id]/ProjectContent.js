@@ -197,12 +197,12 @@ export default function ProjectContent({ project }) {
             {photo.cards.map((card, cardIndex) => (
               <div
                 key={cardIndex}
-                className="bg-blue-50 p-6 rounded-lg text-center border border-blue-100 min-h-[200px] flex flex-col justify-center"
+                className="bg-blue-100 p-6 rounded-lg text-center border border-blue-100 min-h-[200px] flex flex-col justify-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-gray-700 mb-2 border borderfore">
+                <div className="text-3xl md:text-4xl font-bold text-gray-700 mb-2 w-20 text-left">
                   {card.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-600 leading-relaxed">
+                <div className="text-sm md:text-base text-gray-600 leading-relaxed border border-blue-50 rounded-bl-none px-5 mt-3 w-fit   p-1 rounded-full bg-blue-50">
                   {card.label}
                 </div>
               </div>
@@ -263,14 +263,14 @@ export default function ProjectContent({ project }) {
               <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6" style={{ color: "var(--foreground)" }}>
                 {desc.title}
               </h2>
-              <p className="leading-relaxed max-w-full text-base md:text-lg" style={{ color: "var(--foreground)" }}>
+              <p className="leading-relaxed max-w-full text-base md:text-lg text-foreground/80">
                 {desc.text}
               </p>
               {/* Bullet Points Rendering */}
               {desc.bulletPoints && desc.bulletPoints.length > 0 && (
                 <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
                   {desc.bulletPoints.map((point, i) => (
-                    <li key={i} className="text-base md:text-lg leading-relaxed" style={{ color: "var(--foreground)" }}>
+                    <li key={i} className="text-base md:text-lg leading-relaxed text-foreground/80" >
                       {point}
                     </li>
                   ))}

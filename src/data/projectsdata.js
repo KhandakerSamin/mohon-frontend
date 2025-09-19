@@ -86,10 +86,10 @@ const projectsData = [
           title: "Outcomes & Impact",
           text: "In the First Month",
           bulletPoints: [
-            "User Visits: Increased Significantly (30-40%)",
-            "Engagement: Average Session Time Grew by 40%",
+            "User Visits: Increased significantly (30–40% in the first months).",
+            "Engagement: Average session time grew by 40%.",
             "Trust Factor: User Feedback Highlighted Stronger Perception of Reliability",
-            "Bounce Rate: Reduced As Visitors Explored Multiple Articles."
+            "Bounce Rate: Reduced as visitors explored multiple articles."
           ],
           photo: {
             type: "statistics",
