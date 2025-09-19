@@ -1,5 +1,5 @@
 const projectsData = [
-   {
+  {
     id: 1,
     // Homepage fields
     homepage: {
@@ -24,7 +24,6 @@ const projectsData = [
 
       // Description sections
       descriptions: [
-
         {
           serialNumber: "01",
           title: "Challenge",
@@ -45,29 +44,31 @@ const projectsData = [
           title: "Research & Key Insights",
           text: "",
           bulletPoints: [
-            "User Behavior Analysis: Bounce rate was high, session times were short.", 
+            "User Behavior Analysis: Bounce rate was high, session times were short.",
             "User Needs: Quick access to trending checks, better readability, and mobile-friendly access.",
             "Competitive Benchmarking: Global fact-checking platforms (e.g., Reuters, Boom) emphasized trust signals, structured layouts, and discovery features."
           ],
           photo: {
             type: "full-width2",
-            src: "/FactWatch-3.png",
-            alt: "Project overview visualization"
-          },
-          photo: {
-            type: "full-width2",
-            src: "/FactWatch-4.png",
-            alt: "Project overview visualization"
-          },
+            photos: [
+              {
+                src: "/FactWatch-3.png",
+                alt: "Project overview visualization 1"
+              },
+              {
+                src: "/FactWatch-4.png",
+                alt: "Project overview visualization 2"
+              }
+            ]
+          }
         },
-
         {
           serialNumber: "03",
           title: "Solutions",
           text: "",
           bulletPoints: [
             "Enhance readability for long-form content.",
-            "Provide seamless navigation and easy topic discovery.", 
+            "Provide seamless navigation and easy topic discovery.",
             "Build trustworthiness through design consistency.",
             "Encourage longer and repeated engagement."
           ],
@@ -80,6 +81,34 @@ const projectsData = [
             ]
           },
         },
+        {
+          serialNumber: "04",
+          title: "Outcomes & Impact",
+          text: "In the First Month",
+          bulletPoints: [
+            "User Visits: Increased Significantly (30-40%)",
+            "Engagement: Average Session Time Grew by 40%",
+            "Trust Factor: User Feedback Highlighted Stronger Perception of Reliability",
+            "Bounce Rate: Reduced As Visitors Explored Multiple Articles."
+          ],
+          photo: {
+            type: "statistics",
+            cards: [
+              {
+                value: "35%",
+                label: "Increased User Visits"
+              },
+              {
+                value: "40%",
+                label: "Average Session Time Grew"
+              },
+              {
+                value: "Trust Factor",
+                label: "Stronger Perception of Reliability"
+              }
+            ]
+          }
+        }
       ],
     }
   },

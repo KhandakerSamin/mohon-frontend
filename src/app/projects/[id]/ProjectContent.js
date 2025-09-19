@@ -52,26 +52,27 @@ export default function ProjectContent({ project }) {
             />
           </div>
         );
-
-        case "full-width2":
+      case "full-width2":
+        if (!photo.photos || !Array.isArray(photo.photos) || photo.photos.length < 2) {
+          return (
+            <div key={index} className="w-full mb-16 flex flex-col gap-10">
+              <p>Error: Two images are required for full-width2 layout.</p>
+            </div>
+          );
+        }
         return (
           <div key={index} className="w-full mb-16 flex flex-col gap-10">
-            <Image
-              src={photo.src || "/placeholder.svg"}
-              alt={photo.alt}
-              width={1400}
-              height={700}
-              className="w-full h-auto rounded-md"
-              sizes="(max-width: 768px) 100vw, 1400px"
-            />
-            <Image
-              src={photo.src || "/placeholder.svg"}
-              alt={photo.alt}
-              width={1400}
-              height={700}
-              className="w-full h-auto rounded-md"
-              sizes="(max-width: 768px) 100vw, 1400px"
-            />
+            {photo.photos.map((img, idx) => (
+              <Image
+                key={idx}
+                src={img.src || "/placeholder.svg"}
+                alt={img.alt || "Default image description"}
+                width={1400}
+                height={700}
+                className="w-full h-auto rounded-md"
+                sizes="(max-width: 768px) 100vw, 1400px"
+              />
+            ))}
           </div>
         );
 
@@ -105,9 +106,8 @@ export default function ProjectContent({ project }) {
                 <button
                   onClick={() => scrollCarousel(carouselId, "left")}
                   disabled={currentState.isAtStart}
-                  className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${
-                    currentState.isAtStart ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
-                  }`}
+                  className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtStart ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
+                    }`}
                 >
                   <ChevronLeft className="w-5 h-5 text-gray-700" />
                 </button>
@@ -115,9 +115,8 @@ export default function ProjectContent({ project }) {
                 <button
                   onClick={() => scrollCarousel(carouselId, "right")}
                   disabled={currentState.isAtEnd}
-                  className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${
-                    currentState.isAtEnd ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
-                  }`}
+                  className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtEnd ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
+                    }`}
                 >
                   <ChevronRight className="w-5 h-5 text-gray-700" />
                 </button>
@@ -183,6 +182,34 @@ export default function ProjectContent({ project }) {
             />
           </div>
         );
+
+        case "statistics":
+      if (!photo.cards || !Array.isArray(photo.cards) || photo.cards.length === 0) {
+        return (
+          <div key={index} className="w-full mb-16">
+            <p>Error: Statistics cards are required for statistics layout.</p>
+          </div>
+        );
+      }
+      return (
+        <div key={index} className="w-full mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {photo.cards.map((card, cardIndex) => (
+              <div
+                key={cardIndex}
+                className="bg-blue-50 p-6 rounded-lg text-center border border-blue-100 min-h-[200px] flex flex-col justify-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-gray-700 mb-2 border borderfore">
+                  {card.value}
+                </div>
+                <div className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  {card.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
 
       default:
         return null;
