@@ -220,7 +220,7 @@ export default function ProjectContent({ project }) {
     <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30" style={{ color: "var(--foreground)", background: "var(--background)" }}>
       {/* Project Title */}
       <div className="mb-12 md:mb-16">
-        <div className="text-xl md:text-base mb-1" style={{ color: "var(--foreground)" }}>
+        <div className="text-xl md:text-base text-foreground/80 mb-1">
           {project.homepage.projectTitle}
         </div>
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 leading-relaxed" style={{ color: "var(--foreground)" }}>
@@ -231,7 +231,7 @@ export default function ProjectContent({ project }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mb-12">
           {project.detailPage.projectSubtitles.map((subtitle, index) => (
             <div key={index}>
-              <div className="text-xs md:text-base mb-1" style={{ color: "var(--foreground)" }}>{subtitle.label}</div>
+              <div className="text-xs md:text-base mb-1 text-foreground/80" >{subtitle.label}</div>
               <div className="text-sm md:text-xl" style={{ color: "var(--foreground)" }}>{subtitle.value}</div>
             </div>
           ))}
@@ -241,7 +241,7 @@ export default function ProjectContent({ project }) {
       {/* Main Project Image with text */}
       <div className="mb-5">
         <h1 className="text-2xl">{project.detailPage.headingtittle}</h1>
-        <p className="text-xl py-5">{project.detailPage.headindescription}</p>
+        <p className="text-xl py-5 text-foreground/80">{project.detailPage.headindescription}</p>
       </div>
 
       <div className="mb-16 md:mb-20 overflow-hidden rounded-md">
