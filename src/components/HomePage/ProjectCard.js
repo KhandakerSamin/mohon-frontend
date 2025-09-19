@@ -1,29 +1,33 @@
 "use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { MoveRight } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 const ProjectCard = ({ project, isFullWidth = false }) => {
   return (
-    <Link 
+    <Link
       href={`/projects/${project.id}`}
-      className={`group relative rounded-md overflow-hidden bg-background transition-colors duration-300 cursor-pointer block ${
+      className={`group relative overflow-hidden duration-300 cursor-pointer block ${
         isFullWidth ? "col-span-full" : "col-span-1"
       }`}
     >
       {/* Project Image */}
       <div
-        className={`relative rounded-md overflow-hidden bg-gray-900 ${
-          isFullWidth ? "aspect-video max-h-[800px]" : "h-[230px] md:h-[430px]"
+        className={`relative overflow-hidden rounded-md ${
+          isFullWidth
+            ? "w-full h-[450px] md:h-[650px] lg:h-[800px]"
+            : "h-[230px] md:h-[430px]"
         }`}
       >
         <Image
           src={project.homepage.homepageThumbnail || "/placeholder.svg"}
           alt={project.homepage.projectTitle}
           fill
-          style={{ borderRadius: "inherit" }}
-          className="object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+          style={{
+            objectFit: "cover",
+          }}
+          className="transition-transform duration-500 ease-in-out group-hover:scale-105 rounded-md"
         />
       </div>
 
@@ -46,7 +50,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
             {project.homepage.keywords.map((keyword, index) => (
               <span
                 key={index}
-                className=" p-1.5 text-foreground/70 md:px-3 rounded-md bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-200"
+                className="p-1.5 text-foreground/70 md:px-3 rounded-md bg-foreground/10 group-hover:bg-foreground/20 transition-colors duration-200"
               >
                 {keyword}
               </span>
@@ -60,7 +64,7 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
         </p>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;
