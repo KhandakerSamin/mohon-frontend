@@ -86,7 +86,7 @@ export default function ProjectContent({ project }) {
                   alt={img.alt}
                   width={700}
                   height={500}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 "
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
