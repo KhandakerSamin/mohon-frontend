@@ -34,7 +34,6 @@ export default function ClientSay() {
       location: "Australia",
       date: "Aug 2025",
       avatar: "/Client3.png",
-      companyLogo: "/brand-12.png",
     },
   ];
 
@@ -80,7 +79,7 @@ export default function ClientSay() {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-gray-700 text-sm leading-relaxed mb-6 font-medium flex-grow">
+                <p className="text-gray-700 text-base leading-relaxed mb-6 font-medium flex-grow">
                   {testimonial.quote}
                 </p>
 
@@ -106,7 +105,7 @@ export default function ClientSay() {
                       </div>
                     )}
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">
+                      <h4 className="font-semibold text-gray-900 text-base">
                         {testimonial.clientName}
                       </h4>
                       <p className="text-gray-500 text-xs">
@@ -115,7 +114,7 @@ export default function ClientSay() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-gray-900 font-medium text-sm">
+                    <div className="text-gray-900 font-medium text-base">
                       {testimonial.location}
                     </div>
                     <div className="text-gray-500 text-xs">
@@ -136,26 +135,26 @@ export default function ClientSay() {
               className="bg-[#EBEBEB] flex flex-col justify-between p-8 min-h-[350px] rounded-md border border-gray-100"
             >
               {/* Quote Icon and Company Logo */}
-              <div className="flex justify-between items-start mb-6">
+              <div className="flex justify-between items-center mb-12">
                 <Image
                   src="/clientQute.svg"
                   alt="Quote Icon"
-                  width={48}
-                  height={48}
+                  width={70}
+                  height={70}
                 />
                 {testimonial.companyLogo && (
                   <Image
                     src={testimonial.companyLogo}
                     alt="Company Logo"
-                    width={80}
-                    height={40}
+                    width={120}
+                    height={23}
                     className="object-contain"
                   />
                 )}
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-6 font-medium flex-grow">
+              <p className="text-gray-700 text-base leading-relaxed mb-8 font-medium flex-grow">
                 {testimonial.quote}
               </p>
 
@@ -172,7 +171,7 @@ export default function ClientSay() {
                     />
                   ) : (
                     <div className="w-12 h-12 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
-                      <span className="text-gray-600 font-medium text-sm">
+                      <span className="text-gray-600 font-medium text-base">
                         {testimonial.clientName
                           .split(" ")
                           .map((name) => name[0])
@@ -181,7 +180,7 @@ export default function ClientSay() {
                     </div>
                   )}
                   <div>
-                    <h4 className="font-semibold text-gray-900 text-sm">
+                    <h4 className="font-semibold text-gray-900 text-base">
                       {testimonial.clientName}
                     </h4>
                     <p className="text-gray-500 text-xs">
@@ -190,7 +189,7 @@ export default function ClientSay() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-gray-900 font-medium text-sm">
+                  <div className="text-gray-900 font-medium text-base">
                     {testimonial.location}
                   </div>
                   <div className="text-gray-500 text-xs">
