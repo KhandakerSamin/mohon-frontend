@@ -7,19 +7,19 @@ import Link from 'next/link';
 const WorkwithSection = () => {
   // Company data with their websites
   const companies = [
-    { id: 1, name: 'Qarby', website: 'https://qarby.com' },
-    { id: 2, name: 'Company 2', website: 'https://example2.com' },
-    { id: 3, name: 'Aga', website: 'https://aga.com' },
-    { id: 4, name: 'BurgerBuddy', website: 'https://burgerbuddy.com' },
-    { id: 5, name: 'Company 5', website: 'https://example5.com' },
-    { id: 6, name: 'EasyWear', website: 'https://easywear.com' },
-    { id: 7, name: 'Gatherlance', website: 'https://gatherlance.com' },
-    { id: 8, name: 'Tintype', website: 'https://tintype.com' },
-    { id: 9, name: 'We-Pilot.AI', website: 'https://we-pilot.ai' },
-    { id: 10, name: 'HD Nexus', website: 'https://hdnexus.com' },
-    { id: 11, name: 'Lanceboard', website: 'https://lanceboard.com' },
-    { id: 12, name: 'Qumlong', website: 'https://qumlong.com' },
-    { id: 13, name: 'Go Fast', website: 'https://gofast.com' }
+    { id: 1, name: 'Qarby', website: '#' },
+    { id: 2, name: 'Company 2', website: '#' },
+    { id: 3, name: 'Aga', website: '#' },
+    { id: 4, name: 'BurgerBuddy', website: '#' },
+    { id: 5, name: 'Company 5', website: '#' },
+    { id: 6, name: 'EasyWear', website: '#' },
+    { id: 7, name: 'Gatherlance', website: '#' },
+    { id: 8, name: 'Tintype', website: '#' },
+    { id: 9, name: 'We-Pilot.AI', website: '#' },
+    { id: 10, name: 'HD Nexus', website: '#' },
+    { id: 11, name: 'Lanceboard', website: '#' },
+    { id: 12, name: 'Qumlong', website: '#' },
+    { id: 13, name: 'Go Fast', website: '#' }
   ];
 
   const handleCompanyClick = (website) => {

@@ -11,8 +11,8 @@ export default function ClientSay() {
       position: "CEO @ Tintype",
       location: "USA",
       date: "Aug 2025",
-      avatar: "/avatar.png",
-      companyLogo: "/brand-8.png",
+      avatar: "/Client1.png",
+      companyLogo: "/work-8.png",
     },
     {
       id: 2,
@@ -22,8 +22,8 @@ export default function ClientSay() {
       position: "CEO @ CloudSphere",
       location: "UK",
       date: "Aug 2025",
-      avatar: "/avatar.png",
-      companyLogo: "/brand-10.png",
+      avatar: "/Client2.png",
+      companyLogo: "/work-14.png",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export default function ClientSay() {
       position: "UX Designer",
       location: "Australia",
       date: "Aug 2025",
-      avatar: "/avatar.png",
+      avatar: "/Client3.png",
       companyLogo: "/brand-12.png",
     },
   ];

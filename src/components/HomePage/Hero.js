@@ -52,8 +52,8 @@ const Hero = () => {
         <div className="text-center md:text-left  mb-5 md:mb-0 ">
           <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
-            Programming Hero, Codeflexs, <br className="hidden md:block" />
-            Gameohacker360
+            Programming Hero, Codefleee, <br className="hidden md:block" />
+            Gamechnagers360
           </p>
         </div>
 
