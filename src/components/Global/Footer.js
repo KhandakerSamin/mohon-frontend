@@ -3,8 +3,8 @@ import { ArrowUpRight, ExternalLink, Mail, MoveUpRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-background pt-15 lg:pt-30 px-4 lg:px-8">
-      <div className=" mx-auto max-w-[1230px] text-center relative">
+    <footer className="bg-background pt-20 lg:pt-40 px-4 lg:px-8">
+      <div className=" mx-auto max-w-[1230px] text-center  relative">
         {/* CTA Button */}
         <div className="mb-8 absolute -top-15 left-23 lg:-top-14 lg:left-4">
           <button className="inline-block py-2.5 px-6 bg-transparent border border-foreground rounded-full rounded-bl-none text-foreground text-sm lg:text-2xl tracking-wide hover:bg-foreground hover:text-background transition-all duration-200">
@@ -29,46 +29,50 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className='flex flex-col lg:flex-row justify-between items-center pt-15 lg:pt-25 pb-10 pl-3'>
+        <div className='flex flex-col lg:flex-row justify-between items-center pt-15 lg:pt-50 pb-10 pl-3'>
           {/* Copyright */}
-          <div className="hidden lg:block text-sm text-foreground/80">
+          <div className="hidden lg:block text-lg text-foreground/80">
             ©Abulhashemmohon 2025
           </div>
           
           {/* Social Links - Desktop */}
           <div className="hidden md:flex justify-center items-center space-x-8">
             <a 
-              href="#" 
+              href="https://rebrand.ly/30752c" 
+              target='_blank'
               className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
             >
-              <span className="text-sm">LinkedIn</span>
+              <span className="text-lg">LinkedIn</span>
               <ArrowUpRight size={16} />
             </a>
             <a 
-              href="#" 
+              href="https://rebrand.ly/link-x2022-716fdb" 
+              target='_blank'
               className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
             >
-              <span className="text-sm">Instagram</span>
+              <span className="text-lg">Instagram</span>
               <ArrowUpRight size={16} />
             </a>
             <a 
-              href="#" 
+              href="https://rebrand.ly/680223" 
+              target='_blank'
               className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
             >
-              <span className="text-sm">Behance</span>
+              <span className="text-lg">Behance</span>
               <ArrowUpRight size={16} />
             </a>
             <a 
-              href="#" 
+              href="https://rebrand.ly/abul-hashem-f0eb88" 
+              target='_blank'
               className="flex items-center space-x-2 text-foreground hover:text-foreground/60 transition-colors duration-200"
             >
-              <span className="text-sm">Dribbble</span>
+              <span className="text-lg">Dribbble</span>
               <ArrowUpRight size={16} />
             </a>
           </div>
 
           {/* Social Links - Mobile */}
-          <div className="md:hidden space-y-4 mb-5 lg:mb-12 ">
+          <div className="md:hidden space-y-4 mb-5 pt-15 lg:mb-12 ">
             <div className="flex justify-center space-x-8">
               <a 
                 href="#" 

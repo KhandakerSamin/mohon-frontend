@@ -196,7 +196,7 @@ const Navbar = () => {
               <Link href="/about" className="transition-colors text-sm font-medium hover:opacity-80">
                 About Me
               </Link>
-              <a href="#resume" className="transition-colors text-sm font-medium hover:opacity-80">
+              <a href="https://rebrand.ly/abul-hashem-31e8b6" target="_blank" className="transition-colors text-sm font-medium hover:opacity-80">
                 Resume
               </a>
             </div>
