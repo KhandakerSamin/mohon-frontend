@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useCallback } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const ContentCreator = () => {
   const videoData = [
@@ -28,12 +29,12 @@ const ContentCreator = () => {
     touchStartX.current = e.touches[0].clientX;
     isDragging.current = false;
   };
-  
+
   const handleTouchMove = (e) => {
     touchEndX.current = e.touches[0].clientX;
     isDragging.current = true;
   };
-  
+
   const handleTouchEnd = () => {
     if (!isDragging.current) return;
     const swipeDistance = touchStartX.current - touchEndX.current;
@@ -53,20 +54,22 @@ const ContentCreator = () => {
       <div className="flex justify-between items-center mb-12 flex-wrap">
         <button
           className="hidden md:inline-block px-8 py-3  rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium"
-          
+
         >
           Me As A Content Creator
         </button>
 
-        <div className="mt-4 md:mt-0 hidden md:block">
-          <button
-            className="flex justify-between items-center gap-1 px-8 py-3 rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium "
-            
-          >
-            More On YouTube
-            <ArrowUpRight className="pl-1 w-6 h-6" />
-          </button>
-        </div>
+        <Link href="https://rebrand.ly/5d2aea" target="_blank" >
+          <div className="mt-4 md:mt-0 hidden md:block">
+            <button
+              className="flex justify-between items-center gap-1 px-8 py-3 rounded-full rounded-bl-none border border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium "
+
+            >
+              More On YouTube
+              <ArrowUpRight className="pl-1 w-6 h-6" />
+            </button>
+          </div>
+        </Link>
       </div>
 
       {/* Desktop Grid */}
@@ -161,7 +164,7 @@ const ContentCreator = () => {
             }}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
@@ -181,7 +184,7 @@ const ContentCreator = () => {
             }}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
