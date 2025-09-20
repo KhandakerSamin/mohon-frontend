@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               {/* Logo placeholder */}
               <Link href="/" className="inline-block">
-                <div className="w-[120px] h-[45px]" /> {/* Placeholder with same dimensions */}
+                <div className="w-[150px] h-[50px]" /> 
               </Link>
 
               {/* Desktop links */}
@@ -174,15 +174,15 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background text-foreground/70">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="inline-block">
               <Image
                 src={currentTheme === "dark" ? "/NewLogoDark.png" : "/NewLogo.png"}
                 alt="Md Abul Hashem Logo"
-                width={120}
-                height={45}
+                width={150}
+                height={50}
                 priority
                 className="h-auto w-auto object-contain"
               />
