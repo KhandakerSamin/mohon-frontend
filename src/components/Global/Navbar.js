@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { ThemeToggle } from "./ThemeToggle"
 import Image from "next/image"
 import { useTheme } from "next-themes"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,6 +13,8 @@ const Navbar = () => {
   const { theme, resolvedTheme } = useTheme() // get current theme and resolved theme
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const pathname = usePathname();
+
 
   useEffect(() => {
     setMounted(true)
@@ -35,9 +38,8 @@ const Navbar = () => {
       <>
         {/* Overlay */}
         <div
-          className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${
-            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+          className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
           onClick={() => setIsMenuOpen(false)}
         >
           <div className="absolute inset-0 bg-black/20"></div>
@@ -49,7 +51,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               {/* Logo placeholder */}
               <Link href="/" className="inline-block">
-                <div className="w-[150px] h-[50px]" /> 
+                <div className="w-[150px] h-[50px]" />
               </Link>
 
               {/* Desktop links */}
@@ -77,19 +79,16 @@ const Navbar = () => {
               >
                 <div className="flex flex-col items-center justify-center w-6 h-6 relative">
                   <span
-                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${
-                      isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
-                    }`}
+                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                      }`}
                   />
                   <span
-                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-200 ease-out ${
-                      isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                    }`}
+                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-200 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                      }`}
                   />
                   <span
-                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${
-                      isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
-                    }`}
+                    className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                      }`}
                   />
                 </div>
               </button>
@@ -98,9 +97,8 @@ const Navbar = () => {
 
           {/* Mobile menu */}
           <div
-            className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl border-b shadow-xl transform transition-all duration-500 ease-out bg-background text-foreground/70 ${
-              isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
-            }`}
+            className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-xl border-b shadow-xl transform transition-all duration-500 ease-out bg-background text-foreground/70 ${isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
+              }`}
           >
             <div className="px-6 py-8">
               <nav className="space-y-1">
@@ -136,9 +134,8 @@ const Navbar = () => {
               </nav>
 
               <div
-                className={`mt-8 pt-6 border-t transform transition-all duration-500 ease-out ${
-                  isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-                }`}
+                className={`mt-8 pt-6 border-t transform transition-all duration-500 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                  }`}
               >
                 <div className="flex justify-between items-center px-4">
                   <div className="flex items-center space-x-3">
@@ -160,13 +157,17 @@ const Navbar = () => {
   // Use resolvedTheme for better theme detection
   const currentTheme = resolvedTheme || theme
 
+  
+  const linkClasses = (path) =>
+    `transition-colors text-base font-medium ${pathname === path ? "opacity-100 text-foreground" : "opacity-100 hover:text-foreground "
+    }`;
+
   return (
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setIsMenuOpen(false)}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -190,13 +191,17 @@ const Navbar = () => {
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/x-tra" className="transition-colors text-sm font-medium hover:opacity-80">
+              <Link href="/x-tra" className={linkClasses("/x-tra")}>
                 X-TRa
               </Link>
-              <Link href="/about" className="transition-colors text-sm font-medium hover:opacity-80">
+              <Link href="/about" className={linkClasses("/about")}>
                 About Me
               </Link>
-              <a href="https://rebrand.ly/abul-hashem-31e8b6" target="_blank" className="transition-colors text-sm font-medium hover:opacity-80">
+              <a
+                href="https://rebrand.ly/abul-hashem-31e8b6"
+                target="_blank"
+                className="transition-colors text-base font-medium hover:text-foreground"
+              >
                 Resume
               </a>
             </div>
@@ -214,19 +219,16 @@ const Navbar = () => {
             >
               <div className="flex flex-col items-center justify-center w-6 h-6 relative">
                 <span
-                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${
-                    isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                    }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-200 ease-out ${
-                    isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-200 ease-out ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                    }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${
-                    isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
-                  }`}
+                  className={`absolute h-0.5 w-6 bg-foreground rounded-full transform transition-all duration-300 ease-out ${isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                    }`}
                 />
               </div>
             </button>
@@ -235,9 +237,8 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-lg transform transition-all duration-500 ease-out bg-background text-foreground ${
-            isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
-          }`}
+          className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-lg transform transition-all duration-500 ease-out bg-background text-foreground ${isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-4 opacity-0 invisible"
+            }`}
         >
           <div className="px-6 py-8">
             <nav className="space-y-1 text-foreground/70">
@@ -273,9 +274,8 @@ const Navbar = () => {
             </nav>
 
             <div
-              className={`mt-8 pt-6 border-t transform transition-all duration-500 ease-out ${
-                isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
-              }`}
+              className={`mt-8 pt-6 border-t transform transition-all duration-500 ease-out ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                }`}
             >
               <div className="flex justify-between items-center px-4 text-foreground/70">
                 <div className="flex items-center space-x-3">
