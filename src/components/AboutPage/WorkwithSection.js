@@ -36,6 +36,7 @@ const WorkwithSection = () => {
         <Link href="https://rebrand.ly/30752c" target="_blank" >
           <div className='hidden md:block'>
             <button className=" px-6  py-3 border  rounded-full rounded-bl-none  border-foreground hover:text-background hover:bg-foreground text-foreground text-lg font-medium flex items-center gap-2">
+              
               More On LinkedIn
               <ArrowUpRight className='pl-1 w-8 h-8' />
             </button>

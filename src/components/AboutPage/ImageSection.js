@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const heroImages = [
   {
@@ -31,11 +32,16 @@ export default function ImageSection() {
             className="relative w-full h-[500px] overflow-hidden rounded-md shadow-md group cursor-pointer"
           >
             {/* Image */}
-            <img
+            <Image
               src={item.src}
               alt={item.alt}
-              className="w-full h-full object-cover rounded-md transition-all duration-500 group-hover:scale-110"
+              fill
+              className="object-cover rounded-md transition-all duration-500 group-hover:scale-110"
+              style={{ objectFit: "cover", borderRadius: "0.375rem" }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority={item.id === 1}
             />
+            
 
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
