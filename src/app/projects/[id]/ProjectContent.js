@@ -185,7 +185,7 @@ export default function ProjectContent({ project }) {
       }}
     >
       {/* Hero Section */}
-      <div className="py-12 md:py-20 md:pt-30">
+      <div className="py-12 pt-18 md:py-20 md:pt-30">
         {/* Project Category */}
         <div className="text-base md:text-lg text-foreground/60 mb-2">
           {project.homepage.projectTitle}
