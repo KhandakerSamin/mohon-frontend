@@ -1,276 +1,434 @@
 const projectsData = [
-
   {
     id: 1,
-    // Homepage fields
     homepage: {
       homepageThumbnail: "/p1.png",
       projectTitle: "Golpo",
-      homepageDetail:
-        "",
-      keywords: ["Travel Planning", "AI Assistant"],
+      homepageDetail: "",
+      keywords: ["Audiobook", "Storytelling"],
     },
 
-    // Details page fields
     detailPage: {
-      projectTitle: "TripKing",
-      projectInfo: "Smart Travel Companion",
-      detailPageThumbnail: "/p1.png",
+      projectTitle: "Golpo",
+      projectInfo: "Audiobook & Storytelling App",
+      
       projectSubtitles: [
-        { label: "Role", value: "UX/UI Designer" },
-        { label: "Timeline", value: "March 2025" },
-        { label: "Industry", value: "Travel & Tourism" },
-        { label: "Platform", value: "Cross-Platform App" }
+        { label: "Client", value: "Golpo" },
+        { label: "Role", value: "Product Designer" },
+        { label: "Industry", value: "Media & Entertainment" },
+        { label: "Timeline", value: "Nov 2023" }
       ],
 
-      descriptions: [
+      sections: [
         {
-          serialNumber: "01",
-          title: "Challenge & Opportunity",
-          text: "Travel planning often involves juggling multiple apps, websites, and documents. TripLine was designed to consolidate the entire travel experience into one intelligent platform that learns from user preferences and provides personalized recommendations.",
-          photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p1.png", alt: "Feature wireframes" },
-              { src: "/p1.png", alt: "User flow diagrams" }
-            ]
-          },
+          type: "text-grid",
+          title: "Objective",
+          titleBreakLine: false, 
+          description: "Golpo is a mobile app that enables users to listen to their favorite books in audio format, share stories instantly through QR codes, support artists using stickers, take notes while listening, and organize audios into a personalized library.",
+          images: [
+            { src: "/cs1-1.png", alt: "Golpo app objective" }
+          ]
         },
         {
-          serialNumber: "02",
-          title: "Feature Development",
-          text: "Developed core features including itinerary planning, expense tracking, local discovery, and real-time travel updates. Each feature was designed with user-centric approach focusing on simplicity and efficiency.",
-          photo: {
-            type: "full-width",
-            src: "/p1.png",
-            alt: "Travel planning challenge"
-          },
+          type: "text-grid",
+          title: "Problem Statement",
+          titleBreakLine: true,
+          description: "Create an audiobook platform that is simple for listeners and empowering for creators.",
+          images: [
+            { src: "/cs1-2.png", alt: "Problem statement visualization" }
+          ]
         },
         {
-          serialNumber: "03",
-          title: "User Interface Design",
-          text: "Created a clean, modern interface that works seamlessly across different devices. The design emphasizes visual hierarchy and intuitive navigation to help users quickly access important travel information.",
-          photo: {
-            type: "carousel",
-            images: [
-              { src: "/p1.png", alt: "Mobile interface" },
-              { src: "/p2.png", alt: "Desktop interface" },
-              { src: "/p3.png", alt: "Tablet interface" },
-              { src: "/p1.png", alt: "Component library" }
-            ]
-          },
+          type: "text-grid-list",
+          title: "Project Goals",
+          titleBreakLine: true,
+          description: [
+            "Provide a smooth, distraction-free listening experience",
+            "Create a frictionless sharing system using QR codes",
+            "Enable users to emotionally support creators with stickers",
+            "Offer personalized audio organization in a dedicated library",
+            "Integrate note-taking while listening",
+            "Build an interface that is modern, minimal, and accessible"
+          ],
+          images: [
+            { src: "/cs1-3.png", alt: "Project goals overview" }
+          ]
         },
         {
-          serialNumber: "04",
-          title: "Impact & Results",
-          text: "The app successfully streamlined the travel planning process, reducing planning time by 60% and increasing user satisfaction with personalized recommendations and seamless expense tracking.",
-          photo: {
-            type: "endless-height",
-            src: "/p2.png",
-            alt: "App impact metrics"
-          },
+          type: "text-grid-list",
+          title: "Primary Users",
+          titleBreakLine: true,
+          description: [
+            "Young professionals with limited reading time.",
+            "Students who prefer listening to books on the go.",
+            "Local artists/authors who want to publish audiobooks."
+          ],
+          images: [
+            { src: "/cs1-4.png", alt: "User persona 1" },
+            { src: "/cs1-5.png", alt: "User persona 2" },
+            { src: "/cs1-6.png", alt: "User persona 3" }
+          ]
         },
-      ],
+        {
+          type: "text-grid-list",
+          title: "User Flow",
+          titleBreakLine: false,
+          description: [
+            "Onboarding: Splash Screen→ Sign In / Sign Up → Choose Interests → Home Screen",
+            "Audio Player: Recommended→ Sign In / Sign Up → Choose Interests → Home Screen",
+          ],
+          images: [
+            { src: "/cs1-7.png", alt: "User flow diagram" }
+          ]
+        },
+        {
+          type: "text-grid-list",
+          title: "Core Features",
+          titleBreakLine: true,
+         description: [
+            "Modern Audio Player: Minimal layout, big controls, quick-access notes.",
+            "QR Code Sharing: One scan → story shared instantly.",
+            "Support Stickers:  Listeners can support artists with fun stickers + animations.",
+            "Note-Taking: Take time-synced notes without leaving the player.",
+          ],
+          images: [
+            { src: "/cs1-8.png", alt: "QR sharing feature" },
+            { src: "/cs1-9.png", alt: "Sticker support feature" },
+            { src: "/cs1-10.png", alt: "Note-taking feature" },
+            { src: "/cs1-11.png", alt: "Library organization" }
+          ]
+        },
+        {
+          type: "text-grid-list",
+          title: "Design System",
+          titleBreakLine: true,
+          description: [
+            "Typography: Clean, readable sans-serif",
+            "Color Palette: Warm tones for storytelling, deep accents for controls",
+            "Components: Cards, buttons, audio controls, sticky player",
+            "Icons: Rounded, friendly, consistent"
+          ],
+          images: [
+            { src: "/cs1-12.png", alt: "Design system colors" },
+            { src: "/cs1-13.png", alt: "Design components" }
+          ]
+        },
+        {
+          type: "text-grid",
+          title: "Final Product",
+          titleBreakLine: true,
+          description: "The final product reflects my goal to create an effortless audio-storytelling experience simple, human, and focused on meaningful engagement. Every interaction, from listening to sharing via QR, was shaped through continuous iteration and user-centric decision-making.",
+          images: [
+            { src: "/cs1-14.png", alt: "Final product showcase" }
+          ]
+        },
+        {
+          type: "text-only-list",
+          title: "Outcomes & Impact",
+          titleBreakLine: true,
+          description: [
+            "30% faster sharing flow",
+            "Higher creator engagement via stickers",
+            "Improved experience with note-taking"
+          ]
+        },
+        {
+          type: "text-only-list",
+          title: "What I Learned",
+          titleBreakLine: true,
+          description: [
+            "Balancing simplicity with feature-rich design",
+            "Importance of micro-interactions in audio experiences",
+            "QR sharing dramatically improves app virality",
+            "Focus on both sides: creators & listeners",
+            "Next improvements: Smart recommendations, collaborative playlists, creator dashboard"
+          ]
+        }
+      ]
     }
   },
 
   {
     id: 2,
-    // Homepage fields
     homepage: {
       homepageThumbnail: "/TripKing.png",
       projectTitle: "TripKing",
-      homepageDetail:
-        "",
-      keywords: ["Fact Checking", "Information Verification"],
+      homepageDetail: "",
+      keywords: ["Travel", "Planning"],
     },
 
-    // Details page fields
     detailPage: {
-      projectTitle: "FactWatch",
-      projectInfo: "Truth Verification Platform",
-      detailPageThumbnail: "/p2.png",
+      projectTitle: "TripKing",
+      projectInfo: "AI-Powered Travel Planning Platform",
+      
       projectSubtitles: [
-        { label: "Role", value: "Product Designer" },
-        { label: "Timeline", value: "January 2025" },
-        { label: "Industry", value: "Media & Information" },
-        { label: "Platform", value: "Web & Mobile Platform" }
+        { label: "Client", value: "TripKing" },
+        { label: "Role", value: "Lead Product Designer" },
+        { label: "Industry", value: "Travel & Tourism" },
+        { label: "Timeline", value: "Jan 2024" }
       ],
 
-      descriptions: [
+      sections: [
         {
-          serialNumber: "01",
+          type: "text-grid",
+          title: "Objective",
+          titleBreakLine: false,
+          description: "TripKing is an intelligent travel planning platform that consolidates itinerary creation, expense tracking, local discovery, and real-time updates into one seamless experience. The app learns from user preferences to provide personalized recommendations for every journey.",
+          images: [
+            { src: "/cs2-1.png", alt: "TripKing objective" }
+          ]
+        },
+        {
+          type: "text-grid",
           title: "Problem Statement",
-          text: "In an era of information overload and misinformation, users need reliable tools to verify the authenticity of news and claims. FactWatch addresses this critical need by providing instant fact-checking capabilities with transparent source verification.",
-          photo: {
-            type: "two-grid",
-            images: [
-              { src: "/p2.png", alt: "Research findings" },
-              { src: "/p2.png", alt: "Strategy framework" }
-            ]
-          },
+          titleBreakLine: true,
+          description: "Travel planning involves juggling multiple apps, websites, and documents. Travelers face fragmented experiences when booking flights, hotels, activities, and managing budgets. There's no unified platform that understands their preferences and adapts recommendations accordingly.",
+          images: [
+            { src: "/cs2-2.png", alt: "Travel planning challenges" }
+          ]
         },
         {
-          serialNumber: "02",
-          title: "Research & Strategy",
-          text: "Conducted thorough research on misinformation patterns, user verification behaviors, and existing fact-checking methodologies. Developed a strategy that balances automation with human oversight for maximum accuracy.",
-          photo: {
-            type: "full-width",
-            src: "/p2.png",
-            alt: "Problem identification"
-          },
+          type: "text-grid-list",
+          title: "Project Goals",
+          titleBreakLine: true,
+          description: [
+            "Consolidate all travel planning tools into one intelligent platform",
+            "Implement AI-driven personalized recommendations based on user behavior",
+            "Create intuitive expense tracking with multi-currency support",
+            "Develop real-time travel updates and alerts system",
+            "Build collaborative trip planning for group travelers",
+            "Design offline-first architecture for international travelers"
+          ],
+          images: [
+            { src: "/cs2-3.png", alt: "Project goals" }
+          ]
         },
         {
-          serialNumber: "03",
-          title: "Design System & Components",
-          text: "Built a comprehensive design system focused on trust, transparency, and clarity. Created components that clearly communicate verification status, source credibility, and confidence levels to users.",
-          photo: {
-            type: "carousel",
-            images: [
-              { src: "/p2.png", alt: "Design system" },
-              { src: "/p2.png", alt: "Component library" },
-              { src: "/p2.png", alt: "UI patterns" }
-            ]
-          },
+          type: "text-grid-ordered",
+          title: "Primary Users",
+          titleBreakLine: true,
+          description: [
+            "Frequent business travelers needing efficient itinerary management",
+            "Families planning vacations with multiple activities and budgets",
+            "Solo adventurers seeking personalized local experiences"
+          ],
+          images: [
+            { src: "/cs2-4.png", alt: "Business traveler persona" },
+            { src: "/cs2-5.png", alt: "Family traveler persona" },
+            { src: "/cs2-6.png", alt: "Solo traveler persona" }
+          ]
         },
         {
-          serialNumber: "04",
-          title: "Verification Interface",
-          text: "Designed an intuitive interface that allows users to quickly submit claims for verification, view detailed analysis results, and access supporting evidence from trusted sources.",
-          photo: {
-            type: "endless-height",
-            src: "/p3.png",
-            alt: "Verification interface"
-          },
+          type: "text-grid",
+          title: "User Flow",
+          titleBreakLine: true,
+          description: "Users create trips by entering destinations and dates. The AI suggests itineraries based on preferences, budget, and travel style. They can book services, track expenses in real-time, discover local experiences, and receive timely updates throughout their journey.",
+          images: [
+            { src: "/cs2-7.png", alt: "Complete user flow" }
+          ]
         },
         {
-          serialNumber: "05",
-          title: "Mobile Experience",
-          text: "Optimized the platform for mobile devices, ensuring users can verify information on-the-go with the same level of detail and accuracy as the desktop experience.",
-          photo: {
-            type: "full-width",
-            src: "/p3.png",
-            alt: "Mobile experience"
-          },
+          type: "text-grid",
+          title: "Core Features",
+          titleBreakLine: true,
+          description: "Smart itinerary builder with drag-and-drop scheduling. Multi-currency expense tracker with receipt scanning. Local discovery engine powered by user reviews and AI recommendations. Real-time flight and weather alerts. Collaborative planning with shared access for travel companions.",
+          images: [
+            { src: "/cs2-8.png", alt: "Itinerary builder" },
+            { src: "/cs2-9.png", alt: "Expense tracker" },
+            { src: "/cs2-10.png", alt: "Discovery engine" },
+            { src: "/cs2-11.png", alt: "Real-time alerts" }
+          ]
         },
-      ],
+        {
+          type: "text-grid-list",
+          title: "Design System",
+          titleBreakLine: true,
+          description: [
+            "Vibrant color palette inspired by global destinations and travel imagery",
+            "Clean typography with excellent readability across device sizes",
+            "Card-based UI for easy scanning of trip details and recommendations",
+            "Consistent iconography representing travel categories and actions"
+          ],
+          images: [
+            { src: "/cs2-12.png", alt: "Design system overview" },
+            { src: "/cs2-13.png", alt: "Component library" }
+          ]
+        },
+        {
+          type: "text-grid",
+          title: "Final Product",
+          titleBreakLine: true,
+          description: "TripKing successfully streamlined the travel planning process into an intuitive, all-in-one platform. Users can now plan entire trips without switching between multiple apps, receive personalized recommendations, and manage expenses effortlessly while traveling.",
+          images: [
+            { src: "/cs2-14.png", alt: "Final product screens" }
+          ]
+        },
+        {
+          type: "text-only-list",
+          title: "Outcomes & Impact",
+          titleBreakLine: true,
+          description: [
+            "Reduced planning time by 60% compared to traditional multi-app approach",
+            "Achieved 78% user retention rate within first 6 months",
+            "Users saved average of $300 per trip through smart recommendations"
+          ]
+        },
+        {
+          type: "text-only-list",
+          title: "What I Learned",
+          titleBreakLine: true,
+          description: [
+            "Complex travel data requires careful information architecture",
+            "AI recommendations need transparency to build user trust",
+            "Offline functionality is critical for international travel apps",
+            "Collaborative features increase engagement and app stickiness",
+            "Real-time updates must be timely but not overwhelming"
+          ]
+        }
+      ]
     }
   },
 
-    {
+  {
     id: 3,
-    // Homepage fields
     homepage: {
       homepageThumbnail: "/p2.png",
-      projectTitle: "Fact watch",
-      keywords: ["News Media", "Web App"],
+      projectTitle: "FactWatch",
+      homepageDetail: "",
+      keywords: ["News Media", "Fact-Checking"],
     },
 
-    // Details page fields
     detailPage: {
-      projectTitle: "Fact watch",
+      projectTitle: "FactWatch",
       projectInfo: "Fact-Checking & Media Literacy Platform",
-      detailPageThumbnail: "/FactWatch-1.png",
-      headingtittle: "Goal",
-      headindescription: "Strengthen audience trust, increase content consumption, and boost repeat visits through UX improvements.",
+      
       projectSubtitles: [
         { label: "Client", value: "FactWatch" },
-        { label: "Role", value: "Product Designer " },
+        { label: "Role", value: "Product Designer" },
         { label: "Industry", value: "News Media" },
-        { label: "Timeline", value: "February 2025" }
+        { label: "Timeline", value: "Feb 2025" }
       ],
 
-      // Description sections
-      descriptions: [
+      sections: [
         {
-          serialNumber: "01",
-          title: "Challenge",
-          text: "Fact-Watch Provided Credible Fact-Checking Content, But:",
-          bulletPoints: [
-            "Visitors Didn't Engage Deeply With Articles.",
-            "Navigation Friction Limited Exploration.",
-            "Content Presentation Lacked The Clarity And Structure Needed For Credibility And Retention."
-          ],
-          photo: {
-            type: "full-width",
-            src: "/FactWatch-2.png",
-            alt: "Project overview visualization"
-          },
+          type: "text-grid",
+          title: "Objective",
+          titleBreakLine: false,
+          description: "FactWatch is a comprehensive fact-checking platform that verifies news claims, provides transparent source analysis, and educates users on media literacy. The platform aims to combat misinformation by making truth verification accessible, fast, and trustworthy for everyone.",
+          images: [
+            { src: "/cs3-1.png", alt: "FactWatch objective" }
+          ]
         },
         {
-          serialNumber: "02",
-          title: "Research & Key Insights",
-          text: "",
-          bulletPoints: [
-            "User Behavior Analysis: Bounce rate was high, session times were short.",
-            "User Needs: Quick access to trending checks, better readability, and mobile-friendly access.",
-            "Competitive Benchmarking: Global fact-checking platforms (e.g., Reuters, Boom) emphasized trust signals, structured layouts, and discovery features."
-          ],
-          photo: {
-            type: "full-width2",
-            photos: [
-              {
-                src: "/FactWatch-3.png",
-                alt: "Project overview visualization 1"
-              },
-              {
-                src: "/FactWatch-4.png",
-                alt: "Project overview visualization 2"
-              }
-            ]
-          }
+          type: "text-grid",
+          title: "Problem Statement",
+          titleBreakLine: true,
+          description: "FactWatch provided credible fact-checking content, but visitors didn't engage deeply with articles. Navigation friction limited exploration, and content presentation lacked the clarity and structure needed for credibility and retention. High bounce rates and short session times indicated poor user experience.",
+          images: [
+            { src: "/cs3-2.png", alt: "Problem analysis" }
+          ]
         },
         {
-          serialNumber: "03",
-          title: "Solutions",
-          text: "",
-          bulletPoints: [
-            "Enhance readability for long-form content.",
-            "Provide seamless navigation and easy topic discovery.",
-            "Build trustworthiness through design consistency.",
-            "Encourage longer and repeated engagement."
+          type: "text-grid-list",
+          title: "Project Goals",
+          titleBreakLine: true,
+          description: [
+            "Enhance readability for long-form fact-checking content",
+            "Provide seamless navigation and easy topic discovery",
+            "Build trustworthiness through consistent design patterns",
+            "Encourage longer and repeated user engagement",
+            "Implement clear verification status indicators",
+            "Create mobile-first responsive experience"
           ],
-          photo: {
-            type: "three-grid",
-            images: [
-              { src: "/FactWatch-5.png", alt: "Research analysis" },
-              { src: "/FactWatch-6.png", alt: "User journey mapping" },
-              { src: "/FactWatch-7.png", alt: "User journey mapping" }
-            ]
-          },
+          images: [
+            { src: "/cs3-3.png", alt: "Project goals framework" }
+          ]
         },
         {
-          serialNumber: "04",
+          type: "text-grid-ordered",
+          title: "Primary Users",
+          titleBreakLine: true,
+          description: [
+            "News consumers seeking to verify claims they encounter online",
+            "Journalists and researchers requiring source verification tools",
+            "Educators teaching media literacy and critical thinking skills"
+          ],
+          images: [
+            { src: "/cs3-4.png", alt: "General user persona" },
+            { src: "/cs3-5.png", alt: "Journalist persona" },
+            { src: "/cs3-6.png", alt: "Educator persona" }
+          ]
+        },
+        {
+          type: "text-grid",
+          title: "User Flow",
+          titleBreakLine: true,
+          description: "Users discover trending fact-checks on homepage, search for specific claims, or submit new claims for verification. They read detailed analysis with clear verdict indicators, explore source references, and can bookmark articles for later. The flow prioritizes quick access to verification results.",
+          images: [
+            { src: "/cs3-7.png", alt: "User journey map" }
+          ]
+        },
+        {
+          type: "text-grid",
+          title: "Core Features",
+          titleBreakLine: true,
+          description: "Clear verdict system with color-coded indicators for true, false, misleading, and unverified claims. Transparent source linking with credibility ratings. Trending fact-checks section highlighting current topics. Advanced search with filters for topics and verification status. User submission system for crowdsourced claim verification.",
+          images: [
+            { src: "/cs3-8.png", alt: "Verdict system" },
+            { src: "/cs3-9.png", alt: "Source verification" },
+            { src: "/cs3-10.png", alt: "Search interface" },
+            { src: "/cs3-11.png", alt: "Trending section" }
+          ]
+        },
+        {
+          type: "text-grid-list",
+          title: "Design System",
+          titleBreakLine: true,
+          description: [
+            "Trustworthy color palette emphasizing neutrality and credibility",
+            "Clear typography hierarchy for scannable fact-checking content",
+            "Consistent verification badges and trust indicators throughout",
+            "Accessible design meeting WCAG AA standards for all users"
+          ],
+          images: [
+            { src: "/cs3-12.png", alt: "Design system" },
+            { src: "/cs3-13.png", alt: "UI components" }
+          ]
+        },
+        {
+          type: "text-grid",
+          title: "Final Product",
+          titleBreakLine: true,
+          description: "The redesigned FactWatch platform successfully transformed user engagement through improved content structure, intuitive navigation, and clear trust signals. The platform now serves as a reliable resource for truth verification with significantly better user retention and satisfaction scores.",
+          images: [
+            { src: "/cs3-14.png", alt: "Final platform design" }
+          ]
+        },
+        {
+          type: "text-only-list",
           title: "Outcomes & Impact",
-          text: "In the First Month",
-          bulletPoints: [
-            "User Visits: Increased significantly (30–40% in the first months).",
-            "Engagement: Average session time grew by 40%.",
-            "Trust Factor: User Feedback Highlighted Stronger Perception of Reliability",
-            "Bounce Rate: Reduced as visitors explored multiple articles."
-          ],
-          photo: {
-            type: "statistics",
-            cards: [
-              {
-                value: "35%",
-                label: "Increased User Visits"
-              },
-              {
-                value: "40%",
-                label: "Average Session Time Grew"
-              },
-              {
-                value: "Trust Factor",
-                label: "Stronger Perception of Reliability"
-              }
-            ]
-          }
+          titleBreakLine: true,
+          description: [
+            "User visits increased by 35% in the first month after redesign",
+            "Average session time grew by 40% with improved content engagement",
+            "Bounce rate reduced significantly as visitors explored multiple articles"
+          ]
+        },
+        {
+          type: "text-only-list",
+          title: "What I Learned",
+          titleBreakLine: true,
+          description: [
+            "Trust indicators must be prominent but not overwhelming in design",
+            "Content structure directly impacts perceived credibility",
+            "Mobile-first approach is essential for news consumption patterns",
+            "Clear information hierarchy reduces cognitive load for complex topics",
+            "User feedback loops are crucial for continuous platform improvement"
+          ]
         }
-      ],
+      ]
     }
-  },
+  }
+];
 
-]
-
-export default projectsData
+export default projectsData;

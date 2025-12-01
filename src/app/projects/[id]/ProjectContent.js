@@ -1,215 +1,175 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectContent({ project }) {
-  const [carouselStates, setCarouselStates] = useState({});
-  const carouselRefs = useRef({});
+  const renderTitle = (title, breakLine) => {
+    if (!breakLine) {
+      return <span>{title}</span>;
+    }
 
-  const scrollCarousel = (carouselId, direction) => {
-    const carousel = carouselRefs.current[carouselId];
-    if (!carousel) return;
+    const words = title.split(' ');
+    if (words.length === 1) {
+      return <span>{words[0]}</span>;
+    }
 
-    const scrollAmount = 320;
-    const newScrollLeft =
-      direction === "left"
-        ? carousel.scrollLeft - scrollAmount
-        : carousel.scrollLeft + scrollAmount;
-
-    carousel.scrollTo({
-      left: newScrollLeft,
-      behavior: "smooth",
-    });
+    return (
+      <>
+        <span>
+          {words[0]}
+          <br className="hidden md:block" />
+          <span className="md:hidden"> </span>
+        </span>
+        <span>{words.slice(1).join(' ')}</span>
+      </>
+    );
   };
 
-  const updateCarouselState = (carouselId) => {
-    const carousel = carouselRefs.current[carouselId];
-    if (!carousel) return;
-
-    const isAtStart = carousel.scrollLeft <= 10;
-    const isAtEnd = carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10);
-
-    setCarouselStates((prev) => ({
-      ...prev,
-      [carouselId]: { isAtStart, isAtEnd },
-    }));
-  };
-
-  const renderPhoto = (photo, index) => {
-    switch (photo.type) {
-      case "full-width":
+  const renderSection = (section, index) => {
+    switch (section.type) {
+      case "text-grid":
         return (
-          <div key={index} className="w-full mb-16">
-            <Image
-              src={photo.src || "/placeholder.svg"}
-              alt={photo.alt}
-              width={1400}
-              height={700}
-              className="w-full h-auto rounded-md"
-              sizes="(max-width: 768px) 100vw, 1400px"
-            />
-          </div>
-        );
-      case "full-width2":
-        if (!photo.photos || !Array.isArray(photo.photos) || photo.photos.length < 2) {
-          return (
-            <div key={index} className="w-full mb-16 flex flex-col gap-10">
-              <p>Error: Two images are required for full-width2 layout.</p>
+          <div key={index} className="mb-16 md:mb-24">
+            {/* Text Grid Layout */}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-12">
+              {/* Title - 1/3 width */}
+              <div className="md:w-1/3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                  {renderTitle(section.title, section.titleBreakLine)}
+                </h2>
+              </div>
+              
+              {/* Description - 2/3 width */}
+              <div className="md:w-2/3">
+                <p className="text-base md:text-lg leading-relaxed text-foreground/80">
+                  {section.description}
+                </p>
+              </div>
             </div>
-          );
-        }
-        return (
-          <div key={index} className="w-full mb-16 flex flex-col gap-10">
-            {photo.photos.map((img, idx) => (
-              <Image
-                key={idx}
-                src={img.src || "/placeholder.svg"}
-                alt={img.alt || "Default image description"}
-                width={1400}
-                height={700}
-                className="w-full h-auto rounded-md"
-                sizes="(max-width: 768px) 100vw, 1400px"
-              />
-            ))}
-          </div>
-        );
 
-      case "three-grid":
-        return (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-            {photo.images.map((img, imgIndex) => (
-              <div key={imgIndex} className="group overflow-hidden rounded-md min-h-[650px] md:h-80">
+            {/* Images */}
+            {section.images && section.images.map((image, imgIndex) => (
+              <div key={imgIndex} className="mb-6 md:mb-8">
                 <Image
-                  src={img.src || "/placeholder.svg"}
-                  alt={img.alt}
-                  width={700}
-                  height={500}
-                  className="w-full h-full object-cover transition-transform duration-500 "
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto rounded-lg"
+                  sizes="(max-width: 768px) 100vw, 1400px"
                 />
               </div>
             ))}
           </div>
         );
 
-      case "carousel":
-        const carouselId = `carousel-${index}`;
-        const currentState = carouselStates[carouselId] || { isAtStart: true, isAtEnd: false };
-
+      case "text-grid-list":
         return (
-          <div key={index} className="mb-16">
-            <div className="relative group">
-              {/* Navigation Buttons */}
-              <div className="hidden md:block">
-                <button
-                  onClick={() => scrollCarousel(carouselId, "left")}
-                  disabled={currentState.isAtStart}
-                  className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtStart ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
-                    }`}
-                >
-                  <ChevronLeft className="w-5 h-5 text-gray-700" />
-                </button>
-
-                <button
-                  onClick={() => scrollCarousel(carouselId, "right")}
-                  disabled={currentState.isAtEnd}
-                  className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 ${currentState.isAtEnd ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-50 opacity-0 group-hover:opacity-100"
-                    }`}
-                >
-                  <ChevronRight className="w-5 h-5 text-gray-700" />
-                </button>
+          <div key={index} className="mb-16 md:mb-24">
+            {/* Text Grid Layout */}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-12">
+              {/* Title - 1/3 width */}
+              <div className="md:w-1/3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                  {renderTitle(section.title, section.titleBreakLine)}
+                </h2>
               </div>
-
-              {/* Carousel Track */}
-              <div
-                ref={(el) => (carouselRefs.current[carouselId] = el)}
-                onScroll={() => updateCarouselState(carouselId)}
-                className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory"
-              >
-                {photo.images.map((img, imgIndex) => (
-                  <div key={imgIndex} className="flex-shrink-0 snap-start group">
-                    <div className="w-80 md:w-90 h-60 md:h-[650px] overflow-hidden rounded-md">
-                      <Image
-                        src={img.src || "/placeholder.svg"}
-                        alt={img.alt}
-                        width={400}
-                        height={300}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 320px, 400px"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Mobile Dots */}
-              <div className="flex justify-center mt-6 md:hidden">
-                <div className="flex gap-2">
-                  {photo.images.map((_, imgIndex) => (
-                    <button
-                      key={imgIndex}
-                      className="w-2 h-2 rounded-full bg-gray-300 transition-colors duration-200 hover:bg-gray-500"
-                      onClick={() => {
-                        const carousel = carouselRefs.current[carouselId];
-                        if (carousel) {
-                          carousel.scrollTo({
-                            left: imgIndex * 320,
-                            behavior: "smooth",
-                          });
-                        }
-                      }}
-                    />
+              
+              {/* Description - 2/3 width with unordered list */}
+              <div className="md:w-2/3">
+                <ul className="space-y-3 text-base md:text-lg text-foreground/80">
+                  {section.description.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-foreground/40">•</span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
+              </div>
+            </div>
+
+            {/* Images */}
+            {section.images && section.images.map((image, imgIndex) => (
+              <div key={imgIndex} className="mb-6 md:mb-8">
+                <Image
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto rounded-lg"
+                  sizes="(max-width: 768px) 100vw, 1400px"
+                />
+              </div>
+            ))}
+          </div>
+        );
+
+      case "text-grid-ordered":
+        return (
+          <div key={index} className="mb-16 md:mb-24">
+            {/* Text Grid Layout */}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 md:mb-12">
+              {/* Title - 1/3 width */}
+              <div className="md:w-1/3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                  {renderTitle(section.title, section.titleBreakLine)}
+                </h2>
+              </div>
+              
+              {/* Description - 2/3 width with ordered list */}
+              <div className="md:w-2/3">
+                <ol className="space-y-3 text-base md:text-lg text-foreground/80 list-decimal list-inside">
+                  {section.description.map((item, i) => (
+                    <li key={i} className="leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            {/* Images */}
+            {section.images && section.images.map((image, imgIndex) => (
+              <div key={imgIndex} className="mb-6 md:mb-8">
+                <Image
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  width={1400}
+                  height={800}
+                  className="w-full h-auto rounded-lg"
+                  sizes="(max-width: 768px) 100vw, 1400px"
+                />
+              </div>
+            ))}
+          </div>
+        );
+
+      case "text-only-list":
+        return (
+          <div key={index} className="mb-16 md:mb-24">
+            {/* Text Grid Layout */}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+              {/* Title - 1/3 width */}
+              <div className="md:w-1/3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                  {renderTitle(section.title, section.titleBreakLine)}
+                </h2>
+              </div>
+              
+              {/* Description - 2/3 width with unordered list */}
+              <div className="md:w-2/3">
+                <ul className="space-y-3 text-base md:text-lg text-foreground/80">
+                  {section.description.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-foreground/40">•</span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         );
-
-      case "endless-height":
-        return (
-          <div key={index} className="w-full mb-16">
-            <Image
-              src={photo.src || "/placeholder.svg"}
-              alt={photo.alt}
-              width={1400}
-              height={0}
-              className="w-full h-auto rounded-md"
-              sizes="100vw"
-              style={{ height: "auto" }}
-            />
-          </div>
-        );
-
-        case "statistics":
-      if (!photo.cards || !Array.isArray(photo.cards) || photo.cards.length === 0) {
-        return (
-          <div key={index} className="w-full mb-16">
-            <p>Error: Statistics cards are required for statistics layout.</p>
-          </div>
-        );
-      }
-      return (
-        <div key={index} className="w-full mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {photo.cards.map((card, cardIndex) => (
-              <div
-                key={cardIndex}
-                className="bg-blue-100 p-6 rounded-lg text-center border border-blue-100 min-h-[200px] flex flex-col justify-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-gray-700 mb-2 w-20 text-left">
-                  {card.value}
-                </div>
-                <div className="text-sm md:text-base text-gray-600 leading-relaxed border border-blue-50 rounded-bl-none px-5 mt-3 w-fit   p-1 rounded-full bg-blue-50">
-                  {card.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
 
       default:
         return null;
@@ -217,81 +177,46 @@ export default function ProjectContent({ project }) {
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-30" style={{ color: "var(--foreground)", background: "var(--background)" }}>
-      {/* Project Title */}
-      <div className="mb-12 md:mb-16">
-        <div className="text-xl md:text-base text-foreground/80 mb-1">
+    <main 
+      className="max-w-7xl mx-auto px-4 md:px-6"
+      style={{ 
+        color: "var(--foreground)", 
+        background: "var(--background)" 
+      }}
+    >
+      {/* Hero Section */}
+      <div className="py-12 md:py-20 md:pt-30">
+        {/* Project Category */}
+        <div className="text-base md:text-lg text-foreground/60 mb-2">
           {project.homepage.projectTitle}
         </div>
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 leading-relaxed" style={{ color: "var(--foreground)" }}>
+        
+        {/* Project Title */}
+        <h1 className="gradient-text text-[clamp(2rem,6vw,4rem)] font-bold leading-none tracking-tight mb-5 md:mb-10">
           {project.detailPage.projectInfo}
         </h1>
 
         {/* Project Details Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {project.detailPage.projectSubtitles.map((subtitle, index) => (
             <div key={index}>
-              <div className="text-xs md:text-base mb-1 text-foreground/80" >{subtitle.label}</div>
-              <div className="text-sm md:text-xl" style={{ color: "var(--foreground)" }}>{subtitle.value}</div>
+              <div className="text-xs md:text-sm mb-2 text-foreground uppercase tracking-wide">
+                {subtitle.label}
+              </div>
+              <div className="text-foreground/60 md:text-lg font-medium">
+                {subtitle.value}
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Main Project Image with text */}
-      <div className="mb-5">
-        <h1 className="text-2xl">{project.detailPage.headingtittle}</h1>
-        <p className="text-xl py-5 text-foreground/80">{project.detailPage.headindescription}</p>
+      {/* Content Sections */}
+      <div className="py-8 md:py-12">
+        {project.detailPage.sections.map((section, index) => 
+          renderSection(section, index)
+        )}
       </div>
-
-      <div className="mb-16 md:mb-20 overflow-hidden rounded-md">
-        <Image
-          src={project.detailPage.detailPageThumbnail || "/placeholder.svg"}
-          alt={project.detailPage.projectTitle}
-          width={1400}
-          height={700}
-          className="w-full h-auto"
-          sizes="(max-width: 768px) 100vw, 1400px"
-        />
-      </div>
-
-      {/* Description Sections */}
-      <div className="space-y-16 md:space-y-20">
-        {project.detailPage.descriptions.map((desc, index) => (
-          <div key={index}>
-            <div className="mb-8 md:mb-12">
-              <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6" style={{ color: "var(--foreground)" }}>
-                {desc.title}
-              </h2>
-              <p className="leading-relaxed max-w-full text-base md:text-lg text-foreground/80">
-                {desc.text}
-              </p>
-              {/* Bullet Points Rendering */}
-              {desc.bulletPoints && desc.bulletPoints.length > 0 && (
-                <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
-                  {desc.bulletPoints.map((point, i) => (
-                    <li key={i} className="text-base md:text-lg leading-relaxed text-foreground/80" >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-
-            {desc.photo && renderPhoto(desc.photo, index)}
-          </div>
-        ))}
-      </div>
-
-      <style jsx global>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </main>
   );
 }
