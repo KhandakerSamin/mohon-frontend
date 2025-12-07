@@ -8,7 +8,7 @@ const ProjectSection = () => {
   return (
     <section className="py-16 px-4 md:px-8 bg-background">
       <div className="max-w-[1230px] mx-auto">
-        <h1 className='font-semibold text-[40px] text-center my-28'>My Projects</h1>
+        <h1 className='font-semibold text-[40px] text-center mb-28 mt-5'>My Projects</h1>
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => {
