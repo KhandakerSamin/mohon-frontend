@@ -1,9 +1,73 @@
 "use client";
 
-import { Figma } from "lucide-react";
+import { Figma, Clock, ArrowLeft } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectContent({ project }) {
+  // Check if project has detail page data
+  if (!project.detailPage || !project.detailPage.sections) {
+    return (
+      <main 
+        className="min-h-screen flex items-center justify-center px-4 md:px-6"
+        style={{ 
+          color: "var(--foreground)", 
+          background: "var(--background)" 
+        }}
+      >
+        <div className="max-w-2xl w-full text-center">
+          {/* Coming Soon Icon */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-foreground/5 flex items-center justify-center">
+                <Clock className="w-12 h-12 md:w-16 md:h-16 text-foreground/40" strokeWidth={1.5} />
+              </div>
+              <div className="absolute inset-0 rounded-full border-2 border-foreground/10 animate-pulse"></div>
+            </div>
+          </div>
+
+          {/* Project Title */}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+            {project.homepage.projectTitle}
+          </h1>
+
+          {/* Coming Soon Text */}
+          <p className="text-xl md:text-2xl text-foreground/60 mb-8">
+            Case Study Coming Soon
+          </p>
+
+          {/* Description */}
+          <p className="text-base md:text-lg text-foreground/50 mb-12 max-w-xl mx-auto leading-relaxed">
+            We&apos;re crafting a detailed case study for this project. Check back soon to explore the design process, challenges, and solutions.
+          </p>
+
+          {/* Keywords */}
+          {/* {project.homepage.keywords && project.homepage.keywords.length > 0 && (
+            <div className="flex flex-wrap gap-3 justify-center mb-12 rounded-full">
+              {project.homepage.keywords.map((keyword, index) => (
+                <span 
+                  key={index}
+                  className="px-4 py-2 bg-foreground/5 text-foreground/70 text-sm font-medium border border-foreground/10"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          )} */}
+
+          {/* Back Button */}
+          <Link 
+            href="/"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors duration-300"
+          >
+            <ArrowLeft size={20} />
+            Back to Projects
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
   const renderTitle = (title, breakLine) => {
     if (!breakLine) {
       return <span>{title}</span>;

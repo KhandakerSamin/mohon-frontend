@@ -411,6 +411,17 @@ const projectsData = [
         }
       ]
     }
+  },
+  {
+    id: 4,
+    homepage: {
+      homepageThumbnail: "/hero4.png",
+      projectTitle: "Lebanese Grill House",
+      homepageDetail: "",
+      keywords: ["Restaurant", "Lebanese Cuisine"],
+    },
+
+    
   }
 ];
 
