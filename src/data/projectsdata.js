@@ -121,7 +121,7 @@ const projectsData = [
           images: [
             { src: "/cs1-14.png", alt: "Final product showcase" }
           ],
-          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLink: "https://rebrand.ly/figma-5816f5",
           figmaLinkText: "Explore the Full Golpo App Design"
         },
         {
@@ -275,7 +275,7 @@ const projectsData = [
           images: [
             { src: "/cs2-14.png", alt: "Final product screens" }
           ],
-          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLink: "https://rebrand.ly/figma-af1865",
           figmaLinkText: "Explore the Full TripKing Design"
         },
         // {
@@ -395,7 +395,7 @@ const projectsData = [
           images: [
             { src: "/cs3-8.png", alt: "Final platform design" }
           ],
-          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLink: "https://rebrand.ly/figma-a0374f",
           figmaLinkText: "Explore the Full FactWatch Design"
         },
         {
