@@ -165,9 +165,9 @@ const projectsData = [
       
       projectSubtitles: [
         { label: "Client", value: "TripKing" },
-        { label: "Role", value: "Lead Product Designer" },
-        { label: "Industry", value: "Travel & Tourism" },
-        { label: "Timeline", value: "Jan 2024" }
+        { label: "Role", value: "Product Designer" },
+        { label: "Industry", value: "Media & Entertainment" },
+        { label: "Timeline", value: "Nov 2023" }
       ],
 
       sections: [
@@ -175,16 +175,22 @@ const projectsData = [
           type: "text-grid",
           title: "Objective",
           titleBreakLine: false,
-          description: "TripKing is an intelligent travel planning platform that consolidates itinerary creation, expense tracking, local discovery, and real-time updates into one seamless experience. The app learns from user preferences to provide personalized recommendations for every journey.",
+          description: "TripKing is an all-in-one travel booking platform that brings hotel reservations, flight booking, and a fully integrated travel accessories shop under one unified experience. Built for both local and international travelers, TripKing simplifies the entire journey — from trip planning to booking to shopping — ensuring that users no longer need to switch between multiple apps or websites.",
           images: [
             { src: "/cs2-1.png", alt: "TripKing objective" }
           ]
         },
         {
-          type: "text-grid",
-          title: "Problem Statement",
+          type: "text-grid-list",
+          title: "Major Pain Points",
           titleBreakLine: true,
-          description: "Travel planning involves juggling multiple apps, websites, and documents. Travelers face fragmented experiences when booking flights, hotels, activities, and managing budgets. There's no unified platform that understands their preferences and adapts recommendations accordingly.",
+          description: [
+            "Users visit multiple platforms to book hotels, flights, and buy travel items.",
+            "Comparing prices feels overwhelming and inconsistent.",
+            "No unified wallet or reward system exists in most travel booking platforms.",
+            "International users face currency conversion issues and lack of localization.",
+            "Users want a faster, visually appealing, and modern booking experience."
+          ],
           images: [
             { src: "/cs2-2.png", alt: "Travel planning challenges" }
           ]
@@ -194,51 +200,55 @@ const projectsData = [
           title: "Project Goals",
           titleBreakLine: true,
           description: [
-            "Consolidate all travel planning tools into one intelligent platform",
-            "Implement AI-driven personalized recommendations based on user behavior",
-            "Create intuitive expense tracking with multi-currency support",
-            "Develop real-time travel updates and alerts system",
-            "Build collaborative trip planning for group travelers",
-            "Design offline-first architecture for international travelers"
+            "Build a unified booking experience for hotels, flights, and travel products.",
+            "Create a modern, clean, and intuitive interface that increases conversion.",
+            "Add a user wallet for instant checkouts, refunds, and cashback.",
+            "Provide AI-powered suggestions for hotels, flights, and accessories.",
+            "Integrate multi-currency and language localization.",
+            "Ensure a responsive system across Web and Mobile App."
           ],
           images: [
             { src: "/cs2-3.png", alt: "Project goals" }
           ]
         },
         {
-          type: "text-grid-ordered",
-          title: "Primary Users",
-          titleBreakLine: true,
+          type: "text-grid",
+          title: "Research",
+          titleBreakLine: false,
           description: [
-            "Frequent business travelers needing efficient itinerary management",
-            "Families planning vacations with multiple activities and budgets",
-            "Solo adventurers seeking personalized local experiences"
+            "Users struggle with juggling multiple apps, comparing bookings, and finding essentials in one place. Research shows that smart filtering, cross-selling, and a centralized wallet significantly improve the booking flow. Personalized recommendations further boost user satisfaction and increase conversion rates."
           ],
           images: [
-            { src: "/cs2-4.png", alt: "Business traveler persona" },
-            { src: "/cs2-5.png", alt: "Family traveler persona" },
-            { src: "/cs2-6.png", alt: "Solo traveler persona" }
+            { src: "/cs2-4.png", alt: "Business traveler persona" }
           ]
         },
         {
           type: "text-grid",
-          title: "User Flow",
+          title: "Information Architecture",
           titleBreakLine: true,
-          description: "Users create trips by entering destinations and dates. The AI suggests itineraries based on preferences, budget, and travel style. They can book services, track expenses in real-time, discover local experiences, and receive timely updates throughout their journey.",
+          description: "The platform is structured with a simple, intuitive navigation system that connects Hotels, Flights, Shop, Offers, Wallet, and Account under one seamless experience. Each booking flow from hotels to flights and shopping—is designed for quick discovery, smooth comparison, and fast checkout. With an integrated multi-currency wallet, users enjoy instant payments, rewards, and a unified travel management experience.",
           images: [
-            { src: "/cs2-7.png", alt: "Complete user flow" }
+            { src: "/cs2-5.png", alt: "Complete user flow" }
           ]
         },
         {
-          type: "text-grid",
-          title: "Core Features",
-          titleBreakLine: true,
-          description: "Smart itinerary builder with drag-and-drop scheduling. Multi-currency expense tracker with receipt scanning. Local discovery engine powered by user reviews and AI recommendations. Real-time flight and weather alerts. Collaborative planning with shared access for travel companions.",
+          type: "text-grid-list",
+          title: "Solution",
+          titleBreakLine: false,
+          description: [
+            "Discover and book hotels with dynamic filters",
+            "Book international and local flights with transparent pricing",
+            "Shop travel essentials through a structured e-commerce shop",
+            "Save and use balance via a built-in TripKing Wallet",
+            "Enjoy personalized offers based on preferences and behavior",
+            "Browse the platform in their preferred currency and language"
+          ],
           images: [
+            { src: "/cs2-6.png", alt: "Itinerary builder" },
+            { src: "/cs2-7.png", alt: "Itinerary builder" },
             { src: "/cs2-8.png", alt: "Itinerary builder" },
-            { src: "/cs2-9.png", alt: "Expense tracker" },
-            { src: "/cs2-10.png", alt: "Discovery engine" },
-            { src: "/cs2-11.png", alt: "Real-time alerts" }
+            { src: "/cs2-9.png", alt: "Itinerary builder" },
+            { src: "/cs2-10.png", alt: "Itinerary builder" },
           ]
         },
         {
@@ -246,13 +256,14 @@ const projectsData = [
           title: "Design System",
           titleBreakLine: true,
           description: [
-            "Vibrant color palette inspired by global destinations and travel imagery",
-            "Clean typography with excellent readability across device sizes",
-            "Card-based UI for easy scanning of trip details and recommendations",
-            "Consistent iconography representing travel categories and actions"
+            "Typography: Clean, readable sans-serif (Poppins) with strong visual hierarchy.",
+            "Color Palette: Warm neutrals for storytelling paired with rich accents for controls and highlights",
+            "Components: Smart filters, card-based listings, segmented tabs, dynamic map view, floating booking widgets, and a fully integrated wallet module.",
+            "Icons: Rounded, friendly, and consistently styled to support clarity and modern aesthetics."
           ],
           images: [
-            { src: "/cs2-12.png", alt: "Design system overview" },
+            { src: "/cs2-11.png", alt: "Design system overview" },
+            { src: "/cs2-12.png", alt: "Component library" },
             { src: "/cs2-13.png", alt: "Component library" }
           ]
         },
@@ -260,33 +271,30 @@ const projectsData = [
           type: "text-grid",
           title: "Final Product",
           titleBreakLine: true,
-          description: "TripKing successfully streamlined the travel planning process into an intuitive, all-in-one platform. Users can now plan entire trips without switching between multiple apps, receive personalized recommendations, and manage expenses effortlessly while traveling.",
+          description: "The final product delivers a seamless, all-in-one travel experience—simple, intuitive, and designed to help users book, shop, and manage their trips effortlessly. Every feature was refined through user-focused iteration to ensure a smooth and enjoyable journey.",
           images: [
             { src: "/cs2-14.png", alt: "Final product screens" }
           ],
           figmaLink: "https://www.figma.com/design/your-figma-link-here",
-          figmaLinkText: "Explore the Full TripKing App Design"
+          figmaLinkText: "Explore the Full TripKing Design"
         },
-        {
-          type: "text-only-list",
-          title: "Outcomes & Impact",
-          titleBreakLine: true,
-          description: [
-            "Reduced planning time by 60% compared to traditional multi-app approach",
-            "Achieved 78% user retention rate within first 6 months",
-            "Users saved average of $300 per trip through smart recommendations"
-          ]
-        },
+        // {
+        //   type: "text-only-list",
+        //   title: "Outcomes & Impact",
+        //   titleBreakLine: true,
+        //   description: [
+        //     "Reduced planning time by 60% compared to traditional multi-app approach",
+        //     "Achieved 78% user retention rate within first 6 months",
+        //     "Users saved average of $300 per trip through smart recommendations"
+        //   ]
+        // },
         {
           type: "text-only-list",
           title: "What I Learned",
           titleBreakLine: true,
           description: [
-            "Complex travel data requires careful information architecture",
-            "AI recommendations need transparency to build user trust",
-            "Offline functionality is critical for international travel apps",
-            "Collaborative features increase engagement and app stickiness",
-            "Real-time updates must be timely but not overwhelming"
+            "TripKing transforms the traditional travel booking experience into a complete travel ecosystem. By merging hotel and flight bookings with a travel accessories shop and integrating a digital wallet with multi-currency support, TripKing becomes a powerful super-app for both local and international travelers.",
+            "The design focuses on clarity, speed, and personalization — making travel planning easier, smarter, and more enjoyable."
           ]
         }
       ]
@@ -318,70 +326,50 @@ const projectsData = [
           type: "text-grid",
           title: "Objective",
           titleBreakLine: false,
-          description: "FactWatch is a comprehensive fact-checking platform that verifies news claims, provides transparent source analysis, and educates users on media literacy. The platform aims to combat misinformation by making truth verification accessible, fast, and trustworthy for everyone.",
+          description: "Strengthen audience trust, increase content consumption, and boost repeat visits through UX improvements.",
           images: [
             { src: "/cs3-1.png", alt: "FactWatch objective" }
           ]
         },
         {
-          type: "text-grid",
-          title: "Problem Statement",
+          type: "text-grid-list",
+          title: "Challenge",
           titleBreakLine: true,
-          description: "FactWatch provided credible fact-checking content, but visitors didn't engage deeply with articles. Navigation friction limited exploration, and content presentation lacked the clarity and structure needed for credibility and retention. High bounce rates and short session times indicated poor user experience.",
+          description: [
+            "Visitors didn’t engage deeply with articles.",
+            "Navigation friction limited exploration.",
+            "Content presentation lacked the clarity and structure needed for credibility and retention.",
+          ],
           images: [
             { src: "/cs3-2.png", alt: "Problem analysis" }
           ]
         },
         {
           type: "text-grid-list",
-          title: "Project Goals",
+          title: "Research & Key Insights",
           titleBreakLine: true,
           description: [
-            "Enhance readability for long-form fact-checking content",
-            "Provide seamless navigation and easy topic discovery",
-            "Build trustworthiness through consistent design patterns",
-            "Encourage longer and repeated user engagement",
-            "Implement clear verification status indicators",
-            "Create mobile-first responsive experience"
+            "User Behavior Analysis: Bounce rate was high, session times were short.",
+            "User Needs: Quick access to trending checks, better readability, and mobile-friendly access.",
+            "Competitive Benchmarking: Global fact-checking platforms (e.g., Reuters, Boom) emphasized trust signals, structured layouts, and discovery features."
           ],
           images: [
-            { src: "/cs3-3.png", alt: "Project goals framework" }
+            { src: "/cs3-3.png", alt: "Project goals framework" },
+            { src: "/cs3-4.png", alt: "Project goals framework" }
           ]
         },
         {
-          type: "text-grid-ordered",
-          title: "Primary Users",
-          titleBreakLine: true,
+          type: "text-grid-list",
+          title: "Solutions ",
+          titleBreakLine: false,
           description: [
-            "News consumers seeking to verify claims they encounter online",
-            "Journalists and researchers requiring source verification tools",
-            "Educators teaching media literacy and critical thinking skills"
+            "Enhance readability for long-form content.",
+            "Provide seamless navigation and easy topic discovery.",
+            "Build trustworthiness through design consistency.",
+            "Encourage longer and repeated engagement."
           ],
           images: [
-            { src: "/cs3-4.png", alt: "General user persona" },
-            { src: "/cs3-5.png", alt: "Journalist persona" },
-            { src: "/cs3-6.png", alt: "Educator persona" }
-          ]
-        },
-        {
-          type: "text-grid",
-          title: "User Flow",
-          titleBreakLine: true,
-          description: "Users discover trending fact-checks on homepage, search for specific claims, or submit new claims for verification. They read detailed analysis with clear verdict indicators, explore source references, and can bookmark articles for later. The flow prioritizes quick access to verification results.",
-          images: [
-            { src: "/cs3-7.png", alt: "User journey map" }
-          ]
-        },
-        {
-          type: "text-grid",
-          title: "Core Features",
-          titleBreakLine: true,
-          description: "Clear verdict system with color-coded indicators for true, false, misleading, and unverified claims. Transparent source linking with credibility ratings. Trending fact-checks section highlighting current topics. Advanced search with filters for topics and verification status. User submission system for crowdsourced claim verification.",
-          images: [
-            { src: "/cs3-8.png", alt: "Verdict system" },
-            { src: "/cs3-9.png", alt: "Source verification" },
-            { src: "/cs3-10.png", alt: "Search interface" },
-            { src: "/cs3-11.png", alt: "Trending section" }
+            { src: "/cs3-5.png", alt: "General user persona" }
           ]
         },
         {
@@ -389,47 +377,36 @@ const projectsData = [
           title: "Design System",
           titleBreakLine: true,
           description: [
-            "Trustworthy color palette emphasizing neutrality and credibility",
-            "Clear typography hierarchy for scannable fact-checking content",
-            "Consistent verification badges and trust indicators throughout",
-            "Accessible design meeting WCAG AA standards for all users"
+            "Typography: Clean, readable sans-serif (Poppins) with strong visual hierarchy.",
+            "Color Palette: Warm neutrals for storytelling paired with rich accents for controls and highlights",
+            "Components: Smart filters, card-based listings, segmented tabs, dynamic map view, floating booking widgets, and a fully integrated wallet module.",
+            "Icons: Rounded, friendly, and consistently styled to support clarity and modern aesthetics."
           ],
           images: [
-            { src: "/cs3-12.png", alt: "Design system" },
-            { src: "/cs3-13.png", alt: "UI components" }
+            { src: "/cs3-6.png", alt: "User journey map" },
+            { src: "/cs3-7.png", alt: "User journey map" }
           ]
         },
         {
           type: "text-grid",
           title: "Final Product",
           titleBreakLine: true,
-          description: "The redesigned FactWatch platform successfully transformed user engagement through improved content structure, intuitive navigation, and clear trust signals. The platform now serves as a reliable resource for truth verification with significantly better user retention and satisfaction scores.",
+          description: "The final FactWatch design offers a clean, credible, and easy-to-navigate platform for verifying information. With structured fact-check cards, clear labels, and a modern layout, users can quickly explore and confirm facts with confidence.",
           images: [
-            { src: "/cs3-14.png", alt: "Final platform design" }
+            { src: "/cs3-8.png", alt: "Final platform design" }
           ],
           figmaLink: "https://www.figma.com/design/your-figma-link-here",
-          figmaLinkText: "Explore the Full FactWatch Platform Design"
+          figmaLinkText: "Explore the Full FactWatch Design"
         },
         {
           type: "text-only-list",
           title: "Outcomes & Impact",
           titleBreakLine: true,
           description: [
-            "User visits increased by 35% in the first month after redesign",
-            "Average session time grew by 40% with improved content engagement",
-            "Bounce rate reduced significantly as visitors explored multiple articles"
-          ]
-        },
-        {
-          type: "text-only-list",
-          title: "What I Learned",
-          titleBreakLine: true,
-          description: [
-            "Trust indicators must be prominent but not overwhelming in design",
-            "Content structure directly impacts perceived credibility",
-            "Mobile-first approach is essential for news consumption patterns",
-            "Clear information hierarchy reduces cognitive load for complex topics",
-            "User feedback loops are crucial for continuous platform improvement"
+            "User Visits: Increased significantly (30–40% in the first months).",
+            "Engagement: Average session time grew by 40%.",
+            "Trust Factor: User feedback highlighted stronger perception of reliability",
+            "Bounce Rate: Reduced as visitors explored multiple articles."
           ]
         }
       ]
