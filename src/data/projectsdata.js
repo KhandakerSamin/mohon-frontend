@@ -120,7 +120,9 @@ const projectsData = [
           description: "The final product reflects my goal to create an effortless audio-storytelling experience simple, human, and focused on meaningful engagement. Every interaction, from listening to sharing via QR, was shaped through continuous iteration and user-centric decision-making.",
           images: [
             { src: "/cs1-14.png", alt: "Final product showcase" }
-          ]
+          ],
+          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLinkText: "Explore the Full Golpo App Design"
         },
         {
           type: "text-only-list",
@@ -261,7 +263,9 @@ const projectsData = [
           description: "TripKing successfully streamlined the travel planning process into an intuitive, all-in-one platform. Users can now plan entire trips without switching between multiple apps, receive personalized recommendations, and manage expenses effortlessly while traveling.",
           images: [
             { src: "/cs2-14.png", alt: "Final product screens" }
-          ]
+          ],
+          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLinkText: "Explore the Full TripKing App Design"
         },
         {
           type: "text-only-list",
@@ -402,7 +406,9 @@ const projectsData = [
           description: "The redesigned FactWatch platform successfully transformed user engagement through improved content structure, intuitive navigation, and clear trust signals. The platform now serves as a reliable resource for truth verification with significantly better user retention and satisfaction scores.",
           images: [
             { src: "/cs3-14.png", alt: "Final platform design" }
-          ]
+          ],
+          figmaLink: "https://www.figma.com/design/your-figma-link-here",
+          figmaLinkText: "Explore the Full FactWatch Platform Design"
         },
         {
           type: "text-only-list",
