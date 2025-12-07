@@ -2,7 +2,7 @@ const projectsData = [
   {
     id: 1,
     homepage: {
-      homepageThumbnail: "/p1.png",
+      homepageThumbnail: "/hero1.png",
       projectTitle: "Golpo",
       homepageDetail: "",
       keywords: ["Audiobook", "Storytelling"],
@@ -153,7 +153,7 @@ const projectsData = [
   {
     id: 2,
     homepage: {
-      homepageThumbnail: "/TripKing.png",
+      homepageThumbnail: "/hero2.png",
       projectTitle: "TripKing",
       homepageDetail: "",
       keywords: ["Travel", "Planning"],
@@ -304,7 +304,7 @@ const projectsData = [
   {
     id: 3,
     homepage: {
-      homepageThumbnail: "/p2.png",
+      homepageThumbnail: "/hero3.png",
       projectTitle: "FactWatch",
       homepageDetail: "",
       keywords: ["News Media", "Fact-Checking"],

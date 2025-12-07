@@ -17,18 +17,20 @@ const ProjectCard = ({ project, isFullWidth = false }) => {
         className={`relative overflow-hidden rounded-md ${
           isFullWidth
             ? "w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[650px] xl:h-[800px]"
-            : "h-[200px] sm:h-[250px] md:h-[350px] lg:h-[430px]"
+            : "h-[300px]  md:h-[350px] lg:h-[600px]"
         }`}
       >
         <Image
           src={project.homepage.homepageThumbnail || "/placeholder.svg"}
           alt={project.homepage.projectTitle}
           fill
+          priority
+          quality={100}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{
             objectFit: "cover",
           }}
-          className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+          className="transition-transform duration-500 ease-in-out group-hover:scale-101"
         />
       </div>
 

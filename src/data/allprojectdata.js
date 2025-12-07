@@ -5,7 +5,7 @@ export const allProjectsData = [
     category: "Mobile App Design",
     type: "UI/UX Design",
     description: "A game-based audiobook streaming app designed to deliver immersive audio storytelling experiences. Users can listen to creative audiobook episodes and play gamified stories in a fun and engaging way.",
-    image: "/p1.png",
+    image: "/x1.png",
     year: "2024"
   },
   {
@@ -14,7 +14,7 @@ export const allProjectsData = [
     category: "Travel App",
     type: "Product Design",
     description: "A comprehensive travel planning application that helps users organize trips, book accommodations, and discover local attractions with an intuitive interface.",
-    image: "/p3.png",
+    image: "/x2.png",
     year: "2024"
   },
   {
@@ -23,7 +23,7 @@ export const allProjectsData = [
     category: "News App",
     type: "UI/UX Design",
     description: "A fact-checking application that helps users verify news authenticity and combat misinformation with real-time verification tools.",
-    image: "/p2.png",
+    image: "/x3.png",
     year: "2023"
   },
   {
@@ -32,7 +32,7 @@ export const allProjectsData = [
     category: "Fintech",
     type: "Web Design",
     description: "A modern banking dashboard interface featuring account management, transaction history, and financial analytics with clean, professional design.",
-    image: "/ap1.png",
+    image: "/x4.png",
     year: "2024"
   },
   {
@@ -41,7 +41,7 @@ export const allProjectsData = [
     category: "Web Application",
     type: "Full Stack Design",
     description: "Complete e-commerce solution with product catalog, shopping cart, payment integration, and admin dashboard for online retail businesses.",
-    image: "/ap2.png",
+    image: "/x5.png",
     year: "2023"
   },
   {
@@ -50,7 +50,7 @@ export const allProjectsData = [
     category: "Wellness App",
     type: "Mobile Design",
     description: "A calming meditation app with guided sessions, breathing exercises, and progress tracking to help users achieve mindfulness and relaxation.",
-    image: "/ap3.png",
+    image: "/x6.png",
     year: "2024"
   },
   {
@@ -59,7 +59,7 @@ export const allProjectsData = [
     category: "Mobile App",
     type: "UI/UX Design",
     description: "On-demand food delivery application with restaurant discovery, order tracking, and seamless payment processing for hungry customers.",
-    image: "/p1.png",
+    image: "/x7.png",
     year: "2023"
   },
   {
@@ -68,7 +68,7 @@ export const allProjectsData = [
     category: "Health App",
     type: "Product Design",
     description: "Comprehensive fitness tracking app with workout plans, nutrition logging, and progress analytics to help users achieve their health goals.",
-    image: "/ap2.png",
+    image: "/x8.png",
     year: "2024"
   },
   {
@@ -77,7 +77,7 @@ export const allProjectsData = [
     category: "Web Application",
     type: "UI/UX Design",
     description: "Property listing and management platform with advanced search filters, virtual tours, and agent communication tools.",
-    image: "/p3.png",
+    image: "/x9.png",
     year: "2023"
   },
   {
@@ -86,7 +86,7 @@ export const allProjectsData = [
     category: "EdTech",
     type: "Web Design",
     description: "Educational platform for online courses with video streaming, assignment submission, and progress tracking for students and instructors.",
-    image: "/p2.png",
+    image: "/x10.png",
     year: "2024"
   },
   {
@@ -95,7 +95,7 @@ export const allProjectsData = [
     category: "Analytics Tool",
     type: "Web Application",
     description: "Social media management dashboard with post scheduling, analytics, and engagement tracking across multiple platforms.",
-    image: "/p1.png",
+    image: "/x11.png",
     year: "2023"
   },
   {
@@ -104,7 +104,7 @@ export const allProjectsData = [
     category: "Utility App",
     type: "Mobile Design",
     description: "Beautiful weather application with accurate forecasts, radar maps, and severe weather alerts in an elegant, easy-to-read interface.",
-    image: "/ap3.png",
+    image: "/x12.png",
     year: "2024"
   },
   {
@@ -113,7 +113,7 @@ export const allProjectsData = [
     category: "Productivity App",
     type: "UI/UX Design",
     description: "Project and task management tool with team collaboration, deadline tracking, and progress visualization for enhanced productivity.",
-    image: "/ap1.png",
+    image: "/x13.png",
     year: "2023"
   },
   {
@@ -122,7 +122,7 @@ export const allProjectsData = [
     category: "Entertainment App",
     type: "Mobile Design",
     description: "Music streaming application with personalized playlists, social sharing, and high-quality audio streaming capabilities.",
-    image: "/ap2.png",
+    image: "/x14.png",
     year: "2024"
   },
   {
@@ -131,7 +131,7 @@ export const allProjectsData = [
     category: "Fintech",
     type: "Web Application",
     description: "Investment tracking and portfolio management platform with real-time market data, performance analytics, and trading tools.",
-    image: "/p3.png",
+    image: "/x15.png",
     year: "2023"
   },
   {
@@ -140,7 +140,7 @@ export const allProjectsData = [
     category: "Lifestyle App",
     type: "Mobile Design",
     description: "Cooking and recipe discovery app with step-by-step instructions, ingredient lists, and meal planning features for food enthusiasts.",
-    image: "/p1.png",
+    image: "/x16.png",
     year: "2024"
   },
   {
@@ -149,7 +149,7 @@ export const allProjectsData = [
     category: "Travel App",
     type: "UI/UX Design",
     description: "Hotel reservation platform with search filters, room comparisons, guest reviews, and secure booking system for travelers.",
-    image: "/p2.png",
+    image: "/x17.png",
     year: "2023"
   },
   {
@@ -158,7 +158,7 @@ export const allProjectsData = [
     category: "Blockchain App",
     type: "Product Design",
     description: "Secure cryptocurrency wallet with multi-currency support, transaction history, and portfolio tracking for digital asset management.",
-    image: "/ap3.png",
+    image: "/x18.png",
     year: "2024"
   },
   {
@@ -167,7 +167,7 @@ export const allProjectsData = [
     category: "Media App",
     type: "Mobile Design",
     description: "Clean and minimalist news reading application with personalized feeds, offline reading, and social sharing capabilities.",
-    image: "/ap1.png",
+    image: "/x19.png",
     year: "2023"
   },
   {
@@ -176,7 +176,7 @@ export const allProjectsData = [
     category: "Communication App",
     type: "Web Application",
     description: "Professional video conferencing platform with screen sharing, recording, and collaboration tools for remote teams.",
-    image: "/ap2.png",
+    image: "/x20.png",
     year: "2024"
   },
   {
@@ -188,40 +188,5 @@ export const allProjectsData = [
     image: "/p3.png",
     year: "2023"
   },
-  {
-    id: 22,
-    title: "Event Management",
-    category: "Business App",
-    type: "Web Design",
-    description: "Event planning and management platform with attendee registration, schedule management, and real-time updates for organizers.",
-    image: "/p1.png",
-    year: "2024"
-  },
-  {
-    id: 23,
-    title: "Language Learning",
-    category: "EdTech App",
-    type: "Mobile Design",
-    description: "Interactive language learning app with gamified lessons, pronunciation practice, and progress tracking for multiple languages.",
-    image: "/p2.png",
-    year: "2023"
-  },
-  {
-    id: 24,
-    title: "Pet Care Tracker",
-    category: "Pet App",
-    type: "Mobile Design",
-    description: "Pet health and care tracking app with vaccination records, feeding schedules, and veterinary appointment management.",
-    image: "/ap3.png",
-    year: "2024"
-  },
-  // {
-  //   id: 25,
-  //   title: "Interior Design Tool",
-  //   category: "Design App",
-  //   type: "AR Application",
-  //   description: "Augmented reality interior design app allowing users to visualize furniture and decor in their space before purchasing.",
-  //   image: "/ap1.png",
-  //   year: "2024"
-  // }
+
 ];
