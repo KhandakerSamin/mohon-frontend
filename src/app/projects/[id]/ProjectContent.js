@@ -63,7 +63,7 @@ export default function ProjectContent({ project }) {
                   />
                   {isFinalImage && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/0 transition-colors duration-300 ">
-                      <p className="text-white gradient-text md:text-[clamp(4rem,12vw,8rem)] font-semibold text-xl md:text-4xl mb-5 md:mb-12 px-4 text-center ">
+                      <p className="text-white gradient-text md:text-[clamp(2rem,8vw,2.5rem)] font-semibold text-xl md:text-4xl mb-5 md:mb-12 px-4 text-center ">
                         {section.figmaLinkText}
                       </p>
                       <a
