@@ -106,7 +106,7 @@ const ImageModal = ({ isOpen, onClose, currentIndex, projects, onNext, onPrev })
         </div>
 
         {/* Image Counter */}
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 text-white text-sm">
+        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 text-white text-sm">
           {currentIndex + 1} / {projects.length}
         </div>
       </div>
