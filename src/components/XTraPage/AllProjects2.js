@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { allProjectsData } from "../../data/allprojectdata";
 import Card2 from './Card2';
+import ImageModal from './ImageModal';
 
 const AllProjects2 = () => {
   const [isLayoutReady, setIsLayoutReady] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   useEffect(() => {
     // Show layout after a brief delay to ensure smooth rendering
@@ -29,6 +32,28 @@ const AllProjects2 = () => {
   for (let i = 0; i < allProjectsData.length; i += 3) {
     groupedProjects.push(allProjectsData.slice(i, i + 3));
   }
+
+  // Modal handlers
+  const handleCardClick = (index) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prev) => 
+      prev === allProjectsData.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setSelectedImageIndex((prev) => 
+      prev === 0 ? allProjectsData.length - 1 : prev - 1
+    );
+  };
 
   return (
     <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-background min-h-screen">
@@ -80,6 +105,7 @@ const AllProjects2 = () => {
                             index: rowIndex * 3 + cardIndex 
                           }} 
                           className="h-full"
+                          onClick={() => handleCardClick(rowIndex * 3 + cardIndex)}
                         />
                       </div>
                     );
@@ -90,6 +116,16 @@ const AllProjects2 = () => {
           </div>
         )}
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        currentIndex={selectedImageIndex || 0}
+        projects={allProjectsData}
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
       
       <style jsx>{`
         /* Smooth transitions for layout changes */

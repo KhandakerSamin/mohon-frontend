@@ -70,13 +70,10 @@ const projectsData = [
           ]
         },
         {
-          type: "text-grid-list",
+          type: "text-grid",
           title: "User Flow",
           titleBreakLine: false,
-          description: [
-            "Onboarding: Splash Screen→ Sign In / Sign Up → Choose Interests → Home Screen",
-            "Audio Player: Recommended→ Sign In / Sign Up → Choose Interests → Home Screen",
-          ],
+          description: "Users open the app and either sign up with basic details and quick verification or log in with existing credentials. After a simple onboarding, they’re taken directly to the home screen to start exploring and listening.",
           images: [
             { src: "/cs1-7.png", alt: "User flow diagram" }
           ]
