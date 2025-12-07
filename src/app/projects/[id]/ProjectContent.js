@@ -73,7 +73,7 @@ export default function ProjectContent({ project }) {
                         className="px-3 md:px-6 py-2 md:py-3 md:hover:px-6.5  bg-white text-black  md:font-semibold  flex items-center gap-2 rounded-full"
                       >
                         <Figma />
-                        View All Screens on Figma →
+                        View All Screens on Figma  →
                       </a>
                     </div>
                   )}
