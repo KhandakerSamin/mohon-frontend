@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Greeting Badge */}
           <div className="inline-block absolute left-6 -top-6 lg:left-32 lg:-top-8">
             <span className="py-1.5 md:py-2 lg:py-2.5 px-5 md:px-6 lg:px-8 bg-transparent border border-foreground rounded-full rounded-bl-none text-foreground hover:bg-foreground hover:text-background text-sm lg:text-2xl tracking-wide transition-colors duration-200">
-              Hey! I&apos;m
+              Hey! I&apos;m a
             </span>
           </div>
 
@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="text-center md:text-left  mb-5 md:mb-0 ">
           <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
-            Programming Hero, Codefleee, <br className="hidden md:block" />
+            Programming Hero, Codeflee, <br className="hidden md:block" />
             Gamechnagers360
           </p>
         </div>
@@ -61,8 +61,8 @@ const Hero = () => {
         <div className="text-center md:text-right">
           <p className="mb-1 font-medium">My Clients From</p>
           <p className="leading-relaxed">
-            USA, Germany, Colombia, UK <br className="hidden md:block" />
-            Australia, Finland, <br className="md:hidden" /> South Africa, France
+            USA, Germany, Colombia, UK, Australia, Finland, <br className="hidden md:block" />
+             Netherlands,<br className="md:hidden" /> South Africa, France
           </p>
         </div>
       </div>
