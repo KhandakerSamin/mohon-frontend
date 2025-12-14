@@ -182,10 +182,10 @@ const Navbar = () => {
               <Image
                 src={currentTheme === "dark" ? "/NewLogoDark.png" : "/NewLogo.png"}
                 alt="Md Abul Hashem Logo"
-                width={100}
+                width={150}
                 height={50}
                 priority
-                className="h-auto w-auto object-contain"
+                className="h-[50px] w-auto object-contain"
               />
             </Link>
 
