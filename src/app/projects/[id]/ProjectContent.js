@@ -127,14 +127,14 @@ export default function ProjectContent({ project }) {
                   />
                   {isFinalImage && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/0 transition-colors duration-300 ">
-                      <p className="text-white gradient-text md:text-[clamp(2rem,8vw,2.5rem)] font-semibold text-xl md:text-4xl mb-5 md:mb-12 px-4 text-center ">
+                      {/* <p className="gradient-text md:text-[clamp(2rem,8vw,2.5rem)] font-semibold text-xl md:text-4xl mb-5 md:mb-12 px-4 text-center ">
                         {section.figmaLinkText}
-                      </p>
+                      </p> */}
                       <a
                         href={section.figmaLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 md:px-6 py-2 md:py-3 md:hover:px-6.5  bg-white text-black  md:font-semibold  flex items-center gap-2 rounded-full"
+                        className="px-3 md:px-6 py-2 mt-20 md:py-3 md:hover:px-6.5  bg-white text-black  md:font-semibold  flex items-center gap-2 rounded-full"
                       >
                         <Figma />
                         View All Screens on Figma  →
