@@ -24,10 +24,7 @@ const Hero = () => {
           <div className="absolute right-0 -bottom-12 lg:-bottom-14">
             <a
               href="https://api.whatsapp.com/send/?phone=8801879449690&text&type=phone_number&app_absent=0"
-              className="group inline-flex items-center py-1 md:py-2 lg:py-2.5 px-3 md:px-6 lg:px-8  
-             bg-transparent border border-foreground rounded-full rounded-tr-none 
-             text-foreground text-sm lg:text-2xl tracking-wide  
-             transition-all duration-200 hover:bg-foreground hover:text-background"
+              className="group inline-flex items-center py-1 md:py-2 lg:py-2.5 px-3 md:px-6 lg:px-8 bg-transparent border border-foreground rounded-full rounded-tr-none text-foreground text-sm lg:text-2xl tracking-wide transition-all duration-200 hover:bg-foreground hover:text-background"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -66,6 +63,36 @@ const Hero = () => {
           </p>
         </div>
       </div>
+
+      {/* Scroll Down Arrow */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6 text-foreground/50"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+
+      <style jsx>{`
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0) translateX(-50%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+          }
+          50% {
+            transform: translateY(-25%) translateX(-50%);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 2s infinite;
+        }
+      `}</style>
     </section>
   )
 }
