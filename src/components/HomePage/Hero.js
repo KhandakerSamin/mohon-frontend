@@ -1,7 +1,21 @@
 "use client"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const Hero = () => {
+  const [showArrow, setShowArrow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setShowArrow(false);
+      } else {
+        setShowArrow(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="min-h-screen max-w-7xl mx-auto flex items-center justify-center bg-background text-foreground px-8 py-10 lg:py-24 relative">
       <div className="max-w-6xl mx-auto text-center">
@@ -43,10 +57,11 @@ const Hero = () => {
         </div>
       </div>
 
+
       {/* Bottom Section - Previously @ and My Clients From */}
-      <div className="absolute bottom-10 md:bottom-8 md:left-8 md:right-8 flex flex-col md:flex-row justify-between md:items-end text-sm text-foreground/70">
+      <div className="absolute bottom-24 md:bottom-8 md:left-8 md:right-8 flex flex-col md:flex-row justify-between md:items-end text-sm text-foreground/70 w-full px-2">
         {/* Previously @ Section */}
-        <div className="text-center md:text-left  mb-5 md:mb-0 ">
+        <div className="text-center md:text-left mb-5 md:mb-0 ">
           <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
             Programming Hero, Codeflee, <br className="hidden md:block" />
@@ -64,19 +79,21 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 text-foreground/50"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
+      {/* Scroll Down Arrow - always at bottom for mobile, hides after scroll */}
+      {showArrow && (
+        <div className="fixed md:absolute bottom-4 left-1/2 -translate-x-1/2 z-50 animate-bounce-slow pointer-events-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7 text-foreground/60 drop-shadow"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes bounce-slow {
