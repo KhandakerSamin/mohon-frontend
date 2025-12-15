@@ -1,4 +1,5 @@
 "use client"
+import { MoveDown } from "lucide-react";
 import React, { useEffect, useState } from "react"
 
 const Hero = () => {
@@ -82,16 +83,7 @@ const Hero = () => {
       {/* Scroll Down Arrow - always at bottom for mobile, hides after scroll */}
       {showArrow && (
         <div className="fixed md:absolute bottom-4 left-1/2 -translate-x-1/2 z-50 animate-bounce-slow pointer-events-none">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-7 h-7 text-foreground/60 drop-shadow"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <MoveDown className="text-foreground/60 drop-shadow font-thin"/>
         </div>
       )}
 
