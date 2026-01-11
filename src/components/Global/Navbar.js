@@ -62,9 +62,13 @@ const Navbar = () => {
                 <Link href="/about" className="transition-colors text-sm font-medium hover:opacity-80">
                   About Me
                 </Link>
-                <a href="#resume" className="transition-colors text-sm font-medium hover:opacity-80">
-                  Resume
-                </a>
+                <a
+                href="https://rebrand.ly/abul-hashem-31e8b6"
+                target="_blank"
+                className="transition-colors text-base font-medium hover:text-foreground"
+              >
+                Resume
+              </a>
               </div>
 
               <div className="hidden md:block">
@@ -123,7 +127,8 @@ const Navbar = () => {
                 </Link>
 
                 <a
-                  href="#resume"
+                  href="https://rebrand.ly/abul-hashem-31e8b6"
+                target="_blank"
                   className="group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:opacity-80"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -263,7 +268,8 @@ const Navbar = () => {
               </Link>
 
               <a
-                href="#resume"
+                href="https://rebrand.ly/abul-hashem-31e8b6"
+                target="_blank"
                 className="group block py-4 px-4 rounded-xl transform transition-all duration-300 ease-out hover:opacity-80"
                 onClick={() => setIsMenuOpen(false)}
               >
