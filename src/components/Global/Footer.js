@@ -75,21 +75,21 @@ const Footer = () => {
           <div className="md:hidden space-y-4 mb-5 pt-15 lg:mb-12 ">
             <div className="flex justify-center space-x-8">
               <a 
-                href="#" 
+                href="https://rebrand.ly/30752c" 
                 className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">LinkedIn</span>
                 <ArrowUpRight size={16} />
               </a>
               <a 
-                href="#" 
+                href="https://rebrand.ly/link-x2022-716fdb" 
                 className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Instagram</span>
                 <ArrowUpRight size={16} />
               </a>
               <a 
-                href="#" 
+                href="https://rebrand.ly/680223" 
                 className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Behance</span>
@@ -98,7 +98,7 @@ const Footer = () => {
             </div>
             <div className="flex justify-center">
               <a 
-                href="#" 
+                href="https://rebrand.ly/abul-hashem-f0eb88" 
                 className="flex items-center space-x-2 text-foreground/80 hover:text-foreground/60 transition-colors duration-200"
               >
                 <span className="text-sm">Dribbble</span>
