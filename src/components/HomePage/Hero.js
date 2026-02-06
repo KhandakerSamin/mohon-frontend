@@ -19,7 +19,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen max-w-7xl mx-auto flex items-center justify-center bg-background text-foreground px-8 py-10 lg:py-24 relative">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center -mt-16 md:mt-0">
         <div className="space-y-2 md:space-y-6 relative">
           {/* Greeting Badge */}
           <div className="inline-block absolute left-6 -top-6 lg:left-32 lg:-top-8">
