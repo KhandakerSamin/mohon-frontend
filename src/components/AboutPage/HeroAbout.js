@@ -87,7 +87,7 @@ export default function HeroAbout() {
           
           {/* Description */}
           <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-            Product Designer With 2+ Years Of UI/UX Experience In The EdTech Industry, Creating Intuitive, 
+            Product Designer With 3+ Years Of UI/UX Experience In The EdTech Industry, Creating Intuitive, 
             Learner-Focused Interfaces. Backed By 5+ Years In Visual Design, With Strengths In Aesthetics, 
             Content Structure, And Storytelling. Experienced In Remote Work, Daily Scrum, And Collaborating 
             With Product And Development Teams.
