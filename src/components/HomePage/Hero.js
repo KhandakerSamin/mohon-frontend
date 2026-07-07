@@ -66,7 +66,7 @@ const Hero = () => {
           <p className="mb-1 font-medium ">Previously @</p>
           <p className="leading-relaxed">
             Programming Hero, Codeflee, <br className="hidden md:block" />
-            Gamechnagers360
+            Cloudsphere
           </p>
         </div>
 
