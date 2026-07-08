@@ -63,7 +63,7 @@ const Navbar = () => {
                   About Me
                 </Link>
                 <a
-                href="https://rebrand.ly/abul-hashem-31e8b6"
+                href="https://drive.google.com/file/d/1cFXlGRSCviQ0wOQGyA5741lYhuMT6ayI/view?usp=sharing"
                 target="_blank"
                 className="transition-colors text-base font-medium hover:text-foreground"
               >
